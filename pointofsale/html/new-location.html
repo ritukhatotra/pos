@@ -1,0 +1,976 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo - PHP Point Of Sale | Easy to use Online POS Software</title>	
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"> <!--320-->    
+<link rel="stylesheet" type="text/css" href="assets/css/all.css" />
+<script type="text/javascript" src="assets/js/all.js"></script>
+</head>
+
+<body>
+
+
+<div class="wrapper sales-bar mini-bar">
+  <div class="left-bar hidden-print">
+    	<div class="admin-logo">
+          <div class="logo-holder pull-left"> 
+                <img src="assets/images/header_logo.png" class="hidden-print logo" id="header-logo" alt=""> 
+          </div>
+      <!-- logo-holder --> 
+    </div>
+    <!-- admin-logo -->
+    
+    <ul class="list-unstyled menu-parent" id="mainMenu">
+          <li><a href="."><i class="icon ti-dashboard"></i><span class="text">Dashboard</span></a></li>
+          <li><a href="customers.html"><i class="icon ti-user"></i> <span class="text">Customers</span></a></li>
+          <li><a href="items.html"><i class="icon ti-harddrive"></i> <span class="text">Items</span></a> </li>
+   		  <li><a href="edit-item.html"><i class="icon ti-harddrives"></i><span class="text">Item Kits</span></a></li>
+          <li><a href="price-rules.html"><i class="ion-ios-pricetags-outline"></i><span class="text">Price Rules</span></a></li>
+          <li><a href="suppliers.html"><i class="icon ti-download"></i><span class="text">Suppliers</span></a></li>
+          <li><a href="reports.html"><i class="icon ti-bar-chart"></i><span class="text">Reports</span></a></li>
+          <li><a href="receivings.html"><i class="icon ti-cloud-down"></i><span class="text">Receiving</span></a></li>
+          <li><a href="sales.html"><i class="icon ti-shopping-cart"></i><span class="text">Sales</span></a></li>
+          <li><a href="#"><i class="ion-android-car"></i><span class="text">Deliveries</span></a></li>
+          <li><a href="#"><i class="icon ti-money"></i><span class="text">Expenses</span></a></li>
+          <li><a href="employee.html"><i class="icon ti-id-badge"></i><span class="text">Employees</span></a></li>
+          <li><a href="gift-cards.html"><i class="icon ti-credit-card"></i><span class="text">Gift Cards</span></a></li>
+          <li><a href="store-config.html"><i class="icon ti-settings"></i><span class="text">Store Config</span></a></li>
+          <li class="active"><a href="location-page.html"><i class="icon ti-home"></i><span class="text">Locations</span></a></li>
+          <li><a href="#"><i class="icon ti-email"></i><span class="text">Messages</span></a></li>
+          <li><a href="#"><i class="icon ti-power-off"></i><span class="text">Logout</span></a></li>
+    </ul>
+  </div>
+  <!-- left-bar -->
+  
+  <div class="content" id="">
+    <div class="overlay hidden-print"></div>
+        <div class="top-bar hidden-print">
+              <nav class="navbar navbar-default top-bar">
+                <div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i></div>
+                	<div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs"> 
+                    		<a href="#">Dashboard</a> 
+                       </div>
+                       
+                        <ul class="nav navbar-nav navbar-right top-elements">															
+															
+																		
+						<!-- redirect($_SERVER['HTTP_REFERER']);	 -->
+						<li class="dropdown">
+							<a  href="#" class="dropdown-toggle language-dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
+                            	<img class="flag_img" src="assets/images/english.png" alt=""> 
+                            	 <span class="hidden-sm hidden-xs"> English</span>
+                           		 <span class="drop-icon"><i class="ion ion-chevron-down"></i></span>
+                             </a>
+                             
+							<ul class="dropdown-menu animated fadeInUp wow language-drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+									<li><a href="#"><img class="flag_img" src="assets/images/english.png" alt="">English</a> </li>
+									<li><a href="#"><img class="flag_img" src="assets/images/indonesia.png" alt="">Indonesia</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/italian.png" alt="">Italian</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/portugues.png" alt="">Portugues</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/vietnamese.png" alt="">Vietnamese</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/dutch.png" alt="">Dutch</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/arabic.png" alt="">Arabic</a></li>
+							</ul>
+						</li>	
+													
+						
+
+												
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+								<i class="ion-ios-bell-outline  icon-notification"></i>
+								<span class="badge info-number count " id="unread_message_count">0</span>
+							</a>
+								<ul class="dropdown-menu dropdown-menu-right animated fadeInUp wow message_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+									<li class="bottom-links"><a href="#" class="last_info">All Messages</a></li>
+									<li class="bottom-links"><a href="#" class="last_info">Sent Messages</a></li>
+									<li class="bottom-links"><a href="#" class="last_info">New Message</a></li>
+								</ul>
+						</li>
+														
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="avatar-holder"><img src="assets/images/avatar-default.jpg" alt=""></span>
+
+							<span class="avatar_info visible-sm visible-md visible-lg">John Doe</span></a>
+							<ul class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+                                <li><a id="support_link" href="#"><i class="ion-help-buoy"></i><span class="text">Support/Documentation</span></a></li>
+                                <li><a href="#"><i class="ion-android-settings"></i><span class="text">Settings</span></a></li>
+                                <li><a id="switch_user" href="#"><i class="ion-ios-toggle-outline"></i><span class="text">Switch User</span></a></li>
+                                <li><a href="#"><i class="ion-edit"></i><span class="text">Edit profile</span></a></li>
+                                <li><a href="#" class="logout_button"><i class="ion-power"></i><span class="text">Logout</span></a></li>			
+							</ul>
+						</li>							
+					</ul>
+              </nav>
+        </div>
+    <!-- top-bar -->
+    
+   <div class="main-content">
+	<form id="location_form" class="form-horizontal">
+		<div class="row" id="form">
+			<div class="col-md-12">				
+				<div class="panel panel-piluku">
+					<div class="panel-heading">
+		                <h3 class="panel-title">
+		                    <i class="ion-edit"></i> 
+		                    Location Information <small>(Fields in red are required)</small>
+		                </h3>
+			        </div>
+
+					<div class="panel-body">
+						<div class="form-group">
+							<label for="name" class="col-sm-3 col-md-3 col-lg-2 control-label required">Name:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="name" value="" class="form-control form-inps" id="name">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3 col-md-3 col-lg-2 control-label">Color:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="color" value="" class="form-control form-inps colorpicker-element" id="color">
+							</div>
+						</div>
+						
+						<div class="form-group">	
+							<label for="company" class="col-sm-3 col-md-3 col-lg-2 control-label ">Company Name:</label>						
+							<div class="col-sm-9 col-md-9 col-lg-10 input-field">
+								<input type="text" name="company" value="" class="validate form-control form-inps" id="company">
+							</div>
+						</div>
+					
+						<div class="form-group">	
+							<label for="company_logo" class="col-sm-3 col-md-3 col-lg-2 control-label ">Company Logo:</label>						
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="file" name="company_logo" id="company_logo" class="filestyle" style="position: absolute; clip: rect(0px, 0px, 0px, 0px);">	
+							</div>	
+						</div>
+						
+						<div class="form-group">	
+							<label for="delete_logo" class="col-sm-3 col-md-3 col-lg-2 control-label ">Delete Logo:</label>						
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="delete_logo" value="1" id="delete_logo">
+								<label for="delete_logo"><span></span></label>
+							</div>	
+						</div>
+					
+						<div class="form-group">	
+							<label for="website" class="col-sm-3 col-md-3 col-lg-2 control-label ">Website:</label>						
+							<div class="col-sm-9 col-md-9 col-lg-10 input-field">
+								<input type="text" name="website" value="" class="form-control form-inps" id="website">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="address" class="col-sm-3 col-md-3 col-lg-2 control-label required">Address:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<textarea name="address" cols="30" rows="4" id="address" class="form-control text-area"></textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="phone" class="col-sm-3 col-md-3 col-lg-2 control-label required">Phone:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="phone" value="" class="form-control form-inps" id="phone">
+							</div>
+						</div>
+					
+						<div class="form-group">
+							<label for="fax" class="col-sm-3 col-md-3 col-lg-2 control-label">Fax:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="fax" value="" class="form-control form-inps" id="fax">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="col-sm-3 col-md-3 col-lg-2 control-label">Email:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="email" value="" class="form-control form-inps" id="email">
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="cc_email" class="col-sm-3 col-md-3 col-lg-2 control-label">CC Email:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="cc_email" value="" class="form-control form-inps selectized" id="cc_email" style="display: none;">
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="bcc_email" class="col-sm-3 col-md-3 col-lg-2 control-label">BCC Email:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="bcc_email" value="" class="form-control form-inps selectized" id="bcc_email" style="display: none;">
+							</div>
+						</div>
+						
+						<div class="form-group">	
+							<label for="return_policy" class="col-sm-3 col-md-3 col-lg-2 control-label">Return Policy:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<textarea name="return_policy"  id="return_policy" class="form-control text-area"></textarea>
+							</div>
+						</div>
+						
+						
+						<div class="form-group">
+							<label for="employees" class="col-sm-3 col-md-3 col-lg-2 control-label">Employees:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<select class="form-control selectized" name="" id="employees" multiple="multiple"  style="display: none;"></select>	
+							</div>
+						</div>						
+						
+						<div class="form-group add-register-table">	
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Registers:</label>							
+							<div class="table-responsive m-lr-15">
+								<table id="price_registers" class="table">
+									<thead>
+										<tr>
+											<th>Register Name</th>
+											<th class="emv_terminal_id register-cc-field" style="display: none;">Terminal ID</th>
+											<th class="register-cc-field" style="display: none;">IP Tran Device ID</th>
+											<th class="register-cc-field" style="display: none;">Card Reader Actions</th>
+											<th>Delete</th>
+										</tr>
+									</thead>
+									
+									<tbody>
+																		
+									</tbody>
+								</table>
+								<a href="javascript:void(0);" id="add_register">Add Register</a>
+							</div>
+						</div>
+						
+
+						<div class="form-group">
+							<label for="enable_credit_card_processing" class="col-sm-3 col-md-3 col-lg-2 control-label">
+								<a href="#" target="_blank">Enable Credit Card Processing</a>:
+							</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="enable_credit_card_processing" value="1" id="enable_credit_card_processing">
+								<label for="enable_credit_card_processing">
+									<span></span>
+								</label>
+							</div>
+						</div>
+
+						<div id="merchant_information" style="display: none;">
+							<div class="form-group">	
+								<label for="credit_card_processor" class="col-sm-3 col-md-3 col-lg-2 control-label">Credit Card Processor:</label>
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<select name="credit_card_processor" class="form-control" id="credit_card_processor">
+										<option value="mercury">Vantiv/Mercury</option>
+										<option value="heartland">Heartland</option>
+										<option value="evo">EVO</option>
+										<option value="worldpay">Worldpay</option>
+										<option value="firstdata">First Data</option>
+										<option value="stripe">Stripe</option>
+										<option value="braintree">Braintree</option>
+										<option value="other_usb">Other EMV processor</option>
+									</select>
+								</div>
+							</div>
+							
+							<div id="emv_info">
+								<div class="form-group">	
+									<label class="col-sm-3 col-md-3 col-lg-2 control-label">EMV Merchant ID / Terminal ID:</label>
+									<div class="col-sm-9 col-md-9 col-lg-10">
+										<input type="text" name="emv_merchant_id" value="" class="form-control form-inps" id="emv_merchant_id">
+									</div>
+								</div>
+						
+								<div class="form-group">	
+									<label for="com_port" class="col-sm-3 col-md-3 col-lg-2 control-label">COM port:</label>
+									<div class="col-sm-9 col-md-9 col-lg-10">
+										<input type="text" name="com_port" value="" class="form-control form-inps" id="com_port">
+											(Default com port is 9)
+									</div>
+								</div>
+
+
+								<div class="form-group">	
+									<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Listener port:</label>
+									<div class="col-sm-9 col-md-9 col-lg-10">
+										<input type="text" name="listener_port" value="" class="form-control form-inps" id="listener_port">
+												(Port 3333 is default for listener port)
+									</div>
+								</div>
+								
+								<div class="form-group">	
+									<label for="use_integrated_ebt" class="col-sm-3 col-md-3 col-lg-2 control-label">Use Integrated EBT:</label>
+									<div class="col-sm-9 col-md-9 col-lg-10">
+										<input type="checkbox" name="ebt_integrated" value="1" id="ebt_integrated">
+											<label for=""><span></span></label>
+									</div>
+								</div>
+
+
+								<div class="form-group">	
+									<label for="net_e_pay_server" class="col-sm-3 col-md-3 col-lg-2 control-label">Net E-Pay Server:</label>
+									<div class="col-sm-9 col-md-9 col-lg-10">
+										<input type="text" name="" value="" class="form-control form-inps" id="">
+											(Only set value if you  did not install net-e-pay on this machine)
+									</div>
+								</div>
+								
+								<div class="form-group">	
+									<label class="col-sm-3 col-md-3 col-lg-2 control-label">EMV Device Override:</label>
+									<div class="col-sm-9 col-md-9 col-lg-10">
+										<input type="text" name="" value="" class="form-control form-inps" id="">
+									</div>
+								</div>
+								
+								
+								<div class="form-group">	
+									<label class="col-sm-3 col-md-3 col-lg-2 control-label">Non EMV Device Override:</label>
+										<div class="col-sm-9 col-md-9 col-lg-10">
+										<input type="text" name="" value="" class="form-control form-inps" id="">
+									</div>
+								</div>
+								
+								
+								<div class="form-group" id="" style="display: none;">	
+									<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">&nbsp;</label>									<div class="col-sm-9 col-md-9 col-lg-10">
+										 <div id="ajax-loader" style="text-align:center;display:none">
+											<img src="assets/images/ajax-loader.gif" alt="">
+										 </div>
+										<button type="button" id="" class="btn btn-primary btn-block">
+											Initialize credit card reader
+										</button>
+									</div>
+								</div>							
+						    </div>
+							
+							<div id="mercury_hosted_checkout_info">
+								<div class="form-group">	
+									<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">
+										Hosted checkout Merchant ID:
+									</label>								
+									
+									<div class="col-sm-9 col-md-9 col-lg-10">
+										<input type="text" name="" value="" class="form-control form-inps" id="">
+									</div>
+								</div>
+
+								<div class="form-group">	
+									<label class="col-sm-3 col-md-3 col-lg-2 control-label">Mercury Generated Password:</label>
+									<div class="col-sm-9 col-md-9 col-lg-10">
+										<input type="text" name="" value="" id="" class="form-control form-inps">
+										<span id="">Password is found at Mercury's Account Settings area of their website &gt;&gt;&gt; HostedCheckout Password Management</span>
+									</div>
+								</div>
+							</div>
+
+						<div id="stripe_info" style="display: none;">						
+							<div class="form-group">	
+								<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+									<a href="#" target="_blank">Currency Code</a>:
+								</label>								
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="text" name="stripe_currency_code" value="usd" class="form-control form-inps" id="">
+								</div>
+							</div>
+						
+							<div class="form-group">	
+								<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Stripe Secret Key:</label>							
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="text" name="" value="" class="form-control form-inps" id="">
+								</div>
+							</div>
+							
+							<div class="form-group">	
+								<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Stripe Publishable Key:</label>	
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="text" name="" value="" class="form-control form-inps" id="">
+								</div>
+							</div>
+						</div>
+						
+						<div id="braintree_info" style="display: none;">						
+							<div class="form-group">	
+								<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Merchant ID:</label>								
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="text" name="" value="" class="form-control form-inps" id="">
+								</div>
+							</div>
+						
+							<div class="form-group">	
+								<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Public Key:</label>								
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="text" name="" value="" class="form-control form-inps" id="">
+								</div>
+							</div>
+							
+							<div class="form-group">	
+								<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Private Key:</label>								
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="text" name="" value="" class="form-control form-inps" id="">
+								</div>
+							</div>
+						</div>						
+					</div>
+					
+						<div class="form-group">	
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Receive stock alerts:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="1" id="">
+									<label for=""><span></span></label>
+							</div>
+						</div>
+
+						<div class="form-group" id="" style="display: none;">	
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Stock Alert Email:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="" value="" class="form-control form-inps" id="">
+							</div>
+						</div>
+						
+						<div class="form-group">	
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label required">Timezone:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<select name="" class="form-control" id="timezone">
+									<option value="Pacific/Pago_Pago">(UTC-11:00) Pacific/Pago_Pago 06:17 pm</option>
+									<option value="Pacific/Niue">(UTC-11:00) Pacific/Niue 06:17 pm</option>
+									<option value="Pacific/Midway">(UTC-11:00) Pacific/Midway 06:17 pm</option>
+									<option value="Pacific/Tahiti">(UTC-10:00) Pacific/Tahiti 07:17 pm</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group">	
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">
+								<a href="#" target="_blank">Mailchimp API Key</a>:
+							</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="" value="" class="form-control form-inps" id="">
+							</div>
+						</div>
+	
+	
+	
+	
+						<div class="form-group override-taxes-container">
+							<label class="col-sm-3 col-md-3 col-lg-2 control-label wide">Override Default Tax:</label>		
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="1" id="" class="override_default_tax_checkbox delete-checkbox">
+								<label for=""><span></span></label>
+							</div>
+						</div>
+	
+	
+					<div class="tax-container main hidden">	
+						<div class="form-group">	
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Tax Group: </label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<select name="" id="" class="form-control tax_class">
+									<option value="" selected="selected">None</option>
+									<option value="1">Taxes</option>
+								</select>
+							</div>
+						</div>
+	
+						<div style="display:block">
+							<div class="form-group">
+								<h4 class="text-center">OR</h4>
+							</div>
+
+							<div class="form-group">	
+								<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Tax 1 Rate:</label>							
+								<div class="col-sm-4 col-md-4 col-lg-5">
+									<input type="text" name="" value="Sales Tax" class="form-control form-inps" placeholder="Tax Name" id="">
+								</div>
+
+								<div class="col-sm-4 col-md-4 col-lg-5">
+									<div class="input-group">
+										<input type="text" name="" value="" class="form-control form-inps-tax" placeholder="Tax Percent" id="">
+									  <span class="input-group-addon">%</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">	
+								<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Tax 2 Rate:</label>							
+								<div class="col-sm-4 col-md-4 col-lg-5">
+									<input type="text" name="" value="" class="form-control form-inps" placeholder="Tax Name" id="">
+								</div>
+
+								<div class="col-sm-4 col-md-4 col-lg-5">
+									<div class="input-group">
+										<input type="text" name="" value="" class="form-control form-inps-tax" placeholder="Tax Percent" id="">
+									    <span class="input-group-addon">%</span>
+									</div>
+									<div class="clear"></div>
+									<input type="checkbox" name="" value="1" class="cumulative_checkbox" id="">
+									<label>
+										<span></span>
+									</label>
+									<span class="cumulative_label">
+										Cumulative								
+									</span>
+								</div>
+							</div>
+					
+						<div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3" style="display: block">
+							<a href="javascript:void(0);" class="show_more_taxes btn btn-orange btn-round">Show More »</a>
+						</div>
+					
+						<div class="more_taxes_container" style="display: none">
+							<div class="form-group">	
+								<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Tax 3 Rate:</label>								
+								<div class="col-sm-4 col-md-4 col-lg-5">
+									<input type="text" name="" value="" class="form-control form-inps" placeholder="Tax Name" id="" size="10">
+								</div>
+
+								<div class="col-sm-4 col-md-4 col-lg-5">
+									<div class="input-group">
+										<input type="text" name="" value="" class="form-control form-inps" placeholder="Tax Percent" id="">
+										<span class="input-group-addon">%</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">	
+								<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Tax 4 Rate:</label>								
+								<div class="col-sm-4 col-md-4 col-lg-5">
+									<input type="text" name="" value="" class="form-control form-inps" placeholder="Tax Name" id="" size="10">
+								</div>
+
+								<div class="col-sm-4 col-md-4 col-lg-5">
+									<div class="input-group">
+										<input type="text" name="default_tax_4_rate" value="" class="form-control form-inps" placeholder="Tax Percent" id="default_tax_4_rate" size="4">
+									  <span class="input-group-addon">%</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">	
+								<label for="default_tax_5_rate" class="col-sm-3 col-md-3 col-lg-2 control-label">Tax 5 Rate:</label>								<div class="col-sm-4 col-md-4 col-lg-5">
+									<input type="text" name="default_tax_5_name" value="" class="form-control form-inps" placeholder="Tax Name" id="default_tax_5_name" size="10">
+								</div>
+
+								<div class="col-sm-4 col-md-4 col-lg-5">
+									<div class="input-group">
+										<input type="text" name="default_tax_5_rate" value="" class="form-control form-inps" placeholder="Tax Percent" id="default_tax_5_rate" size="4">
+									  <span class="input-group-addon">%</span>
+									</div>
+								</div>
+							</div>
+						</div><!--End more Taxes Container-->		
+					</div>
+				</div>
+						
+						
+<input type="hidden" name="redirect" value="">
+
+						<div class="form-actions pull-right">
+							<input type="submit" name="submitf" value="Save" id="submitf" class="submit_button floating-button btn btn-lg btn-primary">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+		
+
+<script type="text/javascript">
+	var submitting = false;
+	var add_register_index = 0;
+		//validation and submit handling
+		$(document).ready(function()
+		{			
+			//Turn on Credit card processing if we type in IP Tran
+	  		 $(document).on('keyup', ".iptran",function()
+			 {
+					var is_ip_tran_on = false;
+
+					$(".iptran").each(function( index ) 
+					{
+						if ($(this).val()!= '')
+						{
+							is_ip_tran_on = true;
+						}
+					});
+
+					if (is_ip_tran_on && !$("#enable_credit_card_processing").prop('checked'))
+					{
+						$("#enable_credit_card_processing").click();
+					}
+					
+					check_ip_tran_init();
+			  });
+			
+			check_ip_tran_init();
+			
+			function check_ip_tran_init()
+			{
+				var hide_init = false;
+			
+				$(".iptran").each(function()
+				{
+					if ($(this).val())
+					{
+						hide_init = true;
+					}
+				});
+			
+				if (hide_init)
+				{
+					$("#init_mercury_emv_wrapper").hide();		  						
+				}
+				else
+				{
+					$("#init_mercury_emv_wrapper").show();		  	
+				}
+			}
+			
+			$(document).on('click','.update_parameters_ip_tran', function()
+			{
+				var emv_merchant_id = $("#emv_merchant_id").val();
+				var ip_tran_id = $(this).parent().prev().find('.iptran').val();
+				$("#grid-loader").show();	
+				
+				$.post('http://demo.phppointofsale.com/index.php/locations/mercury_ip_tran_update_parameters',{device_id: ip_tran_id, merchant_id : emv_merchant_id}, function(response)
+				{
+					show_feedback(response.success ? 'success' : 'error', response.message,response.success ? "Success" : "Error");
+					$("#grid-loader").hide();
+				},'json');
+			});
+			
+			
+			$(document).on('click','.init_ip_tran', function()
+			{
+				var emv_merchant_id = $("#emv_merchant_id").val();
+				var ip_tran_id = $(this).parent().prev().find('.iptran').val();
+				$("#grid-loader").show();	
+				
+				$.post('http://demo.phppointofsale.com/index.php/locations/mercury_ip_tran_emv_param_download',{device_id: ip_tran_id, merchant_id : emv_merchant_id}, function(response)
+				{
+					show_feedback(response.success ? 'success' : 'error', response.message,response.success ? "Success" : "Error");
+					$("#grid-loader").hide();
+				},'json');
+			});
+
+
+			$(document).on('click','.test_mode_ip_tran', function()
+			{
+				var emv_merchant_id = $("#emv_merchant_id").val();
+				var ip_tran_id = $(this).parent().prev().find('.iptran').val();
+				$("#grid-loader").show();	
+				
+				$.post('http://demo.phppointofsale.com/index.php/locations/mercury_ip_tran_emv_test_mode',{device_id: ip_tran_id, merchant_id : emv_merchant_id}, function(response)
+				{
+					show_feedback(response.success ? 'success' : 'error', response.message,response.success ? "Success" : "Error");
+					$("#grid-loader").hide();
+				},'json');
+			});
+			
+					
+					
+			$(document).on('keyup', "#emv_merchant_id",function()
+			{
+				check_emv_merchant_id();
+				
+			});
+			check_emv_merchant_id();
+			
+			
+			function check_emv_merchant_id()
+			{
+				if ($("#emv_merchant_id").val()!='')
+				{
+					$("#init_mercury_emv_wrapper").show();
+				}
+				else
+				{
+					$("#init_mercury_emv_wrapper").hide();
+				}
+			} 	
+			
+			$("#locations_init_mercury_emv").click(function()
+			{
+				$("#ajax-loader").show();
+				$("#locations_init_mercury_emv").hide();							
+				
+				var credit_card_processor = $("#credit_card_processor").val();
+				var emv_merchant_id = $("#emv_merchant_id").val();
+				var com_port = $("#com_port").val();
+				var listener_port = $("#listener_port").val();
+				var net_e_pay_server = $("#net_e_pay_server").val();
+				var secure_device_override_emv= $('#secure_device_override_emv').val();
+				var secure_device_override_non_emv = $('#secure_device_override_non_emv').val();
+ 				var terminal_id_0 = $("#terminal_id_0").val();
+				var ebt_integrated = $("#ebt_integrated").prop('checked') ? 1 : 0;
+				
+				$.post('http://demo.phppointofsale.com/index.php/locations/save_emv_data/', 
+				{ebt_integrated:ebt_integrated, terminal_id: terminal_id_0, secure_device_override_emv: secure_device_override_emv, secure_device_override_non_emv: secure_device_override_non_emv, credit_card_processor: credit_card_processor, emv_merchant_id: emv_merchant_id, com_port: com_port, listener_port:listener_port, net_e_pay_server:net_e_pay_server}, function(response) {
+					
+					if(response.success)
+					{
+						var emv_param_download_init_params = response.emv_param_download_init_params;
+
+ 				   	emv_param_download_init_params['post_data']['ComPort'] = com_port;
+				   	emv_param_download_init_params['post_data']['MerchantID'] = emv_merchant_id;
+						
+		 				terminal_id_0 = $("#terminal_id_0").val();
+						
+						if (terminal_id_0)
+						{
+					   	emv_param_download_init_params['post_data']['TerminalID'] = terminal_id_0;
+						}
+						
+						emv_param_download(emv_param_download_init_params['post_host'], listener_port, emv_param_download_init_params.post_data, "Initialize was successful", "Unable to initialize device", function()
+						{
+							$("#ajax-loader").hide();
+							$("#locations_init_mercury_emv").show();							
+						});
+					}
+					else
+					{
+						$("#ajax-loader").hide();
+						$("#locations_init_mercury_emv").show();
+					}
+				}, 'json');
+			});
+			
+			$('#employees').selectize();
+			
+			$('#cc_email').selectize({
+			    delimiter: ',',
+			    persist: false,
+			    create: function(input) {
+			        return {
+			            value: input,
+			            text: input
+			        }
+			    }
+			});
+			
+			$('#bcc_email').selectize({
+			    delimiter: ',',
+			    persist: false,
+			    create: function(input) {
+			        return {
+			            value: input,
+			            text: input
+			        }
+			    }
+			});
+			
+      $('#color').colorpicker();
+			
+			$(".delete_register").click(function()
+			{
+				$("#location_form").append('<input type="hidden" name="registers_to_delete[]" value="'+$(this).data('register-id')+'" />');
+				$(this).parent().parent().remove();
+			});
+	
+			$("#add_register").click(function()
+			{
+				$("#price_registers tbody").append('<tr><td><input type="text" class="registers_to_add form-control" name="registers_to_add['+add_register_index+'][name]" value="" /></td><td><input type="text" class="registers_to_add form-control register-cc-field" name="registers_to_add['+add_register_index+'][emv_terminal_id]" value="" /></td><td><input type="text" class="registers_to_add form-control iptran register-cc-field" name="registers_to_add['+add_register_index+'][iptran_device_id]" value="" /></td><td><a class="update_parameters_ip_tran register-cc-field" href="javascript:void(0);">Update Params</a><span class="register-cc-field"> / </span><a class="init_ip_tran register-cc-field" href="javascript:void(0);">Initialize credit card reader</a> </td><td>&nbsp;</td></tr>');
+				register_cc_fields_show_hide();
+				add_register_index++;
+			});
+						
+
+			if ($("#location_form_auth").length == 1)
+			{
+			    setTimeout(function(){$(":input:visible:first","#location_form_auth").focus();},100);
+			}
+			else
+			{
+			    setTimeout(function(){$(":input:visible:first","#location_form").focus();},100);				
+			}
+			var submitting = false;
+			$('#location_form').validate({
+				submitHandler:function(form)
+				{
+					if (submitting) return;
+					submitting = true;
+					$('#grid-loader').show();
+					$(form).ajaxSubmit({
+					success:function(response)
+					{
+						//Don't let the registers be double submitted, so we change the name
+						$(".registers_to_add").attr('name', 'registers_added[]');
+						
+						$('#grid-loader').hide();
+						submitting = false;						
+						show_feedback(response.success ? 'success' : 'error', response.message,response.success ? "Success" +' #' + response.location_id : "Error");
+						
+						
+						if(response.redirect==2 && response.success)
+						{
+							window.location.href = 'http://demo.phppointofsale.com/index.php/locations';
+						}
+						else
+						{
+							$("html, body").animate({ scrollTop: 0 }, "slow");
+							$(".form-group").removeClass('has-success has-error');
+						}
+										
+					},
+										resetForm: true,
+										dataType:'json'
+				});
+
+				},
+				ignore: '',
+				errorClass: "text-danger",
+				errorElement: "p",
+				errorPlacement: function(error, element) {
+				    error.insertBefore(element);
+				},
+					highlight:function(element, errorClass, validClass) {
+						$(element).parents('.form-group').removeClass('has-success').addClass('has-error');
+					},
+					unhighlight: function(element, errorClass, validClass) {
+						$(element).parents('.form-group').removeClass('has-error').addClass('has-success');
+					},
+				rules:
+				{
+					name:
+					{
+						required:true,
+					},
+					phone:
+					{
+						required:true
+					},
+					address:
+					{
+						required:true
+					},
+					timezone:
+					{
+						required: true
+					},
+					"employees[]": "required"
+					
+		   		},
+				messages:
+				{
+					name:
+					{
+						required:"Location Name is required",
+
+					},
+					phone:
+					{
+						required:"Phone number is required",
+						number:"Phone number should be valid"					},
+					address:
+					{
+						required:"Company address is a required field"					},
+					timezone:
+					{
+						required:"Timezone is a required field"					},
+					"employees[]": "At least one employee is required for location"					
+				}
+			});
+			
+			$("#enable_credit_card_processing").change(check_enable_credit_card_processing).ready(check_enable_credit_card_processing);
+
+			$("#credit_card_processor").change(check_credit_card_processor).ready(check_credit_card_processor);
+			
+			function check_enable_credit_card_processing()
+			{
+				register_cc_fields_show_hide();
+				
+				if($("#enable_credit_card_processing").prop('checked'))
+				{
+					$("#merchant_information").show();
+				}
+				else
+				{
+					$("#merchant_information").hide();
+				}
+
+			}
+			
+			function register_cc_fields_show_hide()
+			{
+				if($("#enable_credit_card_processing").prop('checked'))
+				{
+					$(".register-cc-field").show();
+				}
+				else
+				{
+					$(".register-cc-field").hide();
+				}
+			}
+			
+			function check_credit_card_processor()
+			{
+				var cc_processor = $("#credit_card_processor").val();
+				if (cc_processor == 'mercury')
+				{
+					$("#emv_info").show();
+					$("#mercury_hosted_checkout_info").show();
+					$("#stripe_info").hide();
+					$("#braintree_info").hide();
+					
+				}
+				else if(cc_processor == 'heartland' || cc_processor == 'evo' || cc_processor == 'worldpay' || cc_processor == 'firstdata' || cc_processor == 'other_usb')
+				{
+					$("#emv_info").show();
+					$("#mercury_hosted_checkout_info").hide();
+					$("#stripe_info").hide();
+					$("#braintree_info").hide();
+					
+				}
+				else if (cc_processor == 'stripe')
+				{
+					$("#emv_info").hide();
+					$("#mercury_hosted_checkout_info").hide();
+					$("#stripe_info").show();
+					$("#braintree_info").hide();
+				}
+				else if (cc_processor == 'braintree')
+				{
+					$("#emv_info").hide();
+					$("#mercury_hosted_checkout_info").hide();
+					$("#stripe_info").hide();
+					$("#braintree_info").show();
+				}
+			}
+			
+			$("#receive_stock_alert").change(check_enable_stock_alert).ready(check_enable_stock_alert);
+			
+			function check_enable_stock_alert()
+			{
+				if($("#receive_stock_alert").prop('checked'))
+				{
+					$("#stock_alert_email_container").show();
+				}
+				else
+				{
+					$("#stock_alert_email_container").hide();
+				}
+
+			}
+			
+		});
+	
+
+		$(".override_default_tax_checkbox").change(function()
+		{
+			$(this).parent().parent().next().toggleClass('hidden')
+		});
+
+</script>
+
+		</div>
+    <!-- Location Message to employee -->
+    
+    	<div id="footers" class="col-md-12 hidden-print text-center"> Please visit our <a href="#">Website</a> to learn the latest information about the project. 
+            <span class="text-info">You are using PHP Point Of Sale Version 
+                <span class="badge bg-primary"> 16.2</span>
+            </span> Built on 07/15/2018 12:23 pm EST 
+        </div>
+        
+  </div>
+  <!---content --> 
+</div>
+</body>
+</html>

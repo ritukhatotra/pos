@@ -1,0 +1,642 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo - PHP Point Of Sale | Easy to use Online POS Software</title>	
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"> <!--320-->    
+<link rel="stylesheet" type="text/css" href="assets/css/all.css" />
+<script type="text/javascript" src="assets/js/all.js"></script>
+</head>
+
+<body>
+
+
+<div class="wrapper mini-bar sales-bar">
+  <div class="left-bar hidden-print">
+    	<div class="admin-logo">
+          <div class="logo-holder pull-left"> 
+                <img src="assets/images/header_logo.png" class="hidden-print logo" id="header-logo" alt=""> 
+          </div>
+      <!-- logo-holder --> 
+    </div>
+    <!-- admin-logo -->
+    
+    <ul class="list-unstyled menu-parent" id="mainMenu">
+          <li class="active"><a href="."><i class="icon ti-dashboard"></i><span class="text">Dashboard</span></a></li>
+          <li><a href="customers.html"><i class="icon ti-user"></i> <span class="text">Customers</span></a></li>
+          <li><a href="items.html"><i class="icon ti-harddrive"></i> <span class="text">Items</span></a> </li>
+   		  <li><a href="edit-item.html"><i class="icon ti-harddrives"></i><span class="text">Item Kits</span></a></li>
+          <li><a href="price-rules.html"><i class="ion-ios-pricetags-outline"></i><span class="text">Price Rules</span></a></li>
+          <li><a href="suppliers.html"><i class="icon ti-download"></i><span class="text">Suppliers</span></a></li>
+          <li><a href="reports.html"><i class="icon ti-bar-chart"></i><span class="text">Reports</span></a></li>
+          <li><a href="receivings.html"><i class="icon ti-cloud-down"></i><span class="text">Receiving</span></a></li>
+          <li><a href="sales.html"><i class="icon ti-shopping-cart"></i><span class="text">Sales</span></a></li>
+          <li><a href="#"><i class="ion-android-car"></i><span class="text">Deliveries</span></a></li>
+          <li><a href="#"><i class="icon ti-money"></i><span class="text">Expenses</span></a></li>
+          <li><a href="employee.html"><i class="icon ti-id-badge"></i><span class="text">Employees</span></a></li>
+          <li><a href="gift-cards.html"><i class="icon ti-credit-card"></i><span class="text">Gift Cards</span></a></li>
+          <li><a href="store-config.html"><i class="icon ti-settings"></i><span class="text">Store Config</span></a></li>
+          <li><a href="location-page.html"><i class="icon ti-home"></i><span class="text">Locations</span></a></li>
+          <li><a href="#"><i class="icon ti-email"></i><span class="text">Messages</span></a></li>
+          <li><a href="#"><i class="icon ti-power-off"></i><span class="text">Logout</span></a></li>
+    </ul>
+  </div>
+  <!-- left-bar -->
+  
+  <div class="content" id="content">
+    <div class="overlay hidden-print"></div>
+        <div class="top-bar hidden-print">
+              <nav class="navbar navbar-default top-bar">
+                <div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i></div>
+                	<div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs">
+						 <a href="#">Dashboard</a>
+						 <a href="#">Reports</a>
+						 <a class="current" href="#">Items Summary Report</a>					
+				     </div>
+                       
+                        <ul class="nav navbar-nav navbar-right top-elements">															
+															
+																		
+						<!-- redirect($_SERVER['HTTP_REFERER']);	 -->
+						<li class="dropdown">
+							<a  href="#" class="dropdown-toggle language-dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
+                            	<img class="flag_img" src="assets/images/english.png" alt=""> 
+                            	 <span class="hidden-sm hidden-xs"> English</span>
+                           		 <span class="drop-icon"><i class="ion ion-chevron-down"></i></span>
+                             </a>
+                             
+							<ul class="dropdown-menu animated fadeInUp wow language-drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+									<li><a href="#"><img class="flag_img" src="assets/images/english.png" alt="">English</a> </li>
+									<li><a href="#"><img class="flag_img" src="assets/images/indonesia.png" alt="">Indonesia</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/italian.png" alt="">Italian</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/portugues.png" alt="">Portugues</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/vietnamese.png" alt="">Vietnamese</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/dutch.png" alt="">Dutch</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/arabic.png" alt="">Arabic</a></li>
+							</ul>
+						</li>	
+													
+						
+
+												
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                	<i class="ion-ios-bell-outline  icon-notification"></i>
+                                    <span class="badge info-number count " id="unread_message_count">0</span>
+                                </a>
+									<ul class="dropdown-menu dropdown-menu-right animated fadeInUp wow message_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+										<li class="bottom-links"><a href="#" class="last_info">All Messages</a></li>
+										<li class="bottom-links"><a href="#" class="last_info">Sent Messages</a></li>
+                                        <li class="bottom-links"><a href="#" class="last_info">New Message</a></li>
+									</ul>
+							</li>
+														
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="avatar-holder"><img src="assets/images/avatar-default.jpg" alt=""></span>
+
+							<span class="avatar_info visible-sm visible-md visible-lg">John Doe</span></a>
+							<ul class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+                                <li><a id="support_link" href="#"><i class="ion-help-buoy"></i><span class="text">Support/Documentation</span></a></li>
+                                <li><a href="#"><i class="ion-android-settings"></i><span class="text">Settings</span></a></li>
+                                <li><a id="switch_user" href="#"><i class="ion-ios-toggle-outline"></i><span class="text">Switch User</span></a></li>
+                                <li><a href="#"><i class="ion-edit"></i><span class="text">Edit profile</span></a></li>
+                                <li><a href="#" class="logout_button"><i class="ion-power"></i><span class="text">Logout</span></a></li>			
+							</ul>
+						</li>							
+					</ul>
+              </nav>
+        </div>
+    <!-- top-bar -->
+    
+    <div class="main-content">
+
+<div class="row hidden-print">
+	<div class="col-md-12">
+		<div class="panel panel-piluku">	
+			<div class="panel-heading report-options">
+				Report Options											
+				<div class="table_buttons pull-right">
+					<button type="button" class="btn btn-more expand-collapse">
+						<i id="expand-collapse-icon" class="ion-chevron-up"></i>
+					</button>
+				</div>
+			</div>
+			<div id="options" class="panel-body" style="display:none;">
+				<form class="form-horizontal form-horizontal-mobiles" id="report_input_form">
+					<input type="hidden" name="report_type" id="report_type" value="simple">
+					<div class="form-group">
+						<label for="date_range" class="col-sm-3 col-md-3 col-lg-2 control-label   ">Date Range:</label>
+						<div class="col-sm-3 col-md-3 col-lg-2">
+						<select name="report_date_range_simple" id="report_date_range_simple" class="form-control">
+							<option selected="selected">Today</option>
+							<option>Yesterday</option>
+							<option>Last 7 Days</option>
+							<option>Last 30 Days</option>
+							<option>This Week</option>
+							<option>Last Week</option>
+							<option>This Month</option>
+							<option>Last Month</option>
+							<option>This Quarter</option>
+							<option>Last Quarter</option>
+							<option>This Year</option>
+							<option>Last Year</option>
+							<option>All Time</option>
+							<option>Custom Date Range</option>
+						</select>
+						</div>
+						
+						<div id="report_date_range_complex" class="col-sm-6 col-md-6 col-lg-8 hidden">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group input-daterange" id="reportrange">
+										<span class="input-group-addon bg date-picker">From</span>
+											<input type="text" class="form-control start_date" name="" id="start_date_formatted" value="">
+											<input type="hidden" id="start_date" name="" value="2018-07-27 00:00">
+									</div>
+								</div>
+								
+								<div class="col-md-6">
+									<div class="input-group input-daterange" id="">
+										<span class="input-group-addon bg date-picker">To</span>
+											<input type="text" class="form-control end_date" name="" id="" value="">
+											<input type="hidden" id="" name="" value="2018-07-27 23:59">
+									</div>	
+								</div>
+							</div>
+						</div>
+						
+					</div>
+
+
+
+
+			<input type="hidden" name="with_time" value="1">
+			<input type="hidden" name="" value="0">
+			<input type="hidden" name="" id="" value="simple">
+
+			<div class="form-group">
+					<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Compare to Date Range:</label>		
+					<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="" id="">
+						<label for=""><span></span></label>
+					</div>		
+			</div>
+<div id="compare_to_holder" style="display: none;">
+	<div class="form-group">
+		<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Date Range:</label>
+		<div class="col-sm-3 col-md-3 col-lg-2">
+			<select name="" id="" class="form-control">
+				<option>Next Period</option>
+				<option>Previous Period</option>
+				<option>Same Dates Previous Year</option>
+				<option>Today</option>
+				<option>Yesterday</option>
+			</select>
+		</div>
+		
+		<div id="report_date_range_complex_compare" class="col-sm-6 col-md-6 col-lg-8 hidden">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="input-group input-daterange" id="reportrange">
+						<span class="input-group-addon bg date-picker">From</span>
+							<input type="text" class="form-control start_date" name="" id="" value="">
+							<input type="hidden" id="start_date_compare" name="start_date_compare" value="2018-07-27 00:00">
+					</div>
+				</div>
+				
+				<div class="col-md-6">
+					<div class="input-group input-daterange" id="reportrange1">
+						<span class="input-group-addon bg date-picker">To</span>
+							<input type="text" class="form-control end_date" name="" id="" value="">
+							<input type="hidden" id="" name="" value="2018-07-27 23:59">
+					</div>	
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+
+	<!-- End container that hides compare to part -->
+</div>
+
+
+
+<input type="hidden" name="compare_with_time" value="1">
+<input type="hidden" name="compare_end_date_end_of_day" value="0">
+		<div class="form-group">
+			<label for="s2id_autogen1" class="col-sm-3 col-md-3 col-lg-2 control-label ">Supplier:</label> 
+					<div class="col-sm-9 col-md-2 col-lg-2">
+							<input type="text" name="supplier_id" value="" id="supplier_id" size="10" tabindex="-1" class="select2-offscreen">			
+					</div>
+		</div>
+
+		<div class="form-group">
+				<label for="s2id_autogen2" class="col-sm-3 col-md-3 col-lg-2 control-label ">Customer:</label> 
+				<div class="col-sm-9 col-md-2 col-lg-2">
+					<input type="text" name="customer_id" value="" id="customer_id" size="10" tabindex="-1" class="select2-offscreen">	
+				</div>
+		</div>
+
+
+		<div class="form-group">
+			<label for="s2id_autogen3" class="col-sm-3 col-md-3 col-lg-2 control-label ">
+				Category:
+			</label> 
+			<div class="col-sm-9 col-md-2 col-lg-2">
+				<select name="category_id" id="category_id" class="select2-offscreen" tabindex="-1">
+					<option value="" selected="selected">All</option>
+					<option value="12">Cat Principal</option>
+					<option value="16">&nbsp;&nbsp;Beer</option>
+					<option value="15">Discount</option>
+					<option value="13">PRINTERS</option>
+					<option value="14">Store Account Payment</option>
+				</select>
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<label for="sale_type" class="col-sm-3 col-md-3 col-lg-2 control-label ">Sale Type:</label> 
+			<div class="col-sm-9 col-md-2 col-lg-2">
+				<select name="sale_type" id="sale_type" class="form-control">
+					<option value="all" selected="selected">All</option>
+					<option value="sales">Sales</option>
+					<option value="returns">Returns</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="items_to_show" class="col-sm-3 col-md-3 col-lg-2 control-label ">Items to Show:</label> 
+			<div class="col-sm-9 col-md-2 col-lg-2">
+				<select name="items_to_show" id="items_to_show" class="form-control">
+				<option value="items_with_sales" selected="selected">Items with Sales</option>
+				<option value="items_without_sales">Items Without Sales</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">	
+			<label for="group_by_variation" class="col-sm-3 col-md-3 col-lg-2 control-label ">Group By Variation:</label>	
+			<div class="col-sm-9 col-md-9 col-lg-10">
+				<input type="checkbox" name="group_by_variation" value="1" id="group_by_variation">
+				<label for="group_by_variation"><span></span></label>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3 col-md-3 col-lg-2 control-label  ">Export to Excel:</label> 
+			<div class="col-sm-9 col-md-9 col-lg-10">
+				<input type="radio" name="export_excel" id="export_excel_yes" value="1"> Yes  &nbsp;
+				<label for="export_excel_yes"><span></span></label>
+				<input type="radio" name="export_excel" id="export_excel_no" value="0" checked="checked"> No &nbsp;
+				<label for="export_excel_no"><span></span></label>
+			</div>
+		</div>
+
+		<div class="form-actions pull-right">
+			<button type="submit" id="generate_report" class="btn btn-primary submit_button btn-large">Submit</button>
+		</div>					
+				</form>
+			</div>
+		</div>
+</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="row">
+		    <div class="col-md-3 col-xs-12 col-sm-6 summary-data">
+				<div class="info-seven primarybg-info">
+					<div class="logo-seven hidden-print"><i class="ti-widget dark-info-primary"></i></div>
+						$1,195.75<p>Subtotal</p>	       
+				</div>
+			</div>
+		    <div class="col-md-3 col-xs-12 col-sm-6 summary-data">
+				<div class="info-seven primarybg-info">
+					<div class="logo-seven hidden-print"><i class="ti-widget dark-info-primary"></i></div>
+						
+						$1,195.75<p>Total</p>	        
+				</div>
+			</div>
+			
+		    <div class="col-md-3 col-xs-12 col-sm-6 summary-data">
+				<div class="info-seven primarybg-info">
+					<div class="logo-seven hidden-print"><i class="ti-widget dark-info-primary"></i></div>
+					
+					$0.00<p>Tax</p>	        
+				</div>
+			</div>
+			
+		    <div class="col-md-3 col-xs-12 col-sm-6 summary-data">
+				<div class="info-seven primarybg-info">
+					<div class="logo-seven hidden-print"><i class="ti-widget dark-info-primary"></i></div>
+					
+					$1,165.75<p>Profit</p>	        
+				</div>
+	    </div>
+	</div>
+
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-piluku reports-printable">
+			<div class="panel-heading">
+				Reports - Items Summary Report<small class="reports-range">07/27/2018-07/27/2018</small>
+				<span class="pull-right">					
+										
+				</span>
+				
+				<button class="btn btn-primary text-white hidden-print print_button pull-right"> 
+					Print 
+				</button>
+				
+				<button class="btn btn-primary text-white hidden-print save_report_button pull-right"> 
+					Add to Favorites
+				</button>	
+				
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table table-bordered table-striped table-reports tablesorter stacktable small-only">
+						<tbody>
+							<tr class="  "><th class="st-head-row st-head-row-main" colspan="2">Item</th></tr>
+							<tr class=""><th class="st-head-row" colspan="2">Coca Cola</th></tr>
+							<tr class=""><td class="st-key">Category</td><td class="st-val ">Cat Principal &gt; Beer</td></tr>
+							<tr class=""><td class="st-key">Current Cost Price</td><td class="st-val ">$0.00</td></tr>
+							<tr class=""><td class="st-key">Current Selling Price</td><td class="st-val ">$0.00</td></tr>
+							<tr class=""><td class="st-key">Quantity</td><td class="st-val ">-12</td></tr>
+							<tr class=""><td class="st-key">Quantity Purchased</td><td class="st-val ">13</td></tr>
+							<tr class=""><td class="st-key">Subtotal</td><td class="st-val ">$1,016.00</td></tr>
+							<tr class=""><td class="st-key">Total</td><td class="st-val ">$1,016.00</td></tr>
+							<tr class=""><td class="st-key">Tax</td><td class="st-val ">$0.00</td></tr>
+							<tr class=""><td class="st-key">Profit</td><td class="st-val ">$1,016.00</td></tr>
+							<tr class=""><th class="st-head-row" colspan="2">cover iphone 6/6s</th></tr>
+							<tr class=""><td class="st-key">Product ID</td><td class="st-val ">32146546</td></tr>
+							<tr class=""><td class="st-key">Category</td><td class="st-val ">Cat Principal</td></tr>
+							<tr class=""><td class="st-key">Current Cost Price</td><td class="st-val ">$2.00</td></tr>
+							<tr class=""><td class="st-key">Current Selling Price</td><td class="st-val ">$9.99</td></tr>
+							<tr class=""><td class="st-key">Quantity</td><td class="st-val ">7</td></tr>
+							<tr class=""><td class="st-key">Quantity Purchased</td><td class="st-val ">5</td></tr>
+							<tr class=""><td class="st-key">Subtotal</td><td class="st-val ">$49.75</td></tr>
+							<tr class=""><td class="st-key">Total</td><td class="st-val ">$49.75</td></tr>
+							<tr class=""><td class="st-key">Tax</td><td class="st-val ">$0.00</td></tr>
+                            <tr class=""><td class="st-key">Profit</td><td class="st-val ">$39.75</td></tr>
+							<tr class=""><th class="st-head-row" colspan="2">Discount</th></tr>
+                            <tr class=""><td class="st-key">Product ID</td><td class="st-val ">Discount</td></tr>
+							<tr class=""><td class="st-key">Category</td><td class="st-val ">Discount</td></tr>
+                            <tr class=""><td class="st-key">Current Cost Price</td><td class="st-val ">$0.00</td></tr>
+                            <tr class=""><td class="st-key">Current Selling Price</td><td class="st-val ">$0.00</td></tr>
+
+                            <tr class=""><td class="st-key">Quantity</td><td class="st-val ">Not set</td></tr>
+                            
+                            <tr class=""><td class="st-key">Quantity Purchased</td><td class="st-val ">-1</td></tr>
+                            
+                            <tr class=""><td class="st-key">Subtotal</td><td class="st-val "><span style="white-space:nowrap;">-</span>$3.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Total</td><td class="st-val "><span style="white-space:nowrap;">-</span>$3.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Tax</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Profit</td><td class="st-val "><span style="white-space:nowrap;">-</span>$3.00</td></tr>
+                            
+                            <tr class=""><th class="st-head-row" colspan="2">Impresora epson l575</th></tr><tr class=""><td class="st-key">Category</td><td class="st-val ">PRINTERS</td></tr>
+                            
+                            <tr class=""><td class="st-key">Current Cost Price</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Current Selling Price</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Quantity</td><td class="st-val ">-7</td></tr>
+                            
+                            <tr class=""><td class="st-key">Quantity Purchased</td><td class="st-val ">2</td></tr>
+                            
+                            <tr class=""><td class="st-key">Subtotal</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Total</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Tax</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Profit</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><th class="st-head-row" colspan="2">Prueba</th></tr><tr class=""><td class="st-key">Item Number</td><td class="st-val ">66_636640</td></tr>
+                            
+                            <tr class=""><td class="st-key">Supplier</td><td class="st-val ">Aurelia Quispe</td></tr>
+                            
+                            <tr class=""><td class="st-key">Category</td><td class="st-val ">Cat Principal</td></tr>
+                            
+                            <tr class=""><td class="st-key">Current Cost Price</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Current Selling Price</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Quantity</td><td class="st-val ">-11</td></tr>
+                            
+                            <tr class=""><td class="st-key">Quantity Purchased</td><td class="st-val ">1</td></tr>
+                            
+                            <tr class=""><td class="st-key">Subtotal</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Total</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Tax</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Profit</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><th class="st-head-row" colspan="2">TS IT</th></tr><tr class=""><td class="st-key">Product ID</td><td class="st-val ">12346</td></tr>
+                            
+                            <tr class=""><td class="st-key">Category</td><td class="st-val ">Cat Principal</td></tr>
+                            
+                            <tr class=""><td class="st-key">Current Cost Price</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Current Selling Price</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Quantity</td><td class="st-val ">17</td></tr>
+                            
+                            <tr class=""><td class="st-key">Quantity Purchased</td><td class="st-val ">2</td></tr>
+                            
+                            <tr class=""><td class="st-key">Subtotal</td><td class="st-val ">$101.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Total</td><td class="st-val ">$101.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Tax</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Profit</td><td class="st-val ">$101.00</td></tr>
+                            
+                            <tr class=""><th class="st-head-row" colspan="2">மஞ்சள்</th></tr><tr class=""><td class="st-key">Product ID</td><td class="st-val ">3214</td></tr>
+                            
+                            <tr class=""><td class="st-key">Category</td><td class="st-val ">Cat Principal</td></tr>
+                            
+                            <tr class=""><td class="st-key">Current Cost Price</td><td class="st-val ">$20.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Current Selling Price</td><td class="st-val ">$32.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Quantity</td><td class="st-val ">39</td></tr>
+                            
+                            <tr class=""><td class="st-key">Quantity Purchased</td><td class="st-val ">1</td></tr>
+                            
+                            <tr class=""><td class="st-key">Subtotal</td><td class="st-val ">$32.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Total</td><td class="st-val ">$32.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Tax</td><td class="st-val ">$0.00</td></tr>
+                            
+                            <tr class=""><td class="st-key">Profit</td><td class="st-val ">$12.00</td></tr>
+
+</tbody></table><table class="table table-bordered table-striped table-reports tablesorter stacktable large-only" id="sortable_table">
+						<thead>
+							<tr>
+																<th align="left" class="header">Item</th>
+																<th align="left" class="header">Item Number</th>
+																<th align="left" class="header">Product ID</th>
+																<th align="left" class="header">Supplier</th>
+																<th align="left" class="header">Category</th>
+																<th align="left" class="header">Current Cost Price</th>
+																<th align="left" class="header">Current Selling Price</th>
+																<th align="left" class="header">Quantity</th>
+																<th align="left" class="header">Quantity Purchased</th>
+																<th align="right" class="header">Subtotal</th>
+																<th align="right" class="header">Total</th>
+																<th align="right" class="header">Tax</th>
+																<th align="right" class="header">Profit</th>
+															</tr>
+						</thead>
+						<tbody>
+														<tr>
+																<td align="left">Coca Cola</td>
+																<td align="left"></td>
+																<td align="left"></td>
+																<td align="left"></td>
+																<td align="left">Cat Principal &gt; Beer</td>
+																<td align="right">$0.00</td>
+																<td align="right">$0.00</td>
+																<td align="left">-12</td>
+																<td align="left">13</td>
+																<td align="right">$1,016.00</td>
+																<td align="right">$1,016.00</td>
+																<td align="right">$0.00</td>
+																<td align="right">$1,016.00</td>
+															</tr>
+														<tr>
+																<td align="left">cover iphone 6/6s</td>
+																<td align="left"></td>
+																<td align="left">32146546</td>
+																<td align="left"></td>
+																<td align="left">Cat Principal</td>
+																<td align="right">$2.00</td>
+																<td align="right">$9.99</td>
+																<td align="left">7</td>
+																<td align="left">5</td>
+																<td align="right">$49.75</td>
+																<td align="right">$49.75</td>
+																<td align="right">$0.00</td>
+																<td align="right">$39.75</td>
+															</tr>
+														<tr>
+																<td align="left">Discount</td>
+																<td align="left"></td>
+																<td align="left">Discount</td>
+																<td align="left"></td>
+																<td align="left">Discount</td>
+																<td align="right">$0.00</td>
+																<td align="right">$0.00</td>
+																<td align="left">Not set</td>
+																<td align="left">-1</td>
+																<td align="right"><span style="white-space:nowrap;">-</span>$3.00</td>
+																<td align="right"><span style="white-space:nowrap;">-</span>$3.00</td>
+																<td align="right">$0.00</td>
+																<td align="right"><span style="white-space:nowrap;">-</span>$3.00</td>
+															</tr>
+														<tr>
+																<td align="left">Impresora epson l575</td>
+																<td align="left"></td>
+																<td align="left"></td>
+																<td align="left"></td>
+																<td align="left">PRINTERS</td>
+																<td align="right">$0.00</td>
+																<td align="right">$0.00</td>
+																<td align="left">-7</td>
+																<td align="left">2</td>
+																<td align="right">$0.00</td>
+																<td align="right">$0.00</td>
+																<td align="right">$0.00</td>
+																<td align="right">$0.00</td>
+															</tr>
+														<tr>
+																<td align="left">Prueba</td>
+																<td align="left">66_636640</td>
+																<td align="left"></td>
+																<td align="left">Aurelia Quispe</td>
+																<td align="left">Cat Principal</td>
+																<td align="right">$0.00</td>
+																<td align="right">$0.00</td>
+																<td align="left">-11</td>
+																<td align="left">1</td>
+																<td align="right">$0.00</td>
+																<td align="right">$0.00</td>
+																<td align="right">$0.00</td>
+																<td align="right">$0.00</td>
+															</tr>
+														<tr>
+																<td align="left">TS IT</td>
+																<td align="left"></td>
+																<td align="left">12346</td>
+																<td align="left"></td>
+																<td align="left">Cat Principal</td>
+																<td align="right">$0.00</td>
+																<td align="right">$0.00</td>
+																<td align="left">17</td>
+																<td align="left">2</td>
+																<td align="right">$101.00</td>
+																<td align="right">$101.00</td>
+																<td align="right">$0.00</td>
+																<td align="right">$101.00</td>
+															</tr>
+														<tr>
+																<td align="left">மஞ்சள்</td>
+																<td align="left"></td>
+																<td align="left">3214</td>
+																<td align="left"></td>
+																<td align="left">Cat Principal</td>
+																<td align="right">$20.00</td>
+																<td align="right">$32.00</td>
+																<td align="left">39</td>
+																<td align="left">1</td>
+																<td align="right">$32.00</td>
+																<td align="right">$32.00</td>
+																<td align="right">$0.00</td>
+																<td align="right">$12.00</td>
+															</tr>
+													</tbody>
+					</table>
+				</div>
+				<div class="text-center">
+					<button class="btn btn-primary text-white hidden-print print_button"> Print </button>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+</div>
+
+
+</div>
+</div>
+    <!-- Location Message to employee -->
+    
+    	<div id="footers" class="col-md-12 hidden-print text-center"> Please visit our <a href="#">Website</a> to learn the latest information about the project. 
+            <span class="text-info">You are using PHP Point Of Sale Version 
+                <span class="badge bg-primary"> 16.2</span>
+            </span> Built on 07/15/2018 12:23 pm EST 
+        </div>
+        
+  </div>
+  <!---content --> 
+</div>
+	</body>
+</html>

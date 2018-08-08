@@ -1,0 +1,515 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo - PHP Point Of Sale | Easy to use Online POS Software</title>	
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"> <!--320-->    
+<link rel="stylesheet" type="text/css" href="assets/css/all.css" />
+<script type="text/javascript" src="assets/js/all.js"></script>
+</head>
+
+<body>
+
+
+<div class="wrapper sales-bar mini-bar">
+  <div class="left-bar hidden-print">
+    	<div class="admin-logo">
+          <div class="logo-holder pull-left"> 
+                <img src="assets/images/header_logo.png" class="hidden-print logo" id="header-logo" alt=""> 
+          </div>
+      <!-- logo-holder --> 
+    </div>
+    <!-- admin-logo -->
+    
+    <ul class="list-unstyled menu-parent" id="mainMenu">
+          <li><a href="."><i class="icon ti-dashboard"></i><span class="text">Dashboard</span></a></li>
+          <li class="active"><a href="customers.html"><i class="icon ti-user"></i> <span class="text">Customers</span></a></li>
+          <li><a href="items.html"><i class="icon ti-harddrive"></i> <span class="text">Items</span></a> </li>
+   		  <li><a href="edit-item.html"><i class="icon ti-harddrives"></i><span class="text">Item Kits</span></a></li>
+          <li><a href="price-rules.html"><i class="ion-ios-pricetags-outline"></i><span class="text">Price Rules</span></a></li>
+          <li><a href="suppliers.html"><i class="icon ti-download"></i><span class="text">Suppliers</span></a></li>
+          <li><a href="reports.html"><i class="icon ti-bar-chart"></i><span class="text">Reports</span></a></li>
+          <li><a href="receivings.html"><i class="icon ti-cloud-down"></i><span class="text">Receiving</span></a></li>
+          <li><a href="sales.html"><i class="icon ti-shopping-cart"></i><span class="text">Sales</span></a></li>
+          <li><a href="#"><i class="ion-android-car"></i><span class="text">Deliveries</span></a></li>
+          <li><a href="#"><i class="icon ti-money"></i><span class="text">Expenses</span></a></li>
+          <li><a href="employee.html"><i class="icon ti-id-badge"></i><span class="text">Employees</span></a></li>
+          <li><a href="#"><i class="icon ti-credit-card"></i><span class="text">Gift Cards</span></a></li>
+          <li><a href="#"><i class="icon ti-settings"></i><span class="text">Store Config</span></a></li>
+          <li><a href="#"><i class="icon ti-home"></i><span class="text">Locations</span></a></li>
+          <li><a href="#"><i class="icon ti-email"></i><span class="text">Messages</span></a></li>
+          <li><a href="#"><i class="icon ti-power-off"></i><span class="text">Logout</span></a></li>
+    </ul>
+  </div>
+  <!-- left-bar -->
+  
+  <div class="content" id="">
+    <div class="overlay hidden-print"></div>
+        <div class="top-bar hidden-print">
+              <nav class="navbar navbar-default top-bar">
+                <div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i></div>
+                	<div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs">
+						 <a  href="#">Dashboard</a>
+                         <a href="#">Customers</a>
+                         <a class="current" href="#">New Customer</a>					
+                    </div>
+                       
+                        <ul class="nav navbar-nav navbar-right top-elements">															
+															
+																		
+					
+						<li class="dropdown">
+							<a  href="#" class="dropdown-toggle language-dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
+                            	<img class="flag_img" src="assets/images/english.png" alt=""> 
+                            	 <span class="hidden-sm hidden-xs"> English</span>
+                           		 <span class="drop-icon"><i class="ion ion-chevron-down"></i></span>
+                             </a>
+                             
+							<ul class="dropdown-menu animated fadeInUp wow language-drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+									<li><a href="#"><img class="flag_img" src="assets/images/english.png" alt="">English</a> </li>
+									<li><a href="#"><img class="flag_img" src="assets/images/indonesia.png" alt="">Indonesia</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/italian.png" alt="">Italian</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/portugues.png" alt="">Portugues</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/vietnamese.png" alt="">Vietnamese</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/dutch.png" alt="">Dutch</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/arabic.png" alt="">Arabic</a></li>
+							</ul>
+						</li>	
+													
+						
+
+												
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                	<i class="ion-ios-bell-outline  icon-notification"></i>
+                                    <span class="badge info-number count " id="unread_message_count">0</span>
+                                </a>
+									<ul class="dropdown-menu dropdown-menu-right animated fadeInUp wow message_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+										<li class="bottom-links"><a href="#" class="last_info">All Messages</a></li>
+										<li class="bottom-links"><a href="#" class="last_info">Sent Messages</a></li>
+                                        <li class="bottom-links"><a href="#" class="last_info">New Message</a></li>
+									</ul>
+							</li>
+														
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="avatar-holder"><img src="assets/images/avatar-default.jpg" alt=""></span>
+
+							<span class="avatar_info visible-sm visible-md visible-lg">John Doe</span></a>
+							<ul class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+                                <li><a id="support_link" href="#"><i class="ion-help-buoy"></i><span class="text">Support/Documentation</span></a></li>
+                                <li><a href="#"><i class="ion-android-settings"></i><span class="text">Settings</span></a></li>
+                                <li><a id="switch_user" href="#"><i class="ion-ios-toggle-outline"></i><span class="text">Switch User</span></a></li>
+                                <li><a href="#"><i class="ion-edit"></i><span class="text">Edit profile</span></a></li>
+                                <li><a href="#" class="logout_button"><i class="ion-power"></i><span class="text">Logout</span></a></li>			
+							</ul>
+						</li>							
+					</ul>
+              </nav>
+        </div>
+        
+    <!-- top-bar -->
+    <div class="main-content">
+        <div class="row" id="">
+            <div class="spinner" id="grid-loader" style="display:none">
+              <div class="rect1"></div>
+              <div class="rect2"></div>
+              <div class="rect3"></div>
+            </div>
+        
+        <div class="col-md-12">
+                <form id="customer_form" class="form-horizontal" method="post">
+                    <div class="panel panel-piluku">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">
+                              <i class="ion-edit"></i> 
+                              Customer Information<small>(Fields in red are required)</small>
+                          </h3>
+                    </div>
+        
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="first_name" class="col-sm-3 col-md-3 col-lg-2 control-label ">First Name:</label>			
+                                        <div class="col-sm-9 col-md-9 col-lg-10">
+                                            <input type="text" name="first_name" value="" class="form-control" id="first_name">
+                                        </div>
+                                    </div>
+                            
+                                    <div class="form-group">
+                                        <label for="last_name" class=" col-sm-3 col-md-3 col-lg-2 control-label ">Last Name:</label>			
+                                        <div class="col-sm-9 col-md-9 col-lg-10">
+                                        <input type="text" name="last_name" value="" class="form-control" id="last_name">
+                                        </div>
+                                    </div>
+                            
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-3 col-md-3 col-lg-2 control-label not_required">E-Mail:</label>			
+                                        <div class="col-sm-9 col-md-9 col-lg-10">
+                                        <input type="text" name="email" value="" class="form-control" id="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">	
+                                        <label for="phone_number" class="col-sm-3 col-md-3 col-lg-2 control-label ">Phone Number:</label>			
+                                        <div class="col-sm-9 col-md-9 col-lg-10">
+                                        <input type="text" name="phone_number" value="" class="form-control" id="phone_number">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">	
+                                    <label for="image_id" class="col-sm-3 col-md-3 col-lg-2 control-label ">Select Image:</label>			
+                                    <div class="col-sm-9 col-md-9 col-lg-10">
+                                            <ul class="list-unstyled avatar-list">
+                                                <li>
+                                                    <input type="file" name="" id="" class="filestyle">
+                                                    	
+                                                </li>
+                                                
+                                                <li>
+                                                    <div id="avatar">
+                                                    	<img style="width: 20%" src="assets/images/avatar-default.jpg" class="img-polaroid" id="" alt="">
+                                                    </div>		
+                                                </li>		
+                                            </ul>
+                                        </div>
+                                    </div>
+                                
+                                
+                            
+                            
+                            <div class="form-group">	
+                           		 <label for="address_1" class="col-sm-3 col-md-3 col-lg-2 control-label ">Address 1:</label>	
+                                 <div class="col-sm-9 col-md-9 col-lg-10">
+                                	<input type="text" name="address_1" value="" class="form-control" id="address_1">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">	
+                            	 <label for="address_2" class="col-sm-3 col-md-3 col-lg-2 control-label ">Address 2:</label>	
+                            		<div class="col-sm-9 col-md-9 col-lg-10">
+                                    <input type="text" name="address_2" value="" class="form-control" id="address_2">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">	
+                            	<label for="city" class="col-sm-3 col-md-3 col-lg-2 control-label ">City:</label>	
+                            	<div class="col-sm-9 col-md-9 col-lg-10">
+                                	<input type="text" name="city" value="" class="form-control " id="city">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">	
+                            <label for="state" class="col-sm-3 col-md-3 col-lg-2 control-label ">State/Province:</label>	
+                            <div class="col-sm-9 col-md-9 col-lg-10">
+                                <input type="text" name="state" value="" class="form-control " id="state">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">	
+                           	 <label for="zip" class="col-sm-3 col-md-3 col-lg-2 control-label ">Zip:</label>	
+                             <div class="col-sm-9 col-md-9 col-lg-10">
+                                <input type="text" name="zip" value="" class="form-control " id="zip">
+                                </div>
+                            </div>
+                            
+                         <div class="form-group">	
+                            <label for="country" class="col-sm-3 col-md-3 col-lg-2 control-label ">Country:</label>	
+                            <div class="col-sm-9 col-md-9 col-lg-10">
+                                <input type="text" name="country" value="" class="form-control " id="country">
+                                </div>
+                            </div>
+                            
+                           <div class="form-group">	
+                            <label for="comments" class="col-sm-3 col-md-3 col-lg-2 control-label ">Comments:</label>	
+                            <div class="col-sm-9 col-md-9 col-lg-10">
+                                <textarea name="comments" cols="17" rows="5" id="comments" class="form-control text-area"></textarea>
+                                </div>
+                            </div>
+                             
+                        </div><!-- /col-md-12 -->
+                      </div><!-- /row -->		
+                             		
+                      <div class="form-group">	
+                            <label for="balance" class="col-sm-3 col-md-3 col-lg-2 control-label ">Store account balance:</label>					
+                            <div class="col-sm-9 col-md-9 col-lg-10">
+                                <input type="text" name="balance" value="0.00" id="balance" class="form-control balance">
+                                </div>
+                            </div>
+        
+                        <div class="form-group">	
+                            <label for="credit_limit" class="col-sm-3 col-md-3 col-lg-2 control-label ">Credit limit:</label>					
+                            <div class="col-sm-9 col-md-9 col-lg-10">
+                                <input type="text" name="credit_limit" value="" id="credit_limit" class="form-control credit_limit">
+                                </div>
+                            </div>
+                                                        
+                            <div class="form-group">	
+                                <label for="disable_loyalty" class="col-sm-3 col-md-3 col-lg-2 control-label ">Disable Loyalty:</label>						
+                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                    <input type="checkbox" name="disable_loyalty" value="1" id="disable_loyalty">
+                                    <label for="disable_loyalty"><span></span></label>
+                                </div>
+                            </div>
+                   
+                      <div class="form-group quantity-input">
+                                    <label class="col-sm-3 col-md-3 col-lg-2 control-label wide">Amount to spend for next point:</label>							
+                                    <div class="col-sm-9 col-md-9 col-lg-10">
+                                        <input type="text" name="amount_to_spend_for_next_point" value="0.00" id="amount_to_spend_for_next_point" class="form-control amount_to_spend_for_next_point">
+                                    </div>
+                                </div>
+                            
+                                            
+                                        
+                        <div class="form-group">	
+                            <label for="points" class="col-sm-3 col-md-3 col-lg-2 control-label ">Points:</label>					
+                            <div class="col-sm-9 col-md-9 col-lg-10">
+                                <input type="text" name="points" value="0.00" id="points" class="form-control points">
+                                </div>
+                            </div>				
+                        
+                        
+                                        
+                        
+                        <div class="form-group">	
+                            <label for="company_name" class="col-sm-3 col-md-3 col-lg-2 control-label ">Company Name:</label>					
+                            <div class="col-sm-9 col-md-9 col-lg-10">
+                                <input type="text" name="company_name" value="" id="company_name" class="company_names form-control">
+                                </div>
+                            </div>
+        
+                            <div class="form-group">	
+                                <label for="account_number" class="col-sm-3 col-md-3 col-lg-2 control-label ">Account #:</label>						
+                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                    <input type="text" name="account_number" value="" id="account_number" class="company_names form-control">
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                            <div class="form-group override-taxes-container">
+                                <label class="col-sm-3 col-md-3 col-lg-2 control-label wide">Override Default Tax For Sale:</label>									
+                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                    <input type="checkbox" name="override_default_tax" value="1" id="override_default_tax" class="override_default_tax_checkbox delete-checkbox">
+                                    <label for="override_default_tax"><span></span></label>
+                                </div>
+                            </div>
+        
+        
+        
+                            <div class="tax-container main hidden">	
+                                <div class="form-group">	
+                                    <label for="tax_class" class="col-sm-3 col-md-3 col-lg-2 control-label">Tax Group: </label>										
+                                    <div class="col-sm-9 col-md-9 col-lg-10">
+                                    <select name="tax_class" id="tax_class" class="form-control tax_class">
+                                        <option value="" selected="selected">None</option>
+                                        <option value="2">tax</option>
+                                        <option value="3">State sales</option>
+                                    </select>
+                                    </div>
+                                </div>
+                
+                                <div class="form-group">
+                                    <h4 class="text-center">OR</h4>
+                                </div>
+                                
+                            <div class="form-group">
+                                <label for="tax_percent_1" class="col-sm-3 col-md-3 col-lg-2 control-label wide">Tax 1:</label>										
+                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                    <input type="text" name="" value="Sales Tax" id="tax_percent_1" size="8" class="form-control margin10 form-inps" placeholder="Tax Name">
+                                </div>
+                                <label class="col-sm-3 col-md-3 col-lg-2 control-label wide" for="tax_percent_name_1">&nbsp;</label>
+                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                    <input type="text" name="" value="" id="tax_percent_name_1" size="3" class="form-control form-inps-tax" placeholder="Tax Percent">
+                                    <div class="tax-percent-icon">%</div>
+                                    <div class="clear"></div>          
+            						<input type="hidden" name="tax_cumulatives[]" value="0">
+                                </div>
+                            </div>
+
+                                <div class="form-group">
+                                    <label for="tax_percent_2" class="col-sm-3 col-md-3 col-lg-2 control-label wide">Tax 2:</label>										
+                                    <div class="col-sm-9 col-md-9 col-lg-10">
+                                        <input type="text" name="tax_names[]" value="Sales Tax 2" id="tax_percent_2" size="8" class="form-control form-inps margin10" placeholder="Tax Name">
+                                    </div>
+                                    <label class="col-sm-3 col-md-3 col-lg-2 control-label text-info wide">&nbsp;</label>
+                                    
+                                    <div class="col-sm-9 col-md-9 col-lg-10">
+                                        <input type="text" name="tax_percents[]" value="" id="tax_percent_name_2" size="3" class="form-control form-inps-tax" placeholder="Tax Percent">
+                                        <div class="tax-percent-icon">%</div>
+                                        <div class="clear"></div>
+                                        <input type="checkbox" name="tax_cumulatives[]" value="1" class="cumulative_checkbox" id="tax_cumulatives">
+                                        <label for="tax_cumulatives"><span></span></label>
+                                        <span class="cumulative_label"> Cumulative</span>
+                                    </div>
+                                </div>
+                 
+                                <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3" style="visibility: visible">
+                                    <a href="javascript:void(0);" class="show_more_taxes">Show More »</a>
+                                </div>
+                                
+                                
+                                
+        <div class="more_taxes_container" style="display: none">
+            <div class="form-group">
+                    <label for="tax_percent_3" class="col-sm-3 col-md-3 col-lg-2 control-label wide">Tax 3:</label>	
+                     
+                     <div class="col-sm-9 col-md-9 col-lg-10">
+                        <input type="text" name="tax_names[]" value="" id="tax_percent_3" size="8" class="form-control form-inps margin10" placeholder="Tax Name">
+                    </div>
+                    
+                    <label class="col-sm-3 col-md-3 col-lg-2 control-label wide">&nbsp;</label>
+                    
+                    <div class="col-sm-9 col-md-9 col-lg-10">
+                        <input type="text" name="tax_percents[]" value="" id="tax_percent_name_3" size="3" class="form-control form-inps-tax margin10" placeholder="Tax Percent">
+                        <div class="tax-percent-icon">%</div>
+                        <div class="clear"></div>
+                        
+                        <input type="hidden" name="tax_cumulatives[]" value="0">
+                   </div>
+            </div>
+
+            <div class="form-group">
+            	<label for="tax_percent_4" class="col-sm-3 col-md-3 col-lg-2 control-label wide">Tax 4:</label>
+                										
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input type="text" name="tax_names[]" value="" id="tax_percent_4" size="8" class="form-control  form-inps margin10" placeholder="Tax Name">
+                 </div>
+                 
+                <label class="col-sm-3 col-md-3 col-lg-2 control-label wide">&nbsp;</label>
+                
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input type="text" name="tax_percents[]" value="" id="tax_percent_name_4" size="3" class="form-control form-inps-tax" placeholder="Tax Percent">
+                    <div class="tax-percent-icon">%</div>
+                    <div class="clear"></div>
+                    
+                    <input type="hidden" name="tax_cumulatives[]" value="0">
+                </div>
+            </div>
+
+            <div class="form-group">
+            	<label for="tax_percent_5" class="col-sm-3 col-md-3 col-lg-2 control-label wide">Tax 5:</label>		
+                									
+                 <div class="col-sm-9 col-md-9 col-lg-10">
+                        <input type="text" name="tax_names[]" value="" id="tax_percent_5" size="8" class="form-control  form-inps margin10" placeholder="Tax Name">
+                  </div>
+                    
+                <label class="col-sm-3 col-md-3 col-lg-2 control-label wide">&nbsp;</label>
+                
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input type="text" name="tax_percents[]" value="" id="tax_percent_name_5" size="3" class="form-control form-inps-tax margin10" placeholder="Tax Percent">
+                    <div class="tax-percent-icon">%</div>
+                    <div class="clear"></div>
+                    
+                    <input type="hidden" name="tax_cumulatives[]" value="0">
+                </div>
+            </div>
+            
+        </div> <!--End more Taxes Container-->
+        
+              <div class="clear"></div>
+ </div>
+                                
+        
+                    <div class="form-group">	
+                        <label for="taxable" class="col-sm-3 col-md-3 col-lg-2 control-label ">Taxable:</label>							
+                        
+                        <div class="col-sm-9 col-md-9 col-lg-10">
+                            <input type="checkbox" name="taxable" value="1" checked="checked" id="taxable">
+                            <label for="taxable"><span></span></label>
+                        </div>
+                    </div>
+                                
+                    <div class="form-group" id="tax_certificate_holder" style="display: none;">	
+                        <label for="tax_certificate" class="col-sm-3 col-md-3 col-lg-2 control-label ">Non tax certificate number:</label>							
+                            <div class="col-sm-9 col-md-9 col-lg-10">
+                            <input type="text" name="tax_certificate" value="" id="tax_certificate" class="company_names form-control">
+                            </div>
+                    </div>
+                                                         
+                            
+                    <div class="panel panel-piluku">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="ion-folder"></i>Files</h3>
+                        </div>
+    
+                         <h4 style="padding: 20px;">Add Files</h4>
+              
+                           <div class="form-group" style="padding-left: 10px;">
+                                <label for="files_1" class="col-sm-3 col-md-3 col-lg-2 control-label ">File 1:</label>							
+                                
+                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                    <div class="file-upload">
+                                        <input type="file" name="files[]" id="files_1">
+                                     </div>
+                              </div>
+                          </div>
+                                           
+                                           
+                    <div class="form-group" style="padding-left: 10px;">
+                    	<label for="files_2" class="col-sm-3 col-md-3 col-lg-2 control-label ">File 2:</label>							
+                        
+                        <div class="col-sm-9 col-md-9 col-lg-10">
+                            <div class="file-upload">
+                                <input type="file" name="files[]" id="files_2">
+                             </div>
+                        </div>
+                    </div>
+                                          
+      	
+                     <div class="form-group" style="padding-left: 10px;">
+                                <label for="files_3" class="col-sm-3 col-md-3 col-lg-2 control-label ">File 3:</label>							
+                                
+                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                    <div class="file-upload">
+                                        <input type="file" name="files[]" id="files_3">
+                                     </div>
+                                </div>
+                       </div>
+                 
+                 
+                 <div class="form-group" style="padding-left: 10px;">
+                    <label for="files_4" class="col-sm-3 col-md-3 col-lg-2 control-label ">File 4:</label>							
+                    
+                    <div class="col-sm-9 col-md-9 col-lg-10">
+                        <div class="file-upload">
+                            <input type="file" name="files[]" id="files_4">
+                         </div>
+                 	 </div>
+                  </div>
+               
+                <div class="form-group" style="padding-left: 10px;">
+                    <label for="files_5" class="col-sm-3 col-md-3 col-lg-2 control-label ">File 5:</label>							
+                    
+                    <div class="col-sm-9 col-md-9 col-lg-10">
+                        <div class="file-upload">
+                            <input type="file" name="files[]" id="files_5">
+                         </div>
+                   </div>
+              </div>
+             </div>
+                                                                                                                                                               
+                                
+        <input type="hidden" name="redirect_code" value="0">
+               	 <div class="form-actions">                           
+                   		 <input type="submit" name="submitf" value="Save" id="submitf" class=" submit_button floating-button btn btn-lg btn-primary">
+                </div>
+                            </div>
+                        </div>
+                </form>
+                </div>
+            </div><!-- /row -->
+	</div>
+    
+    <!-- Location Message to employee -->
+    
+    	<div id="footers" class="col-md-12 hidden-print text-center"> Please visit our <a href="#">Website</a> to learn the latest information about the project. 
+            <span class="text-info">You are using PHP Point Of Sale Version 
+                <span class="badge bg-primary"> 16.2</span>
+            </span> Built on 07/15/2018 12:23 pm EST 
+        </div>
+        
+  </div>
+  <!---content --> 
+</div>
+</body>
+</html>

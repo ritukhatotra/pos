@@ -1,0 +1,2802 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo - PHP Point Of Sale | Easy to use Online POS Software</title>	
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"> <!--320-->    
+<link rel="stylesheet" type="text/css" href="assets/css/all.css" />
+<script type="text/javascript" src="assets/js/all.js"></script>
+</head>
+
+<body>
+
+
+<div class="wrapper sales-bar mini-bar">
+  <div class="left-bar hidden-print">
+    	<div class="admin-logo">
+          <div class="logo-holder pull-left"> 
+                <img src="assets/images/header_logo.png" class="hidden-print logo" id="header-logo" alt=""> 
+          </div>
+      <!-- logo-holder --> 
+    </div>
+    <!-- admin-logo -->
+    
+    <ul class="list-unstyled menu-parent" id="mainMenu">
+          <li><a href="."><i class="icon ti-dashboard"></i><span class="text">Dashboard</span></a></li>
+          <li><a href="customers.html"><i class="icon ti-user"></i> <span class="text">Customers</span></a></li>
+          <li><a href="items.html"><i class="icon ti-harddrive"></i> <span class="text">Items</span></a> </li>
+   		  <li><a href="edit-item.html"><i class="icon ti-harddrives"></i><span class="text">Item Kits</span></a></li>
+          <li><a href="price-rules.html"><i class="ion-ios-pricetags-outline"></i><span class="text">Price Rules</span></a></li>
+          <li><a href="suppliers.html"><i class="icon ti-download"></i><span class="text">Suppliers</span></a></li>
+          <li><a href="reports.html"><i class="icon ti-bar-chart"></i><span class="text">Reports</span></a></li>
+          <li><a href="receivings.html"><i class="icon ti-cloud-down"></i><span class="text">Receiving</span></a></li>
+          <li><a href="sales.html"><i class="icon ti-shopping-cart"></i><span class="text">Sales</span></a></li>
+          <li><a href="#"><i class="ion-android-car"></i><span class="text">Deliveries</span></a></li>
+          <li><a href="#"><i class="icon ti-money"></i><span class="text">Expenses</span></a></li>
+          <li><a href="employee.html"><i class="icon ti-id-badge"></i><span class="text">Employees</span></a></li>
+          <li><a href="gift-cards.html"><i class="icon ti-credit-card"></i><span class="text">Gift Cards</span></a></li>
+          <li class="active"><a href="store-config.html"><i class="icon ti-settings"></i><span class="text">Store Config</span></a></li>
+          <li><a href="location-page.html"><i class="icon ti-home"></i><span class="text">Locations</span></a></li>
+          <li><a href="#"><i class="icon ti-email"></i><span class="text">Messages</span></a></li>
+          <li><a href="#"><i class="icon ti-power-off"></i><span class="text">Logout</span></a></li>
+    </ul>
+  </div>
+  <!-- left-bar -->
+  
+  <div class="content" id="">
+    <div class="overlay hidden-print"></div>
+        <div class="top-bar hidden-print">
+              <nav class="navbar navbar-default top-bar">
+                <div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i></div>
+                	<div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs"> 
+                    		<a href="#">Dashboard</a> 
+                       </div>
+                       
+                        <ul class="nav navbar-nav navbar-right top-elements">															
+															
+																		
+						<!-- redirect($_SERVER['HTTP_REFERER']);	 -->
+						<li class="dropdown">
+							<a  href="#" class="dropdown-toggle language-dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
+                            	<img class="flag_img" src="assets/images/english.png" alt=""> 
+                            	 <span class="hidden-sm hidden-xs"> English</span>
+                           		 <span class="drop-icon"><i class="ion ion-chevron-down"></i></span>
+                             </a>
+                             
+							<ul class="dropdown-menu animated fadeInUp wow language-drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+									<li><a href="#"><img class="flag_img" src="assets/images/english.png" alt="">English</a> </li>
+									<li><a href="#"><img class="flag_img" src="assets/images/indonesia.png" alt="">Indonesia</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/italian.png" alt="">Italian</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/portugues.png" alt="">Portugues</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/vietnamese.png" alt="">Vietnamese</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/dutch.png" alt="">Dutch</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/arabic.png" alt="">Arabic</a></li>
+							</ul>
+						</li>	
+													
+						
+
+												
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                	<i class="ion-ios-bell-outline  icon-notification"></i>
+                                    <span class="badge info-number count " id="unread_message_count">0</span>
+                                </a>
+									<ul class="dropdown-menu dropdown-menu-right animated fadeInUp wow message_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+										<li class="bottom-links"><a href="#" class="last_info">All Messages</a></li>
+										<li class="bottom-links"><a href="#" class="last_info">Sent Messages</a></li>
+                                        <li class="bottom-links"><a href="#" class="last_info">New Message</a></li>
+									</ul>
+							</li>
+														
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="avatar-holder"><img src="assets/images/avatar-default.jpg" alt=""></span>
+
+							<span class="avatar_info visible-sm visible-md visible-lg">John Doe</span></a>
+							<ul class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+                                <li><a id="support_link" href="#"><i class="ion-help-buoy"></i><span class="text">Support/Documentation</span></a></li>
+                                <li><a href="#"><i class="ion-android-settings"></i><span class="text">Settings</span></a></li>
+                                <li><a id="switch_user" href="#"><i class="ion-ios-toggle-outline"></i><span class="text">Switch User</span></a></li>
+                                <li><a href="#"><i class="ion-edit"></i><span class="text">Edit profile</span></a></li>
+                                <li><a href="#" class="logout_button"><i class="ion-power"></i><span class="text">Logout</span></a></li>			
+							</ul>
+						</li>							
+					</ul>
+              </nav>
+        </div>
+    <!-- top-bar -->
+    
+	<div class="main-content">
+		<div class="manage_buttons">
+			<div class="manage-row-options">
+				<div class="email_buttons text-center">
+					<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-2">
+							<div class="search-tpl">
+								<div class="input-group">
+								  <span class="input-group-addon" id="search-addon">
+										<span class="glyphicon glyphicon-search"></span>
+								   </span>
+									<input aria-describedby="search-addon" type="text" class="form-control" name="search" id="search" placeholder="Search" value="">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-8 col-sm-8 col-xs-10">
+							<div class="pull-left">
+								<a href="#" class="btn btn-primary btn-lg dbBackup hidden-xs">
+									<span class="ion-load-a"> </span>
+									<span class="">Backup Database</span>
+								</a>
+								<a href="#" class="checkForUpdate btn btn-success btn-lg hidden-xs">
+									<span class="glyphicon glyphicon-import"></span> 
+									<span class="hidden-xs hidden-sm">Check for update</span>
+								</a> 
+								<a href="#" class="dbOptimize btn btn-primary btn-lg">
+									<span class="ion-wand"></span> 
+									<span class="hidden-xs hidden-sm">Optimize Database</span>
+								</a> 
+							</div>
+						</div>
+					</div>
+				</div><!-- end email_buttons -->
+			</div><!-- manage-row-options -->
+		</div><!-- manage_buttons -->
+
+<div class="manage_buttons buttons-list config-page container">
+	
+</div>
+
+	<div class="text-center location-settings">
+		Looking for other configuration options? Go to 
+		<a href="#" class="btn btn-info">Locations Module</a>
+	</div>
+	
+<div class="config-panel">
+	<div class="row">
+		<form id="config_form" class="form-horizontal">
+			<!-- Company Information -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Company Information				
+				</div>
+				<div class="panel-body">
+					<div class="form-group" data-keyword="company">	
+						<label for="company_logo" class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Company Logo:
+						</label>
+						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="file" name="company_logo" id="company_logo" class="filestyle" data-icon="false"  style="position: absolute; clip: rect(0px, 0px, 0px, 0px);">	
+						</div>	
+					</div>
+					
+					<div class="form-group" data-keyword="company">	
+						<label for="delete_logo" class="col-sm-3 col-md-3 col-lg-2 control-label">Delete Logo:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="delete_logo" value="1" id="delete_logo">
+							<label>
+								<span></span>
+							</label>
+						</div>	
+					</div>
+					
+					<div class="form-group">	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label required">Company Name:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10 input-field">
+							<input type="text" name="company" value="" class="validate form-control form-inps" id="company">
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label for="website" class="col-sm-3 col-md-3 col-lg-2 control-label ">Website:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10 input-field">
+							<input type="text" name="website" value="" class="form-control form-inps" id="website">
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+		
+		<!-- Taxes -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Taxes				
+				</div>
+				
+				<div class="panel-body">
+					<div class="form-group" data-keyword="taxes">	
+						<label for="prices_include_tax" class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Prices include Tax:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="prices_include_tax" value="prices_include_tax" id="prices_include_tax">
+							<label for="prices_include_tax">
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" data-keyword="taxes">	
+						<label for="charge_tax_on_recv" class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Charge tax on receivings:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="charge_tax_on_recv" value="charge_tax_on_recv" id="charge_tax_on_recv">
+								<label for="charge_tax_on_recv">
+									<span></span>
+								</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label for="use_tax_value_at_all_locations" class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Use Tax Values at ALL locations:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="use_tax_value_at_all_locations" value="" id="use_tax_value_at_all_locations">
+							<label><span></span></label>
+						</div>
+					</div>					
+									
+					<!-- Tax Classes -->
+					<div class="form-group no-padding-right">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Tax Groups:
+						</label>
+						<div class="col-md-9 col-sm-9 col-lg-10">
+							<div class="table-responsive">
+								<table id="tax_classes" class="table">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Tax Name</th>
+												<th>Tax Percent</th>			
+												<th>Cumulative</th>	
+												<th>Default</th>
+												<th>Delete</th>		
+												<th>Add</th>
+												<th>ID</th>
+												<th>Sort</th>
+											</tr>
+										</thead>
+							
+										<tbody class="ui-sortable">
+											<tr>
+												<td class="tax_class_name top">
+													<input type="text" class="rates form-control" name="" value="TAX">
+													<input type="hidden" name="" value="2">
+												</td>
+												<td class="tax_class_rate_name top">
+													<input type="text" class="rates form-control" name="" value="ESTATAL">
+												</td>
+												<td class="tax_class_rate_percent top">
+													<input type="text" class="rates form-control" name="" value="11.500">
+												</td>
+												<td class="tax_class_rate_cumulative top">															
+													<input type="hidden" name="" value="0">
+													<input type="checkbox" name="" value="1" disabled="" id="" class="form-control rates cumulative_checkbox invisible">
+													<label class="tax_class_cumulative_element invisible">
+														<span></span>
+													</label>
+												</td>
+												<td class="tax_class_rate_default">
+													<input type="radio" name="tax_class_id" value="6" checked="checked" id="">
+													<label class="tax_class_default_element">
+														<span></span>
+													</label>
+												</td>
+												<td>
+													<a class="delete_tax_rate tax_table_rate_text_element">Delete</a>
+												</td>
+												<td>
+													<a href="javascript:void(0);" class="add_tax_rate">Add Rate</a>
+												</td>
+												<td>6</td>
+												<td>
+													<span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								
+									<a href="javascript:void(0);" class="add_tax_class">Add Tax Group</a>
+								</div>								
+						</div><!-- end col -->
+					</div><!-- end form-group -->
+					
+												
+					</div><!-- end -->
+				</div><!-- end -->
+			</div><!-- end panel-->
+					
+		<!-- Currency -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Currency				
+				</div>
+				<div class="panel-body">
+					<div class="form-group" data-keyword="currency">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Currency Symbol:
+						</label>						
+						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text" name="" value="$" class="form-control form-inps" id="">
+						</div>
+					</div>	
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">Currency Code:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text" name="" value="USD" class="form-control form-inps" id="">
+						</div>
+					</div>	
+					
+					
+					<div class="form-group" data-keyword="currency">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Exchange Rates:
+						</label>						
+						
+						<div class="table-responsive col-sm-9 col-md-9 col-lg-10">
+							<table id="currency_exchange_rates" class="table">
+								<thead>
+									<tr>
+									<th>Payment Currency</th>
+									<th>Currency Symbol</th>
+									<th>Currency Symbol Location</th>
+									<th>Number of decimals</th>
+									<th>Thousands Separator</th>
+									<th>Decimal Point</th>
+									<th>Exchange Rate</th>
+									<th>Delete</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						
+							<a href="javascript:void(0);" id="add_exchange_rate">Add Currency Exchange Rate</a>
+						</div>
+					</div>
+					
+					
+ 					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Currency Symbol Location:
+						</label> 						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="" class="form-control" id="">
+								<option selected="selected">Before Number</option>
+								<option>After Number</option>
+							</select>
+ 						</div>						
+ 					</div>				
+							
+ 					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Number of decimals:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select class="form-control" id="">
+									<option value="" selected="selected">Let system decide (Recommended)</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+							</select>
+ 						</div>						
+ 					</div>				
+					
+					<div class="form-group" data-keyword="currency">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Thousands Separator:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10 input-field">
+							<input type="text" name="" value="," class="validate form-control form-inps" id="">
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Decimal Point:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10 input-field">
+							<input type="text" name="" value="." class="validate form-control form-inps" id="">
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Currency Denominations:
+						</label>
+						<div class="table-responsive col-sm-9 col-md-4 col-lg-4">
+							<table id="currency_denoms" class="table">
+								<thead>
+									<tr>
+									<th>Denomination</th>
+									<th>Currency Value</th>
+									<th>Delete</th>
+									</tr>
+								</thead>
+							
+							<tbody>
+								<tr>
+									<td>
+										<input type="text" name="" class="form-control" value="100's">
+									</td>
+									<td>
+										<input type="text" name="" class="form-control" value="100.00">
+									</td>
+									<td>
+										<a class="delete_currency_denom text-primary" href="javascript:void(0);">Delete</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" name="" class="form-control" value="50's">
+									</td>
+									<td>
+										<input type="text" name="" class="form-control" value="50.00">
+									</td>
+									<td>
+										<a class="delete_currency_denom text-primary" href="javascript:void(0);">Delete</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" name="" class="form-control" value="20's">
+									</td>
+									<td>
+										<input type="text" name="" class="form-control" value="20.00">
+									</td>
+									<td>
+										<a class="delete_currency_denom text-primary" href="javascript:void(0);">Delete</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" name="" class="form-control" value="10's">
+									</td>
+									<td>
+										<input type="text" name="" class="form-control" value="10.00">
+									</td>
+									<td>
+										<a class="delete_currency_denom text-primary" href="javascript:void(0);">Delete</a>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>
+										<input type="text" name="" class="form-control" value="5's">
+									</td>
+									<td>
+										<input type="text" name="" class="form-control" value="5.00">
+									</td>
+									<td>
+										<a class="delete_currency_denom text-primary" href="javascript:void(0);">Delete</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" name="" class="form-control" value="2's">
+									</td>
+									<td>
+										<input type="text" name="" class="form-control" value="2.00">
+									</td>
+									<td>
+										<a class="delete_currency_denom text-primary" href="javascript:void(0);">Delete</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" name="" class="form-control" value="1's">
+									</td>
+									<td>
+										<input type="text" name="" class="form-control" value="1.00">
+									</td>
+									<td>
+										<a class="delete_currency_denom text-primary" href="javascript:void(0);">Delete</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" name="" class="form-control" value="Half Dollars">
+									</td>
+									<td>
+										<input type="text" name="" class="form-control" value="0.50">
+									</td>
+									<td>
+										<a class="delete_currency_denom text-primary" href="javascript:void(0);">Delete</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" name="" class="form-control" value="">
+									</td>
+									<td>
+										<input type="text" name="" class="form-control" value="">
+									</td>
+									<td>
+										<a class="delete_currency_denom text-primary" href="javascript:void(0);">Delete</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" name="" class="form-control" value="">
+									</td>
+									<td>
+										<input type="text" name="" class="form-control" value="">
+									</td>
+									<td>
+										<a class="delete_currency_denom text-primary" href="javascript:void(0);">Delete</a>
+									</td>
+								</tr>
+									<tr>
+										<td>
+											<input type="text" name="" class="form-control" value="">
+										</td>
+										<td>
+											<input type="text" name="" class="form-control" value="">
+										</td>
+										<td>
+											<a class="delete_currency_denom text-primary" href="javascript:void(0);">Delete</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="text" name="" class="form-control" value="">
+										</td>
+										<td>
+											<input type="text" name="" class="form-control" value="">
+										</td>
+										<td>
+											<a class="delete_currency_denom text-primary" href="javascript:void(0);">Delete</a>
+										</td>
+									</tr>
+								</tbody>
+						</table>
+						
+						<a href="javascript:void(0);" id="add_denom">Add currency denomination</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Payment Types -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Payment Types				
+				</div>
+				<div class="panel-body">	
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Payment Types:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<a href="#" class="btn btn-primary payment_types">Cash</a> 
+							<a href="#" class="btn btn-primary payment_types">Check</a> 
+							<a href="#" class="btn btn-primary payment_types">Gift Card</a> 
+							<a href="#" class="btn btn-primary payment_types">Debit Card</a> 
+							<a href="#" class="btn btn-primary payment_types">Credit Card</a>
+							<br>
+							<br>
+							<input type="text" name="" value="chuyển khoản" class="form-control form-inps selectized" id="">
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label for="default_payment_type" class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Default Payment Type:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="" class="form-control" id="">
+								<option value="Cash" selected="selected">Cash</option>
+								<option value="Check">Check</option>
+								<option value="Gift Card">Gift Card</option>
+								<option value="Debit Card">Debit Card</option>
+								<option value="Credit Card">Credit Card</option>
+								<option value="Store Account">Store Account</option>
+								<option value="chuyển khoản">chuyển khoản</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group" data-keyword="payment">
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Enable EBT payments:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Enable WIC:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" data-keyword="payment">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Prompt for CCV when swiping credit card:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+								<label>
+									<span></span>
+								</label>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+		
+		<!-- Price Rules-->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Price Rules				
+				</div>
+				<div class="panel-body">
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Disable Price Rules dialog:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="disable_price_rules_dialog" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<!-- Orders and Deliveries -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Orders And Deliveries				
+				</div>
+				<div class="panel-body">
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Do NOT tax service items for deliveries:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+				<div class="form-group no-padding-right">	
+					<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Shipping Providers:</label>						
+					<div class="col-md-9 col-sm-9 col-lg-10">
+							<div class="table-responsive">
+								<table id="" class="table">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Rate Name</th>
+											<th>Rate Fee</th>			
+											<th>Delivery Time In Days</th>			
+											<th>Default</th>
+											<th>Delete</th>
+											<th>Add</th>
+											<th>Sort</th>
+										</tr>
+									</thead>
+									
+									<tbody class="ui-sortable">
+										
+									</tbody>
+								</table>
+								
+								<a href="javascript:void(0);" class="add_shipping_provider">Add Shipping Provider</a>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group no-padding-right">	
+							<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Shipping Zones:</label>								
+							<div class="col-md-9 col-sm-9 col-lg-10">
+									<div class="table-responsive">
+										<table id="shipping_zones" class="table">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Zips</th>
+													<th>Fee</th>
+													<th>Tax Group</th>
+													<th>Delete</th>
+													<th>Sort</th>
+												</tr>
+											</thead>
+									
+											<tbody class="ui-sortable">
+										
+											</tbody>
+										</table>
+								
+										<a href="javascript:void(0);" class="add_shipping_zone">Add Shipping Zone</a>
+										</div>
+									</div>
+								</div>
+					
+				</div><!-- end panel-body -->
+			</div><!-- end panel-->
+		</div><!-- end col -->
+		
+		<!-- Sales -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Sales				
+				</div>
+				<div class="panel-body">			
+					<div class="form-group">	
+						<label for="sale_prefix" class="col-sm-3 col-md-3 col-lg-2 control-label  required">
+							Sale ID Prefix:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text" name="" value="POS" class="form-control form-inps" id="">
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label  required">
+							Item ID to Show on Sales Interface:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="" class="form-control" id="">
+								<option value="number" selected="selected">UPC/EAN/ISBN</option>
+								<option value="product_id">Product ID</option>
+								<option value="id">Item Id</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Auto Focus On Item Field When using Sales/Receivings Interfaces:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="" checked="checked" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Capture signature for all sales:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" checked="checked" id="">
+							<label for="capture_sig_for_all_payments"><span></span></label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Number of recent sales by customer to show:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="number_of_recent_sales" class="form-control" id="number_of_recent_sales">
+								<option value="10" selected="selected">10</option>
+								<option value="20">20</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+								<option value="200">200</option>
+								<option value="500">500</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Hide Recent Sales for Customer:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Disable confirmation for complete sale:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="" id="">
+								<label>
+									<span></span>
+								</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Disable Confirmation for Complete Receiving:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+								<label>
+									<span></span>
+								</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Disable sale quick complete:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Calculate Average Cost Price from Receivings:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" checked="checked" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div id="average_cost_price_from_receivings_methods">
+						<div class="form-group">	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Averaging Method:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+								<select name="" class="form-control" id="">
+									<option value="moving_average" selected="selected">Moving Average</option>
+									<option value="historical_average">Historical Average</option>
+									<option value="dont_average">Don't average, use current received price</option>
+								</select>
+							</div>
+						</div>
+					</div>
+									
+										
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Hide suspended Receivings in reports:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Track Cash In Register:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="common_cash" checked="checked" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Track Checks In Register:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="common_check" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Track Giftcards in Register:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="common_giftcard" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Track Debit Cards In Register:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="common_debit" checked="checked" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Track Credit Cards In Register:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="common_credit" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Do not show expected closing amount when closing register:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Disable Giftcard Detection:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Always Show Item Grid:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Hide out of stock items in grid:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+										
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Default type for Grid:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select  class="form-control" id="">
+								<option value="" selected="selected">Categories</option>
+								<option value="">Tags</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Require customer for sale:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Select sales person during sale:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Default sales person:
+						</label>
+						
+						<div class="col-sm-9 col-md-9 col-lg-10"> 
+							<select class="form-control" id="">
+								<option value="" selected="selected">Logged in employee</option>
+								<option value="">Not set</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Commission Default Rate:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<div class="input-group">
+								<input type="text" name="" value="0" id="" class="form-control">
+							    <span class="input-group-addon">%</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Commission Percent calculation method: 
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<select  id="" class="form-control">
+							<option value="selling_price" selected="selected">Selling Price</option>
+							<option value="profit">Profit</option>
+						</select>
+						</div>
+					</div>
+					
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Disable sale notifications:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Confirm error messages using modal dialogs:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Change Sale Date For New Sale:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Do NOT group items that are the same:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Do NOT allow items to be sold below cost price:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+					<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+						Do not allow out of stock items to be sold:
+					</label>						
+					<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+
+					<div class="form-group">	
+					<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+						Do NOT allow variation items to be sold without selecting variation:
+					</label>
+					<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Edit item price if 0 after adding to sale:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+								<label>
+									<span></span>
+								</label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Remind employee to open customer facing display:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+					
+		<!-- Suspended Sales/Layaways -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Suspended Sales/Layaways
+				</div>
+				<div class="panel-body">
+					<div class="form-group no-padding-right">	
+					<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+						Additional Suspended Sale Types:
+					</label>
+					<div class="col-md-9 col-sm-9 col-lg-10">
+							<div class="table-responsive">
+								<table id="sale_types" class="table">
+									<thead>
+										<tr>
+										<th>Sort</th>
+										<th>ID</th>
+										<th>Suspended Sale Type</th>
+										<th>Delete</th>
+										</tr>
+									</thead>
+									
+									<tbody class="ui-sortable">
+									</tbody>
+								</table>
+								
+								<a href="javascript:void(0);" id="">Add Suspended Sale Type</a>
+								</div>
+							</div>
+						</div>
+					
+					<div class="form-group">	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Require customer for suspended sale:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" >
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Override Layaway Name:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text" name="" value="" class="form-control form-inps" id="">
+						</div>
+					</div>
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Hide layaways in reports:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Change sale date when suspending sale:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+								<label>
+									<span></span>
+								</label>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Change sale date when completing suspended sale:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Show receipt after suspending sale:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="1" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Receipt -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Receipt				
+				</div>
+				<div class="panel-body">
+					<div class="form-group">	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Override receipt title:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text" name="" value="Kvittens" class="form-control form-inps" id="">
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Email Receipt Subject:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text" name="" value="" class="form-control form-inps" id="" placeholder="Sales Receipt">
+						</div>
+					</div>
+					
+					
+					<div class="form-group" >	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Show item id on receipt:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+								<label>
+									<span></span>
+								</label>
+						</div>
+					</div>
+					
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Number of Decimals for Quantity On Receipt:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="" class="form-control" id="">
+								<option value="" selected="selected">Let system decide (Recommended)</option>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+						</div>
+					</div>
+					
+					
+					
+					<div class="form-group" >	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Indicate Taxable On Receipt:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Hide Description on Receipt:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Hide description on sales and receivings interfaces:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Show original price on receipt if marked down:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="" checked="checked" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Print receipt after sale:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" checked="checked" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Wide Printer Receipt Format:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Print receipt after receiving:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Hide Signature:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" checked="checked" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+												
+					<div class="form-group" >	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Remove Customer Name From Receipt:
+						</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" > 
+					  <label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+						Remove Employee Name From Receipt:
+						</label>					 
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+								<label>
+									<span></span>
+								</label>
+						</div>
+					</div>		
+					
+					<div class="form-group" >	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Remove customer company name from receipt:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Remove customer contact info from receipt:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Automatically Email receipt:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Automatically print duplicate receipt for credit card transactions:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+								<label>
+									<span></span>
+								</label>
+						</div>
+					</div>
+
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Always print duplicate receipt for all transactions:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+					
+					
+					
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Automatically Show Comments on Receipt:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+					
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">Hide barcode on receipts:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">Group all taxes on receipt:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>						
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">
+							Redirect to sale or receiving screen after printing receipt:
+						</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+						<input type="checkbox" name="" value="" checked="checked" id="">
+							<label>
+								<span></span>
+							</label>
+						</div>
+					</div>
+													
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Receipt text size:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select class="form-control" id="">
+								<option selected="selected">Small</option>
+								<option>Medium</option>
+								<option>Large</option>
+								<option>Extra large</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">Hide store account balance on receipt:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">Round to nearest .05 on receipt:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" checked="checked" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+					
+					<div class="form-group has-success" >	
+					<label class="col-sm-3 col-md-3 col-lg-2 control-label required">Return Policy:</label>						
+					<div class="col-sm-9 col-md-9 col-lg-10">
+						<textarea name="return_policy" cols="30" rows="4" id="return_policy" class="form-control text-area">
+							We are making changes in the system. Please note that prices for non-food items currently INCLUDE moms and prices for food items DO NOT INCLUDE moms.  Further up-dates to follow. Thank you for your understanding</textarea>
+						</div>
+					</div>
+
+					<div class="form-group" >	
+					<label  class="col-sm-3 col-md-3 col-lg-2 control-label">Announcements/Specials:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<textarea name="" cols="30" rows="4" id="" class="form-control text-area" ></textarea>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<!-- Profit -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+					<div class="panel-heading">
+						Profit Calculation				
+					</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Calculate Gift Card Profit When:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select class="form-control" id="">
+								<option>Do Nothing</option>
+								<option>Redeeming Gift Card</option>
+								<option>Selling Gift Card</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+					<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Remove commission from profit in reports:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label">Remove points redemption from profit:</label>						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+								<label><span></span></label>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<!-- Barcodes -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Barcodes				
+				</div>	
+				<div class="panel-body">
+					<div class="form-group">	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">ID to show on barcode:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select class="form-control" id="">
+									<option selected="selected">Item Id</option>
+									<option>UPC/EAN/ISBN</option>
+									<option>Product ID</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Include tax on barcodes:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Hide price on barcodes:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Hide Name on Barcodes:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+					
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Show company name on barcode:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" checked="checked" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+					
+					
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Enable Scale:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+								
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Scale Barcode Format:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="scale_format" class="form-control" id="scale_format">
+									<option selected="selected">UPC-12 4 price digits</option>
+									<option>UPC-12 5 Price Digits</option>
+									<option>EAN-13 5 price digits</option>
+									<option>EAN-13 6 price digits</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Scale Price Divide By:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select class="form-control" id="">
+									<option>1000</option>
+									<option selected="selected">100</option>
+									<option>10</option>
+									<option>1</option>
+							</select>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<!-- Customer Loyalty -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Customer Loyalty				
+				</div>	
+				
+				<div class="panel-body">
+					<div class="form-group">	
+					<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Enable Customer Loyalty system:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+					
+					<div id="loyalty_setup" style="display: block;">
+						<div class="form-group" id="">	
+							<label class="col-sm-3 col-md-3 col-lg-2 control-label">Loyalty Program Option:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<select name="" class="form-control" id="">
+									<option selected="selected">Simple</option>
+									<option>Advanced</option>
+								</select>
+							</div>
+						</div>		
+						
+						
+					<div id="loyalty_setup_simple" style="">
+						<div class="form-group">	
+							<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Number of sales for discount:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="" value="" class="validate form-control form-inps" id="">
+							</div>
+						</div>
+							
+						<div class="form-group">	
+							<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Discount percent earned when reaching sales:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="" value="0" class="validate form-control form-inps" id="">
+							</div>
+						</div>
+							
+						<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">Hide sales to discount on receipt:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="" id="">
+									<label><span></span></label>
+							</div>
+						</div>	
+					</div>
+				
+						
+					<div id="loyalty_setup_advanced" style="display: none;">					
+								<div class="form-group">	
+									<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Spend amount to point ratio:</label>
+									<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="text" name="" value="" class="validate form-control form-inps" id="" placeholder="Enter the amount to spend">
+									<input type="text" name="" value="" class="validate form-control form-inps" id="" placeholder="Enter points to be earned">
+								</div>
+						</div>
+						
+						<div class="form-group">	
+							<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">Point Value:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" value="" class="validate form-control form-inps" id="">
+							</div>
+						</div>
+						
+						<div class="form-group">	
+							<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Minimum number of points to redeem:</label>	
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="text" name="" value="" class="validate form-control form-inps" id="">
+							</div>
+						</div>
+						
+						
+						
+						<div class="form-group">	
+							<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">Loyalty points earned not including tax:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="" id="">
+									<label><span></span></label>
+							</div>
+						</div>
+
+						<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Prompt to use points when available:</label>		
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="" id="">
+									<label><span></span></label>
+							</div>
+						</div>
+						
+						<div class="form-group">	
+							<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Hide Points On Receipt:</label>							
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="checkbox" name="" value="" id="">
+									<label><span></span></label>
+								</div>
+						</div>
+					</div>													
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Price Tiers -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Price Tiers				
+				</div>	
+				<div class="panel-body">
+					<div class="form-group no-padding-right">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Price tiers:</label>						
+							<div class="col-md-9 col-sm-9 col-lg-10">
+								<div class="table-responsive">
+									<table id="price_tiers" class="table">
+										<thead>
+											<tr>
+											<th>Sort</th>
+											<th>Tier Name</th>
+											<th>Default Percent Off</th>
+											<th>Default Cost Plus Percent</th>
+											<th>Default Cost Plus Fixed Amount</th>
+											<th>Delete</th>
+											</tr>
+										</thead>
+										
+										<tbody class="ui-sortable">
+										</tbody>
+									</table>
+									
+									<a href="javascript:void(0);" id="add_tier">Add tier</a>
+									</div>
+								</div>
+						</div>
+						
+						<div class="form-group">	
+							<label  class="col-sm-3 col-md-3 col-lg-2 control-label">Override Tier Name on Receipt:</label>							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="" value="" class="form-control form-inps" id="">
+							</div>
+						</div>
+						
+	 					<div class="form-group">	
+	 					<label class="col-sm-3 col-md-3 col-lg-2 control-label">Default Tier Percent Type for excel import:</label>	 						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+								<select name="" class="form-control" id="">
+									<option value="" selected="selected">Percent Off</option>
+									<option value="">Cost Plus Percent</option>
+								</select>
+	 						</div>						
+	 					</div>
+						
+	 					<div class="form-group">	
+							<label class="col-sm-3 col-md-3 col-lg-2 control-label">Default Tier Fixed Amount for Excel Import:</label>	 	
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<select name="" class="form-control" id="">
+										<option value="" selected="selected">Fixed Amount</option>
+										<option value="">Cost Plus Fixed Amount</option>
+									</select>
+								</div>						
+	 					</div>
+						
+						
+						<div class="form-group">	
+							<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Round tier Prices to 2 decimals:</label>	
+								<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="1" id="">
+								<label><span></span></label>
+							</div>
+						</div>
+						
+				</div>
+			</div>
+		</div>
+		
+		<!-- Auto Increment IDs Settings -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					ID Numbers				
+				</div>	
+				<div class="panel-body">
+					<div class="">
+						<div class="col-sm-offset-3 col-md-offset-3 col-lg-offset-2 col-sm-9 col-md-9 col-lg-10">
+							<div class="alert alert-info">
+								<strong>note:</strong> You can only increase Auto Increment values. Updating them will not affect IDs for items, item kits, sales or receivings that already exist.
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Item ID Auto Increment Starting Value:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text" name="" value="" class="validate form-control form-inps" id="">
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label">Item Kit ID Auto Increment Starting Value:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text" name="" value="" class="validate form-control form-inps" id="">
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">Sale ID Auto Increment Starting Value:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text" name="" value="" class="validate form-control form-inps" id="">
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Receiving ID Auto Increment Starting Value:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text" name="" value="" class="validate form-control form-inps" id="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Items Settings -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Items				
+				</div>	
+				<div class="panel-body">
+					<div class="form-group">	
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<a href="#" target="_blank">Manage categories</a>							
+						</div>
+					</div>
+							
+				
+					<div class="form-group">	
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<a href="#" target="_blank">Manage tags</a>							
+						</div>
+					</div>
+										
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label  required">Number Of Items Per Page:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select class="form-control" id="">
+								<option  selected="selected">20</option>
+								<option>50</option>
+								<option>100</option>
+								<option>200</option>
+								<option>500</option>
+							</select>
+						</div>
+					</div>		
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label  required">Number of items per page in grid:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<select name="" class="form-control" id="">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+								</select>
+							</div>
+					</div>				
+					
+					
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Default Reorder Level When Creating Items:</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text" name="" value="" class="form-control form-inps" id="">
+						</div>
+					</div>
+					
+
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Default days to expire when creating items:</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text"  value="" class="form-control form-inps" id="">
+						</div>
+					</div>
+					
+					
+					
+								
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Default New Items as service items:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Highlight low inventory items in items module:</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label><span></span></label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Limit Manual Price Adjustments And Discounts:</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+								<label><span></span></label>
+						</div>
+					</div>
+					
+					
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Enable Mark Up Calculator:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+								<label><span></span></label>
+						</div>
+					</div>
+				
+					<div class="form-group" >	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Verify age for products:</label>						
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="1" id="">
+									<label><span></span></label>
+							</div>
+					</div>
+
+
+					<div id="" class="form-group"  style="display: block;">	
+						<label  class="col-sm-3 col-md-3 col-lg-2 control-label ">Default age to verify:</label>						
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="" value="" class="form-control form-inps" id="">
+							</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+		<!-- Employee Settings -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Employee				
+				</div>	
+				<div class="panel-body">
+					<div class="form-group">	
+					<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Enable Time Clock:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="timeclock" value="timeclock" checked="checked" id="timeclock">
+							<label for="timeclock"><span></span></label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Log out automatically when clocking out:</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" checked="checked" id="">
+							<label for=""><span></span></label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Enable fast user switching (password not required):</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="" id="">
+									<label for=""><span></span></label>
+							</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Require employee login before each sale:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="" id="">
+									<label for=""><span></span></label>
+							</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Reset location when switching employee:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="" id="">
+								<label for=""><span></span></label>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Store Accounts -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Store Accounts				
+				</div>	
+				<div class="panel-body">
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Customers Store Accounts:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label for=""><span></span></label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Suppliers Store Accounts:</label>						
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="" id="">
+								<label for="suppliers_store_accounts"><span></span></label>
+							</div>
+					</div>
+					
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Disable store account when over credit limit:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="1" id="">
+								<label for=""><span></span></label>
+							</div>
+					</div>
+					
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Store Account Statement Message:</label>						
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<textarea name="" cols="30" rows="4" id="" class="form-control text-area"></textarea>
+							</div>
+					</div>
+					
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Hide Store Account Payments In Reports:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+								<label for=""><span></span></label>
+							</div>
+					</div>
+					
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Hide store account payments from report totals:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="1" id="">
+								<label for=""><span></span></label>
+							</div>
+					</div>
+					
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">PayPal.me Username:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="text" name="" value="" class="form-control form-inps" id="" placeholder="paypal.me Username">
+						</div>
+					</div>
+									
+				</div>
+			</div>
+		</div>
+		
+		<!-- Application Settings -->
+		<div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Application Settings				
+				</div>	
+				<div class="panel-body">
+					<div class="form-group">	
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<span class="text-danger">Language cannot be saved at application level. However the default admin employee can change the language using the selector in the header of the program</span>
+							</div>
+					</div>
+					
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label  required">Language:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="language" class="form-control" id="language">
+								<option value="" selected="selected">English</option>
+								<option value="">Indonesia</option>
+								<option value="">Español</option>
+								<option value="">Fançais</option>
+								<option value="">Italiano</option>
+								<option value="">Deutsch</option>
+								<option value="">Nederlands</option>
+								<option value="">Portugues</option>
+								<option value="">العَرَبِيةُ&lrm;&lrm;</option>
+								<option value="">Khmer</option>
+								<option value="">中文</option>
+								<option value="">繁體中文</option>
+								<option value="">Vietnamese</option>
+								</select>
+						</div>						
+					</div>
+					
+					<div class="form-group">	
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label  required">Date Format:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<select name="date_format" class="form-control" id="">
+									<option value="" selected="selected">12/30/2000</option>
+									<option value="">30-12-2000</option>
+									<option value="">2000-12-30</option>
+								</select>
+							</div>
+					</div>
+						
+						
+
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label  required">Time Format:</label>							
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="time_format" class="form-control" id="time_format">
+								<option value="" selected="selected">1:00 PM</option>
+								<option value="">13:00</option>
+							</select>
+						</div>
+					</div>
+						
+					<div class="form-group">
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Store Opening Time :</label>			 					
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<div class="input-group">
+									<span class="input-group-addon bg"><i class="glyphicon glyphicon-time"></i></span>
+									<input type="text" name="" value="05:30 am" id="" class="form-control timepicker">
+								</div>
+							</div>
+					</div>
+						
+					<div class="form-group">
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Store Closing Time :</label>			 					
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<div class="input-group">
+									<span class="input-group-addon bg"><i class="glyphicon glyphicon-time"></i></span>
+									<input type="text" name="" value="" id="" class="form-control timepicker">
+								</div>
+							</div>
+					</div>
+						
+					
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Require https for program:</label>						
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="force_https" id="">
+								<label for=""><span></span></label>
+							</div>
+					</div>
+					
+					<div class="form-group"> 
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Do not force HTTP when needed for EMV Credit Card Processing:
+						</label>					  
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+					           <label for=""><span></span></label>
+					    </div>
+					</div>
+					
+										
+					
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Disable test mode:</label>						
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="" id="">
+							<label for=""><span></span></label>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">hide item description in reports:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="" id="">
+								<label for=""><span></span></label>
+							</div>
+					</div>
+					
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Enable sounds for status messages:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="" id="">
+								<label for=""><span></span></label>
+							</div>
+					</div>
+					
+					<div class="form-group has-success">
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Virtual Keyboard (On/Off):</label>							
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="" class="form-control" id="">
+								<option value="" selected="selected">Never</option>
+								<option value="">All</option>
+								<option value="">Desktop</option>
+								<option value="">Mobile</option>
+							</select>
+						</div>
+					</div>
+										
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Show Language Switcher:</label>							
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+								<label for=""><span></span></label>
+						</div>
+					</div>
+
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Show Clock in Header:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="1" id="">
+									<label for=""><span></span></label>
+									<p class="help-block">This is visible only on wide screens</p>
+							</div>
+					</div>
+
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Legacy Detailed Report Excel Export:</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label for=""><span></span></label>
+						</div>
+					</div>
+						
+					<div class="form-group">
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Overwrite existing items on excel import:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="1" id="">
+								<label for=""><span></span></label>
+							</div>
+					</div>
+						
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Report Sort Order:</label>							
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="" class="form-control" id="">
+								<option value="" selected="selected">Oldest first</option>
+								<option value="">Newest first</option>
+							</select>
+						</div>
+					</div>
+						
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Speed up search queries? (Only recommend if you have more than 10,000 items or customers):
+						</label>							
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label for=""><span></span></label>
+						</div>
+					</div>
+						
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Enable quick edit on manage pages:</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label for=""><span></span></label>
+						</div>
+					</div>
+						
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Enhanced Search Method:</label>								
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="1" id="">
+									<label for=""><span></span></label>
+							</div>
+					</div>
+						
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Include child categories when searching or reporting:
+						</label>							
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label for=""><span></span></label>
+						</div>
+					</div>
+						
+					<div class="form-group has-success">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Spreadsheet Format:</label>							
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="" class="form-control" id="">
+								<option value="">CSV</option>
+								<option value="" selected="selected">XLSX</option>
+							</select>
+						</div>
+					</div>
+						
+					<div class="form-group has-success">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">Mailing Labels Format:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<select name="mailing_labels_type" class="form-control" id="mailing_labels_type">
+									<option value="" selected="selected">PDF</option>
+									<option value="">Excel</option>
+								</select>
+							</div>
+					</div>
+						
+					<div class="form-group">	
+						<label for="phppos_session_expiration" class="col-sm-3 col-md-3 col-lg-2 control-label ">Session expiration:</label>
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="phppos_session_expiration" class="form-control" id="phppos_session_expiration">
+									<option value="0" selected="selected">On Browser Close</option>
+									<option value="600">10 Minutes</option>
+							</select>
+						</div>
+					</div>
+						
+						
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">
+							Always Minimize Left Side Bar Menu:
+						</label>							
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<input type="checkbox" name="" value="1" id="">
+							<label for=""><span></span></label>
+						</div>
+					</div>
+						
+					<div class="form-group">	
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Item Lookup Order:</label>								
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								  	<ul id="" class="list-group ui-sortable">
+										   <li class="list-group-item">
+												<input name="" type="hidden" value="">Item Id
+												<span class="ui-icon ui-icon-arrowthick-2-n-s pull-right"></span>
+											</li>
+										   <li class="list-group-item">
+												<input name="" type="hidden" value="">Item Number
+												<span class="ui-icon ui-icon-arrowthick-2-n-s pull-right"></span>
+											</li>
+										   <li class="list-group-item">
+												<input name="" type="hidden" value="">Product ID
+												<span class="ui-icon ui-icon-arrowthick-2-n-s pull-right"></span>
+											</li>
+										   <li class="list-group-item">
+												<input name="" type="hidden" value="">Additional Item Numbers
+												<span class="ui-icon ui-icon-arrowthick-2-n-s pull-right"></span>
+											</li>
+										   <li class="list-group-item">
+												<input name="" type="hidden" value="">Serial Numbers
+												<span class="ui-icon ui-icon-arrowthick-2-n-s pull-right"></span>
+											</li>
+										   <li class="list-group-item">
+												<input name="" type="hidden" value="">Item Variation Item Number
+												<span class="ui-icon ui-icon-arrowthick-2-n-s pull-right"></span>
+											</li>
+									</ul>
+								</div>
+						</div>
+												
+				</div>
+			</div>
+		</div>
+				
+    <!-- Ecommerce Store -->
+     <div class="col-md-12">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Ecommerce Platform				
+				</div>	
+				<div class="panel-body"> 
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Select Platform:</label>								
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="" id="" class="ecommerce_platform form-control">
+								<option value="" selected="selected">None</option>
+								<option value="">Woocommerce</option>
+							</select>
+						</div>
+					</div>
+                  
+									
+									
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label ">New Items are E-Commerce By Default:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="checkbox" name="" value="1" checked="checked" id="">
+								<label for=""><span></span></label>
+							</div>
+					</div>
+
+					<div class="form-group" data-keyword="ecommerce platform">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Store Location:</label>								
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<select name="" class="form-control">
+									<option value="" selected="selected">Default</option>
+									<option value="">111</option>
+									<option value="">Deepen Parmar</option>
+								</select>
+							</div>
+					</div>
+						
+												
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Ecommerce Sync Operations:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								 <ul id="check-list-box" class="list-group checked-list-box">
+									    <li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											Imports tags into phppos
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+										
+										<li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											Import categories into phppos
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+										
+										<li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											Import attributes into phppos
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+										
+										<li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											Classes into phppos
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+										
+										<li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											Import Shipping Classes into phppos
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+										
+										<li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											inventory changes
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+										<li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											Import items into phppos
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+									
+										<li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											Import orders into phppos
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+										
+										<li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											Export tags to ecommerce
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+										<li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											Export categories to ecommerce
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+										
+										<li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											Export Attributes to ecommerce
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+										<li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											Export tax classes to ecommerce
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+										<li class="list-group-item list-group-item-success" data-color="success" style="cursor: pointer;">
+											<span class="state-icon glyphicon glyphicon-check"></span>
+											Export items to ecommerce
+										    <input type="checkbox" class="hidden" value="" name="">
+										</li>
+								    </ul>
+								</div>
+						</div>
+						
+						<div class="form-group">	
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">E-Commerce Syncing Logs:</label>	
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<ul>
+									</ul>
+								</div>
+						</div>
+						
+						<div id="sync_progress" class="form-group hidden" style="display: block;">	
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Sync Progress:</label>								
+							<div class="col-sm-9 col-md-9 col-lg-10">
+									<div class="well well-sm">
+										<div class="progress">
+										  <div class="progress-bar progress-bar-striped active" id="" role="" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+										    <span id="progress_percent">0</span>% <span id="progress_message"></span>
+										  </div>
+										</div>
+									</div>
+								</div>
+						</div>
+						
+						<div class="form-group" data-keyword="ecommerce platform">
+							<label class="col-sm-3 col-md-3 col-lg-2 control-label ">Last Sync Date:</label>								
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<div class="input-group">
+								  <input readonly="" type="text" class="form-control form-inps" placeholder="Last Sync Date" name="sync_date" id="" value="" >
+									<button id="" type="button" class="btn btn-lg  btn-warning">
+										<span id="sync_woo_button_icon" class="glyphicon glyphicon-refresh"></span> Sync
+									</button>
+									</span>
+									
+									<span class="input-group-btn hidden" id="cancel-button">
+										<button id="" type="button" class="btn btn-lg btn-danger"> Cancel</button>
+									</span>
+									
+								</div>				
+							</div>
+						</div>
+						
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Reset E-Commerce:</label>								
+						<div class="col-sm-9 col-md-9 col-lg-10">
+							<button id="" type="button" class="btn btn-lg btn-danger"> Reset E-Commerce</button>
+						</div>
+					</div>
+							
+				</div>
+			</div>
+		</div>
+    <!-- Woocommerce Settings -->
+          <div class="col-md-12 woo_settings ecom_settings hidden" style="display: block;">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+					Woocommerce Settings				
+				</div>
+				
+				<div class="panel-body">
+					<div class="form-group">	
+						<label for="woo_version" class="col-sm-3 col-md-3 col-lg-2 control-label">WooCommerce Version:</label>						
+							<div class="col-sm-9 col-md-9 col-lg-10">
+									<select name="" id="" class="woo_version form-control">
+										<option value="" selected="selected">3.0.0</option>
+										<option value="">2.6.0 to 2.6.14</option>
+									</select>
+							</div>
+					</div>
+					
+					<div class="form-group">	
+							<label for="woo_api_url" class="col-sm-3 col-md-3 col-lg-2 control-label">Woocommerce API Url:</label>						
+							<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="" value="" class="form-control form-inps" id="">
+							</div>
+					</div>
+                        
+					<div class="form-group">	
+						<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Woocommerce API Key:</label>								
+						<div class="col-sm-9 col-md-9 col-lg-10">
+								<input type="text" name="" value="" class="form-control form-inps" id="">
+							</div>
+					</div>
+                        
+					<div class="form-group">	
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">Woocommerce API Secret:</label>
+							<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="text" name="woo_api_secret" value="" class="form-control form-inps" id="woo_api_secret">
+								</div>
+						</div>
+						
+						
+						<div class="form-group">	
+							<label for="" class="col-sm-3 col-md-3 col-lg-2 control-label">SKU field to sync with:</label>							
+							<div class="col-sm-9 col-md-9 col-lg-10">
+							<select name="" class="form-control" id="">
+								<option value="item_number" selected="selected">UPC/EAN/ISBN</option>
+								<option value="product_id">Product ID</option>
+								<option value="item_id">Item Id</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+	     <!-- Email Settings -->
+	     <div class="col-md-12">
+				<div class="panel panel-piluku">
+					<div class="panel-heading">
+						API Settings
+					</div>	
+					<div class="panel-body">
+						<div class="form-group no-padding-right" data-keyword="API">	
+						<label class="col-sm-3 col-md-3 col-lg-2 control-label ">API Keys:</label>								
+						<div class="col-md-9 col-sm-9 col-lg-10">
+								<div class="table-responsive">
+									<table id="api_keys" class="table">
+										<thead>
+											<tr>
+											<th>Description</th>
+											<th>API Key Ending In</th>
+											<th>Permissions</th>
+											<th>Delete</th>
+											</tr>
+										</thead>
+								
+										<tbody id="api_keys_body">
+											<tr>
+												<td>Api Android</td>
+												<td>...ko4cc8o</td>
+												<td>Read/Write</td>
+												<td><a class="delete_api_key" href="javascript:void(0);">Delete</a></td>
+										</tr>
+																					</tbody>
+									</table>
+							
+										<a tabindex="-1" href="#" data-toggle="modal" data-target="#myModal">Add API Key</a>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-actions">
+				<input type="submit" name="submitf" value="Save" id="submitf" class="submit_button floating-button btn btn-primary btn-lg pull-right">
+			</div>
+    
+		<input class="deleted_payment_types" type="hidden" name="deleted_payment_types" value=""></form>	
+	</div>
+</div>
+</div>
+	
+    	<div id="footers" class="col-md-12 hidden-print text-center"> 
+		Please visit our <a href="#">Website</a> to learn the latest information about the project. 
+            <span class="text-info">You are using PHP Point Of Sale Version 
+                <span class="badge bg-primary"> 16.2</span>
+            </span> Built on 07/15/2018 12:23 pm EST 
+        </div>
+        
+  </div>
+  <!---content --> 
+</div>
+</body>
+</html>

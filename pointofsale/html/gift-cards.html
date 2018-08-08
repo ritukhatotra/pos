@@ -1,0 +1,504 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo - PHP Point Of Sale | Easy to use Online POS Software</title>	
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"> <!--320-->    
+<link rel="stylesheet" type="text/css" href="assets/css/all.css" />
+<script type="text/javascript" src="assets/js/all.js"></script>
+</head>
+
+<body>
+
+
+<div class="wrapper sales-bar mini-bar">
+  <div class="left-bar hidden-print">
+    	<div class="admin-logo">
+          <div class="logo-holder pull-left"> 
+                <img src="assets/images/header_logo.png" class="hidden-print logo" id="header-logo" alt=""> 
+          </div>
+      <!-- logo-holder --> 
+    </div>
+    <!-- admin-logo -->
+    
+    <ul class="list-unstyled menu-parent" id="mainMenu">
+          <li><a href="."><i class="icon ti-dashboard"></i><span class="text">Dashboard</span></a></li>
+          <li><a href="customers.html"><i class="icon ti-user"></i> <span class="text">Customers</span></a></li>
+          <li><a href="items.html"><i class="icon ti-harddrive"></i> <span class="text">Items</span></a> </li>
+   		  <li><a href="edit-item.html"><i class="icon ti-harddrives"></i><span class="text">Item Kits</span></a></li>
+          <li><a href="price-rules.html"><i class="ion-ios-pricetags-outline"></i><span class="text">Price Rules</span></a></li>
+          <li><a href="suppliers.html"><i class="icon ti-download"></i><span class="text">Suppliers</span></a></li>
+          <li><a href="reports.html"><i class="icon ti-bar-chart"></i><span class="text">Reports</span></a></li>
+          <li><a href="receivings.html"><i class="icon ti-cloud-down"></i><span class="text">Receiving</span></a></li>
+          <li><a href="sales.html"><i class="icon ti-shopping-cart"></i><span class="text">Sales</span></a></li>
+          <li><a href="#"><i class="ion-android-car"></i><span class="text">Deliveries</span></a></li>
+          <li><a href="#"><i class="icon ti-money"></i><span class="text">Expenses</span></a></li>
+          <li><a href="employee.html"><i class="icon ti-id-badge"></i><span class="text">Employees</span></a></li>
+          <li class="active"><a href="gift-cards.html"><i class="icon ti-credit-card"></i><span class="text">Gift Cards</span></a></li>
+          <li><a href="store-config.html"><i class="icon ti-settings"></i><span class="text">Store Config</span></a></li>
+          <li><a href="location-page.html"><i class="icon ti-home"></i><span class="text">Locations</span></a></li>
+          <li><a href="#"><i class="icon ti-email"></i><span class="text">Messages</span></a></li>
+          <li><a href="#"><i class="icon ti-power-off"></i><span class="text">Logout</span></a></li>
+    </ul>
+  </div>
+  <!-- left-bar -->
+  
+  <div class="content" id="">
+    <div class="overlay hidden-print"></div>
+        <div class="top-bar hidden-print">
+              <nav class="navbar navbar-default top-bar">
+                <div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i></div>
+                	<div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs"> 
+                    		<a href="#">Dashboard</a> 
+                       </div>
+                       
+                        <ul class="nav navbar-nav navbar-right top-elements">															
+															
+																		
+						<!-- redirect($_SERVER['HTTP_REFERER']);	 -->
+						<li class="dropdown">
+							<a  href="#" class="dropdown-toggle language-dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
+                            	<img class="flag_img" src="assets/images/english.png" alt=""> 
+                            	 <span class="hidden-sm hidden-xs"> English</span>
+                           		 <span class="drop-icon"><i class="ion ion-chevron-down"></i></span>
+                             </a>
+                             
+							<ul class="dropdown-menu animated fadeInUp wow language-drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+									<li><a href="#"><img class="flag_img" src="assets/images/english.png" alt="">English</a> </li>
+									<li><a href="#"><img class="flag_img" src="assets/images/indonesia.png" alt="">Indonesia</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/italian.png" alt="">Italian</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/portugues.png" alt="">Portugues</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/vietnamese.png" alt="">Vietnamese</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/dutch.png" alt="">Dutch</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/arabic.png" alt="">Arabic</a></li>
+							</ul>
+						</li>	
+													
+						
+
+												
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                	<i class="ion-ios-bell-outline  icon-notification"></i>
+                                    <span class="badge info-number count " id="unread_message_count">0</span>
+                                </a>
+									<ul class="dropdown-menu dropdown-menu-right animated fadeInUp wow message_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+										<li class="bottom-links"><a href="#" class="last_info">All Messages</a></li>
+										<li class="bottom-links"><a href="#" class="last_info">Sent Messages</a></li>
+                                        <li class="bottom-links"><a href="#" class="last_info">New Message</a></li>
+									</ul>
+							</li>
+														
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="avatar-holder"><img src="assets/images/avatar-default.jpg" alt=""></span>
+
+							<span class="avatar_info visible-sm visible-md visible-lg">John Doe</span></a>
+							<ul class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+                                <li><a id="support_link" href="#"><i class="ion-help-buoy"></i><span class="text">Support/Documentation</span></a></li>
+                                <li><a href="#"><i class="ion-android-settings"></i><span class="text">Settings</span></a></li>
+                                <li><a id="switch_user" href="#"><i class="ion-ios-toggle-outline"></i><span class="text">Switch User</span></a></li>
+                                <li><a href="#"><i class="ion-edit"></i><span class="text">Edit profile</span></a></li>
+                                <li><a href="#" class="logout_button"><i class="ion-power"></i><span class="text">Logout</span></a></li>			
+							</ul>
+						</li>							
+					</ul>
+              </nav>
+        </div>
+    <!-- top-bar -->
+    
+    <div class="main-content">
+		<div class="manage_buttons">
+
+	<div class="manage-row-options hidden">
+		<div class="email_buttons people">
+            <a class="btn btn-primary btn-lg email" title="" id="" href="#">
+                <span class="ion-email"> E-Mail</span>
+            </a>
+		
+            <a class="btn btn-primary btn-lg labels" title="" id="" href="#">
+                <span class="ion-android-list"></span> <span class="hidden-xs">Mailing Labels</span>
+            </a>
+				
+            <a href="#" id="generate_barcode_labels" class="btn btn-primary btn-lg" title="">
+            	<span class="ion-ios-barcode"></span> <span class="hidden-xs">Barcode Labels</span>
+            </a>
+            		
+            <a href="#" id="" class="btn btn-primary btn-lg" target="_blank">
+            	<span class="ion-document"></span> 
+            	<span class="hidden-xs">Barcode Sheet</span>
+           </a>
+           		
+            <a href="#" id="" class="btn btn-red btn-lg" title="">
+                <span class="ion-trash-a"></span> 
+                <span class="hidden-xs">Delete</span>
+            </a>
+            				
+			<a href="#" class="btn btn-lg btn-clear-selection btn-warning">
+            	<span class="ion-close-circled"></span> 
+        		<span class="hidden-xs">Clear Selection</span>
+            </a>
+		</div>
+</div>
+
+	<div class="row">
+		<div class="col-md-8 col-sm-8 col-xs-8">
+			<form action="" id="search_form" autocomplete="off" method="post" accept-charset="utf-8">
+					<div class="search no-left-border">
+						<ul class="list-inline">
+							<li>
+								<span role="status" aria-live="polite" class="ui-helper-hidden-accessible">
+                                </span><input type="text" class="form-control ui-autocomplete-input" name="search" id="search" value="" placeholder="Search Customers" autocomplete="off">
+							</li>
+							<li>
+								<button type="submit" class="btn btn-primary btn-lg"><span class="ion-ios-search-strong"></span>
+                                <span class="hidden-xs hidden-sm"> Search</span></button>
+							</li>
+							<li>
+								<div class="clear-block hidden">
+									<a class="clear" href="#">
+										<i class="ion ion-close-circled"></i>
+									</a>	
+								</div>
+							</li>
+						</ul>
+					</div>
+			</form>	
+			
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4">	
+			<div class="buttons-list">
+				<div class="pull-right-btn">
+					<a href="new-giftcard.html" id="new-person-btn" class="btn btn-primary btn-lg hidden-sm hidden-xs">
+						<span class="ion-plus"> New Giftcard</span>
+					</a>										
+						<div class="piluku-dropdown btn-group">
+							<button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<span class="hidden-xs ion-android-more-horizontal"> </span>
+								<i class="visible-xs ion-android-more-vertical"></i>
+							</button>
+						<ul class="dropdown-menu" role="menu">
+                        	<li class="visible-sm visible-xs">
+                                <a href="#" class="" title="New Customer">
+                                	<span class="ion-plus-round"> Add New Customer</span>
+                                </a>								
+                            </li>
+							
+                            <li>	
+								<a href="#" class="hidden-xs" title="Excel Import">
+                                	<span class="ion-ios-download-outline"> Excel Import</span>
+                                </a>
+                            </li>
+							
+                            <li>
+                                <a href="#" class="hidden-xs import" title="Excel Export">
+                                	<span class="ion-ios-upload-outline"> Excel Export</span>
+                                 </a>								
+                            </li>
+						   
+                           <li>
+                                <a href="#" id="cleanup" class="" title="Cleanup old customers">
+                              	  <span class="ion-loop"> Cleanup old customers</span>
+                                </a>								
+                          </li>
+						
+                          <li>
+                                <a href="#" id="custom_fields" class="" title="Custom Field Configuration">
+                                	<span class="ion-wrench"> Custom Field Configuration</span>
+                                 </a>								
+                           </li>
+							
+                            <li>
+                                <a href="#" class="toggle_deleted" title="Manage Deleted Customers">
+                                     <span class="ion-trash-a"> Manage Deleted Customers</span>
+                                </a>
+                              </li>
+						</ul>
+					</div>
+				</div>
+			</div>				
+		</div>
+	</div>
+</div>
+
+	<div class="container-fluid">
+		<div class="row manage-table">
+			<div class="panel panel-piluku">
+				<div class="panel-heading">
+				<h3 class="panel-title">
+					Customers					
+                    <span title="9 total customers" class="badge bg-primary tip-left" id="manage_total_items">9</span>
+					
+					<form id="config_columns">
+					<div class="piluku-dropdown btn-group table_buttons pull-right m-left-20">
+						<button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							<i class="ion-gear-a"></i>
+						</button>
+						
+						<ul id="sortable" class="dropdown-menu dropdown-menu-left col-config-dropdown ui-sortable" role="menu" style="">
+								
+								<li class="dropdown-header">
+                                	<a id="reset_to_default" class="pull-right">
+                                		<span class="ion-refresh"></span> Reset</a>Column Configuration
+                                </li>
+                                
+                                    <li class="sort">
+                                    	<a><input checked="checked" name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>Name</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input checked="checked" name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>Person ID</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>First Name</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>Last Name</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>Company Name</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>Account</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>Email</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>Phone No</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>Comment</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>Balance</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>Address 1</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>Address 2</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>ZIP</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    
+                                    <li class="sort">
+                                    	<a><input name="" type="checkbox" class="columns" id="" value="">
+                                        <label class="sortable_column_name" for=""><span></span>Country</label>
+                                        <span class="handle ion-drag"></span></a>
+                                    </li>
+                                    			
+							</ul>
+					</div>
+					</form>
+					
+					
+					<span class="panel-options custom">
+							<div class="pagination pagination-top hidden-print  text-center" id="pagination_top">
+										
+							</div>
+					</span>
+				</h3>
+			</div>
+				<div class="panel-body nopadding table_holder table-responsive" id="table_holder">
+					<table class="table tablesorter table-hover" id="sortable_table">
+                    <thead>
+                    	<tr>
+                        	<th>
+                            	<input type="checkbox" value="">
+                                <label for="select_all"><span></span></label>
+                            </th>
+                            <th>Person ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Company Name</th>
+                            <th>&nbsp;</th>
+                          </tr>
+                    </thead>
+                 
+                 <tbody>
+                 	<tr>
+                    	<td>
+                        	<input type="checkbox" value="">
+                            <label><span></span></label>
+                         </td>
+                         
+                         <td>121</td> 
+                         <td><a href="#">John S</a></td>
+                         <td>info@dummy.com</td>
+                         <td>+5454 454545</td>
+                         <td>John</td>
+                         <td>Sinha</td>
+                         <td>Dummy.pvt</td>
+                         <td>
+                         	<a href="assets/images/avatar-default.jpg">
+                                    <img src="assets/images/avatar-default.jpg" alt="" class="img-polaroid" width="45">
+                             </a>
+                         </td>
+                       </tr>
+                       
+                    <tr>
+                    	<td>
+                        	<input type="checkbox" value="">
+                            <label><span></span></label>
+                         </td>
+                         
+                         <td>121</td> 
+                         <td><a href="#">John S</a></td>
+                         <td>info@dummy.com</td>
+                         <td>+5454 454545</td>
+                         <td>John</td>
+                         <td>Sinha</td>
+                         <td>Dummy.pvt</td>
+                         <td>
+                         	<a href="assets/images/avatar-default.jpg">
+                                    <img src="assets/images/avatar-default.jpg" alt="" class="img-polaroid" width="45">
+                             </a>
+                         </td>
+                       </tr>
+                       
+                    <tr>
+                    	<td>
+                        	<input type="checkbox" value="">
+                            <label><span></span></label>
+                         </td>
+                         
+                         <td>121</td> 
+                         <td><a href="#">John S</a></td>
+                         <td>info@dummy.com</td>
+                         <td>+5454 454545</td>
+                         <td>John</td>
+                         <td>Sinha</td>
+                         <td>Dummy.pvt</td>
+                         <td>
+                         	<a href="assets/images/avatar-default.jpg">
+                                    <img src="assets/images/avatar-default.jpg" alt="" class="img-polaroid" width="45">
+                             </a>
+                         </td>
+                       </tr>
+                       
+                    <tr>
+                    	<td>
+                        	<input type="checkbox" value="">
+                            <label><span></span></label>
+                         </td>
+                         
+                         <td>121</td> 
+                         <td><a href="#">John S</a></td>
+                         <td>info@dummy.com</td>
+                         <td>+5454 454545</td>
+                         <td>John</td>
+                         <td>Sinha</td>
+                         <td>Dummy.pvt</td>
+                         <td>
+                         	<a href="assets/images/avatar-default.jpg">
+                                    <img src="assets/images/avatar-default.jpg" alt="" class="img-polaroid" width="45">
+                             </a>
+                         </td>
+                       </tr>
+                       
+                    <tr>
+                    	<td>
+                        	<input type="checkbox" value="">
+                            <label><span></span></label>
+                         </td>
+                         
+                         <td>121</td> 
+                         <td><a href="#">John S</a></td>
+                         <td>info@dummy.com</td>
+                         <td>+5454 454545</td>
+                         <td>John</td>
+                         <td>Sinha</td>
+                         <td>Dummy.pvt</td>
+                         <td>
+                         	<a href="assets/images/avatar-default.jpg">
+                                    <img src="assets/images/avatar-default.jpg" alt="" class="img-polaroid" width="45">
+                             </a>
+                         </td>
+                       </tr>
+                       
+                    <tr>
+                    	<td>
+                        	<input type="checkbox" value="">
+                            <label><span></span></label>
+                         </td>
+                         
+                         <td>121</td> 
+                         <td><a href="#">John S</a></td>
+                         <td>info@dummy.com</td>
+                         <td>+5454 454545</td>
+                         <td>John</td>
+                         <td>Sinha</td>
+                         <td>Dummy.pvt</td>
+                         <td>
+                         	<a href="assets/images/avatar-default.jpg">
+                                    <img src="assets/images/avatar-default.jpg" alt="" class="img-polaroid" width="45">
+                             </a>
+                         </td>
+                       </tr>                     
+                 </tbody>
+               </table>			
+				</div>	
+		</div>	
+		<div class="text-center">
+		<div class="pagination hidden-print alternate text-center" id="pagination_bottom">
+					</div>
+		</div>
+	</div>
+    </div>
+  </div>
+    
+    <!-- Location Message to employee -->
+    
+    	<div id="footers" class="col-md-12 hidden-print text-center"> Please visit our <a href="#">Website</a> to learn the latest information about the project. 
+            <span class="text-info">You are using PHP Point Of Sale Version 
+                <span class="badge bg-primary"> 16.2</span>
+            </span> Built on 07/15/2018 12:23 pm EST 
+        </div>
+        
+  </div>
+  <!---content --> 
+</div>
+</body>
+</html>

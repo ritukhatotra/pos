@@ -1,0 +1,1044 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo - PHP Point Of Sale | Easy to use Online POS Software</title>	
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"> <!--320-->    
+<link rel="stylesheet" type="text/css" href="assets/css/all.css" />
+<script type="text/javascript" src="assets/js/all.js"></script>
+</head>
+
+<body>
+
+<div class="modal fade hidden-print" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog customer-recent-sales">
+        <div class="modal-content">
+            <div class="modal-header" id="myTabHeader">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="ti-close"></span></button>
+                <div class="modal-item-details">
+                        <h4 class="modal-title">New Item 2018</h4>
+                </div>
+                <nav>
+                
+            <ul id="myTab" class="nav nav-tabs nav-justified">
+                        <li class="active"><a href="#ItemInfo" data-toggle="tab">Item Info</a></li>
+              			<li class=""><a href="#Pricing" data-toggle="tab">Pricing</a></li>
+                        <li class=""><a href="#Inventory" data-toggle="tab">Inventory</a></li>
+                        <li class=""><a href="#Images" data-toggle="tab">Images</a></li>
+            </ul>
+                </nav>
+            </div>
+            
+            <div class="modal-body" id="myTabModalBody">    
+                <div class="tab-content">
+                    <div class="tab-pane active" id="ItemInfo">
+                        <div class="panel panel-piluku">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h3><span class="ion-information-circled"></span>Item Information
+                                        <div class="panel-options custom">
+                                              <a href="#" class="btn btn-default pull-right">Edit</a>
+                                          </div>
+                                    </h3> 
+                                </div>
+                            </div>
+                            
+                            <table class="table table-bordered table-hover table-striped">
+                                <tbody>
+                                	<tr>
+                                    	<td width="40%">Category</td> 
+                                        <td>General</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    	<td width="40%">Item Id</td> 
+                                        <td>50</td>
+                                    </tr>
+                                     
+                                     <tr>
+                                     	<td>UPC/EAN/ISBN</td> 
+                                        <td>011111222223</td>
+                                     </tr>																												
+                                     <tr>
+                                     	<td>Supplier</td>
+                                        <td>Test Supplier (First Last)</td>
+                                     </tr>														
+                                     <tr> 
+                                         <td>Allow Alt Description</td> 
+                                         <td> No</td>
+                                     </tr>
+                                      <tr> 
+                                      		<td>Item has Serial Number</td> 
+                                            <td> No</td>
+                                       </tr>
+                                      <tr> 
+                                      	<td>Is Ecommerce Item</td> 
+                                        <td> No</td>
+                                      </tr>
+                            	</tbody>
+                           </table>
+                            
+                        </div>
+                   </div>
+                    <div class="tab-pane" id="Pricing">
+                        <div class="panel panel-piluku">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h3><span class="ion-cash"></span> Pricing								
+                                    
+                                    <div class="panel-options custom">
+                                           <a href="#" class="btn btn-default pull-right">Edit</a>
+                                     </div>
+                                    </h3> 
+                                </div>
+                            </div>
+                            
+                         <table class="table table-bordered table-hover table-striped">  
+                                <tbody>
+                                	<tr>
+                                    	<td width="25%">Selling Price</td>
+                                        <td colspan="5"><strong>$7.99</strong></td>
+                                    </tr>
+                                    <tr>
+                                    	<td>Cost Price</td>
+                                        <td colspan="5">$4.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                     
+                    </div>
+                
+                    <div class="tab-pane" id="Inventory">
+                        <div class="panel panel-piluku">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h3><span class="ion-android-clipboard"></span>Inventory								
+                                    	<div class="panel-options custom">
+                                               <a href="#" class="btn btn-default pull-right">Edit</a>
+                                         </div>
+                                    </h3> 
+                                </div>
+                            </div>
+                            
+                    <h4 style="padding: 10px;">DrawInc</h4>
+                        <table class="table table-bordered table-hover table-striped">	
+                                <tbody>
+                                	<tr>
+                                    	<td width="30%">Quantity</td> 
+                                        <td> 0</td>
+                                    </tr>
+                                
+                                    <tr>
+                                    	<td>Reorder Level</td> 
+                                        <td> Not set</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                         </div>
+                        
+                                            
+                    </div>
+                    <div class="tab-pane" id="Images">
+                        <div class="panel panel-piluku">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h3><span class="ion-android-clipboard"></span> Images
+                                    	<div class="panel-options custom">
+                                           <a href="#" class="btn btn-default pull-right">Edit</a>
+                                        </div>
+                                    </h3> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end tabs -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="wrapper sales-bar mini-bar">
+  <div class="left-bar hidden-print">
+    	<div class="admin-logo">
+          <div class="logo-holder pull-left"> 
+                <img src="assets/images/header_logo.png" class="hidden-print logo" id="header-logo" alt=""> 
+          </div>
+      <!-- logo-holder --> 
+    </div>
+    <!-- admin-logo -->
+    
+    <ul class="list-unstyled menu-parent" id="mainMenu">
+          <li><a href="."><i class="icon ti-dashboard"></i><span class="text">Dashboard</span></a></li>
+          <li><a href="customers.html"><i class="icon ti-user"></i> <span class="text">Customers</span></a></li>
+          <li><a href="items.html"><i class="icon ti-harddrive"></i> <span class="text">Items</span></a> </li>
+   		  <li class="active"><a href="edit-item.html"><i class="icon ti-harddrives"></i><span class="text">Item Kits</span></a></li>
+          <li><a href="price-rules.html"><i class="ion-ios-pricetags-outline"></i><span class="text">Price Rules</span></a></li>
+          <li><a href="suppliers.html"><i class="icon ti-download"></i><span class="text">Suppliers</span></a></li>
+          <li><a href="reports.html"><i class="icon ti-bar-chart"></i><span class="text">Reports</span></a></li>
+          <li><a href="receivings.html"><i class="icon ti-cloud-down"></i><span class="text">Receiving</span></a></li>
+          <li><a href="sales.html"><i class="icon ti-shopping-cart"></i><span class="text">Sales</span></a></li>
+          <li><a href="#"><i class="ion-android-car"></i><span class="text">Deliveries</span></a></li>
+          <li><a href="#"><i class="icon ti-money"></i><span class="text">Expenses</span></a></li>
+          <li><a href="employee.html"><i class="icon ti-id-badge"></i><span class="text">Employees</span></a></li>
+          <li><a href="#"><i class="icon ti-credit-card"></i><span class="text">Gift Cards</span></a></li>
+          <li><a href="#"><i class="icon ti-settings"></i><span class="text">Store Config</span></a></li>
+          <li><a href="#"><i class="icon ti-home"></i><span class="text">Locations</span></a></li>
+          <li><a href="#"><i class="icon ti-email"></i><span class="text">Messages</span></a></li>
+          <li><a href="#"><i class="icon ti-power-off"></i><span class="text">Logout</span></a></li>
+    </ul>
+  </div>
+  <!-- left-bar -->
+  
+  <div class="content" id="">
+    <div class="overlay hidden-print"></div>
+        <div class="top-bar hidden-print">
+              <nav class="navbar navbar-default top-bar">
+                <div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i></div>
+                	<div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs"> 
+                    		<a href="#">Dashboard</a> 
+                       </div>
+                       
+                        <ul class="nav navbar-nav navbar-right top-elements">															
+															
+																		
+						<!-- redirect($_SERVER['HTTP_REFERER']);	 -->
+						<li class="dropdown">
+							<a  href="#" class="dropdown-toggle language-dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
+                            	<img class="flag_img" src="assets/images/english.png" alt=""> 
+                            	 <span class="hidden-sm hidden-xs"> English</span>
+                           		 <span class="drop-icon"><i class="ion ion-chevron-down"></i></span>
+                             </a>
+                             
+							<ul class="dropdown-menu animated fadeInUp wow language-drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+									<li><a href="#"><img class="flag_img" src="assets/images/english.png" alt="">English</a> </li>
+									<li><a href="#"><img class="flag_img" src="assets/images/indonesia.png" alt="">Indonesia</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/italian.png" alt="">Italian</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/portugues.png" alt="">Portugues</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/vietnamese.png" alt="">Vietnamese</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/dutch.png" alt="">Dutch</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/arabic.png" alt="">Arabic</a></li>
+							</ul>
+						</li>	
+													
+						
+
+												
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                	<i class="ion-ios-bell-outline  icon-notification"></i>
+                                    <span class="badge info-number count " id="unread_message_count">0</span>
+                                </a>
+									<ul class="dropdown-menu dropdown-menu-right animated fadeInUp wow message_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+										<li class="bottom-links"><a href="#" class="last_info">All Messages</a></li>
+										<li class="bottom-links"><a href="#" class="last_info">Sent Messages</a></li>
+                                        <li class="bottom-links"><a href="#" class="last_info">New Message</a></li>
+									</ul>
+							</li>
+														
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="avatar-holder"><img src="assets/images/avatar-default.jpg" alt=""></span>
+
+							<span class="avatar_info visible-sm visible-md visible-lg">John Doe</span></a>
+							<ul class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+                                <li><a id="support_link" href="#"><i class="ion-help-buoy"></i><span class="text">Support/Documentation</span></a></li>
+                                <li><a href="#"><i class="ion-android-settings"></i><span class="text">Settings</span></a></li>
+                                <li><a id="switch_user" href="#"><i class="ion-ios-toggle-outline"></i><span class="text">Switch User</span></a></li>
+                                <li><a href="#"><i class="ion-edit"></i><span class="text">Edit profile</span></a></li>
+                                <li><a href="#" class="logout_button"><i class="ion-power"></i><span class="text">Logout</span></a></li>			
+							</ul>
+						</li>							
+					</ul>
+              </nav>
+        </div>
+    <!-- top-bar -->
+    
+    <div class="main-content">
+        <div class="manage_buttons">
+            <div class="row">
+                <div class="col-xs-9 col-sm-10 col-md-10 col-lg-10 margin-top-10">
+                    <div class="modal-item-info padding-left-10">
+                        <div class="modal-item-details margin-bottom-10">
+                                <span class="modal-item-name">sfsdf</span>
+                            		<span class="modal-item-category">CNC &gt; COSMETICS</span>
+                            </div>
+                         </div>	
+                    </div>
+                    
+                 <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 margin-top-10">
+                    <div class="buttons-list">
+                        <div class="pull-right-btn">
+                        	<a href="#" class="outbound_link btn btn-primary btn-lg ion-android-exit">Done</a>				
+                       	</div>
+                    </div>
+                </div>
+             </div>
+        </div>
+
+		<nav class="navbar navbar-default panel-piluku manage-table">
+				<ul class="nav nav-justified nav-wizard ">
+					<li class="active">
+						<a href="edit-item.html" class="outbound_link" role="button">Item Kit Info</a>
+					</li>
+					
+					<li>
+						<a href="item-tabs.html" class="outbound_link" role="button">Items</a>
+					</li>
+					
+					<li>
+						<a href="pricing-tab.html" class="outbound_link" role="button">Pricing</a>
+					</li>
+					
+					<li>
+						<a href="location.html" class="outbound_link" role="button">Locations</a>
+					</li>
+				</ul>
+		</nav>
+
+		<form id="item_kit_form" class="form-horizontal" method="post">
+			<div class="row" id="form">
+				<div class="col-md-12">
+					<div class="panel panel-piluku">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<i class="ion-information-circled"></i> Item Kit Information <small>(Fields in red are required)</small>
+							</h3>
+							
+							<div class="panel-options custom pagination pagination-top hidden-print text-center" id="pagination_top">
+								<a href="#">
+									<span class="hidden-xs ion-chevron-left"> Previous Item Kit</span>
+								</a>	  		
+							</div>
+					  </div>
+					  
+						<div class="panel-body">      
+							<div class="form-group has-success">
+									<label for="name" class="col-sm-3 col-md-3 col-lg-2 control-label">Item Kit Name:</label>					
+								
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="text" name="name" value="sfsdf" class="form-control form-inps" id="name">
+								</div>
+							</div>
+			
+							<div class="form-group">
+								<label class="col-sm-3 col-md-3 col-lg-2 control-label  required wide">Category:</label>					
+									<div class="col-sm-9 col-md-9 col-lg-10">
+										<select name="category_id" class="form-control form-inps selectized" id="category_id">
+											<option selected="selected">&nbsp;&nbsp;COSMETICS</option>
+										</select>
+									 <div>
+									  
+									   <a href="javascript:void(0);" id="add_category">Add Category</a>
+								   </div>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="name" class="col-sm-3 col-md-3 col-lg-2 control-label  ">UPC/EAN/ISBN:</label>					
+									
+									<div class="col-sm-9 col-md-9 col-lg-10">
+										<input type="text" name="item_kit_number" value="" class="form-control form-inps" id="item_kit_number">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="product_id" class="col-sm-3 col-md-3 col-lg-2 control-label wide">Product ID:</label>					
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="text" name="product_id" value="" id="product_id" class="form-control form-inps">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="manufacturer_id" class="col-sm-3 col-md-3 col-lg-2 control-label wide">Manufacturer:</label>
+								
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<select name="manufacturer_id" class="form-control" id="manufacturer_id">
+										<option value="-1">None</option>
+										<option value="1">CNC Supply</option>
+									</select>
+									
+									<div>
+										<a href="#">Manage manufacturers</a>						
+									</div>                        
+								</div>
+							</div>
+			
+							<div class="form-group">
+								<label for="tags" class="col-sm-3 col-md-3 col-lg-2 control-label wide">Tags:</label>	
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<input type="text" name="tags" value="" id="tags" class="form-control form-inps selectized" tabindex="-1" style="display: none;">
+								 <div>        
+								  <a href="#" title="Manage tags">Manage tags</a>							
+								</div>
+							 </div>
+			 </div>
+			
+							<div class="form-group">
+								<label for="description" class="col-sm-3 col-md-3 col-lg-2 control-label">Item Kit Description:</label>					
+								
+								<div class="col-sm-9 col-md-9 col-lg-10">
+									<textarea name="description" cols="17" rows="5" id="description" class="form-control text-area"></textarea>
+								</div>
+							</div>
+																																			  
+						
+							<input type="hidden" name="redirect" value="item_kits">
+										
+							<input type="hidden" name="progression" value="">
+										
+							<input type="hidden" name="quick_edit" value="">
+							
+										
+						<div class="form-actions pull-right">
+							<input type="submit" name="submit" value="Save" id="submit" class="submit_button floating-button btn btn-lg btn-primary">
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+</div>
+
+<script type="text/javascript">
+var submitting = false;
+
+function hashDiff(h1, h2) {
+  var d = {};
+  for (k in h2) {
+    if (h1[k] !== h2[k]) d[k] = h2[k];
+  }
+  return d;
+}
+
+function convertSerializedArrayToHash(a) { 
+  var r = {}; 
+  for (var i = 0;i<a.length;i++) {
+		if(a[i].name !== 'submitf')
+		{
+			r[a[i].name] += a[i].value;
+		}
+  }
+  return r;
+}
+
+var $form = $('#item_form, #item_kit_form').eq(0);
+
+var startItems;
+
+$(document).ready(function() {		
+	if(!startItems)
+	{
+		startItems = convertSerializedArrayToHash($form.serializeArray());
+	}
+});
+
+function doItemSubmit(form, args)
+{
+  var currentItems = convertSerializedArrayToHash($form.serializeArray());
+	
+	var startItems_length = $.map(startItems, function(n, i) { return i; }).length;
+	var currentItems_length = $.map(currentItems, function(n, i) { return i; }).length;
+	
+  var itemsToSubmit = hashDiff(startItems, currentItems);
+		
+	if($.isEmptyObject(itemsToSubmit) && startItems_length == currentItems_length)
+	{
+		show_feedback('warning',"warning","There was no updated information to save.");
+		
+		return;
+	}
+	
+	if (submitting) return;
+	submitting = true;
+	
+	$('#grid-loader').show();
+	
+	$(form).ajaxSubmit({
+	success:function(response)
+	{
+		$('#grid-loader').hide();
+			startItems = convertSerializedArrayToHash($form.serializeArray());
+			submitting = false;		
+										show_feedback(response.success ? 'success' : 'error', response.message, response.success ? "Success" +' #' + response.item_kit_id : "Error");
+						
+						
+			if(response.progression && response.redirect=='sales/index/1' && response.success)
+			{ 
+				item_save_confirm_dialog({
+					reload: response.reload ? true : false,
+					id: response.item_id,
+					confirm: {
+						label: "Add Item to Sale",
+						post_url: "https:\/\/demo.phppointofsale.com\/index.php\/sales\/add",
+						redirect: "https:\/\/demo.phppointofsale.com\/index.php\/sales\/index\/1"},
+					cancel: {
+						label: args.next.label,
+						redirect: args.next.url
+					}
+				});
+			}
+			else if(response.progression && response.redirect=='receivings/' && response.success)
+			{
+				item_save_confirm_dialog({
+					reload: response.reload ? true : false,
+					id: response.item_id,
+					confirm: {
+						label: "Add Item to Receiving",
+						post_url: "https:\/\/demo.phppointofsale.com\/index.php\/receivings\/add",
+						redirect: "https:\/\/demo.phppointofsale.com\/index.php\/receivings"},
+					cancel: {
+						label: args.next.label,
+						redirect: args.next.url
+					}
+				});
+			}
+			else if(response.progression && response.redirect == 'items' && response.success)
+			{
+				if(args.next.redirect)
+				{
+					item_save_confirm_dialog({
+						reload: response.reload ? true : false,
+						id: response.item_id,
+						confirm: {
+							label: "Return to Items",
+							post_url: null,
+							redirect: "https:\/\/demo.phppointofsale.com\/index.php\/items"},
+						cancel: {
+							label: "Continue Editing",
+							redirect: null
+						}
+					});
+				}
+				else
+				{
+					if(response.reload)
+					{
+						window.location.reload();
+					}
+					else
+					{
+						window.location.href = args.next.url.replace(/-1/g, response.item_id);
+					}	
+				}
+			}
+			else if(response.progression && response.redirect == 'item_kits' && response.success)
+			{
+				if(args.next.redirect)
+				{
+					item_save_confirm_dialog({
+						reload: response.reload ? true : false,
+						id: response.item_kit_id,
+						confirm: {
+							label: "Return to Item Kits",
+							post_url: null,
+							redirect: "https:\/\/demo.phppointofsale.com\/index.php\/item_kits"},
+						cancel: {
+							label: "Continue Editing",
+							redirect: null
+						}
+					});
+				}
+				else
+				{
+					window.location.href = args.next.url.replace(/-1/g, response.item_kit_id);
+				}
+			}
+			else if(response.redirect == 'items' && response.success)
+			{
+				if(response.quick_edit)
+				{
+					window.location.href = "https:\/\/demo.phppointofsale.com\/index.php\/items";
+				}
+				else
+				{
+						item_save_confirm_dialog({
+							reload: response.reload ? true : false,
+							id: response.item_id,
+							confirm: {
+								label: "Return to Items",
+								post_url: null,
+								redirect: "https:\/\/demo.phppointofsale.com\/index.php\/items"},
+							cancel: {
+								label: "Continue Editing",
+								redirect: null
+							}
+						});
+					
+				}
+			}
+			else if(response.redirect == 'item_kits' && response.success)
+			{
+				if(response.quick_edit)
+				{
+					window.location.href = "https:\/\/demo.phppointofsale.com\/index.php\/item_kits";
+				}
+				else
+				{
+					item_save_confirm_dialog({
+						reload: response.reload ? true : false,
+						id: response.item_id,
+						confirm: {
+							label: "Return to Item Kits",
+							post_url: null,
+							redirect: "https:\/\/demo.phppointofsale.com\/index.php\/item_kits"},
+						cancel: {
+							label: "Continue Editing",
+							redirect: null
+						}
+					});
+				}
+			}
+	},
+	dataType:'json'
+	});
+}
+
+$('a.outbound_link').click(function(e)
+{
+	var $that = $(this);
+	
+  var currentItems = convertSerializedArrayToHash($form.serializeArray());
+  var itemsToSubmit = hashDiff(startItems, currentItems);
+		
+	$form.validate();
+		
+	if(!$form.valid())
+	{
+		e.preventDefault();
+		bootbox.alert("You must fill out the required fields before making other changes.");
+		return;
+	}
+		
+	if($.isEmptyObject(itemsToSubmit))
+	{
+		return;
+	}
+		
+	e.preventDefault();
+		
+	$('#grid-loader').show();
+	
+	$form.ajaxSubmit({
+		success: function(response,status)
+		{
+			var id = response.item_id ? response.item_id : response.item_kit_id;
+
+			var updated_href = $that.attr('href').replace(/-1/g, id);
+			$(e.target).attr('href', updated_href);
+			$('#grid-loader').hide();
+			window.location = updated_href;
+
+		},
+		dataType:'json'
+	});
+	
+});
+
+function item_save_confirm_dialog(args) {
+	
+	bootbox.confirm({
+	    message: "What would you like to do next?",
+	    buttons: {
+	        confirm: {
+	            label: args.confirm.label,
+	            className: 'btn-primary'
+	        },
+	        cancel: {
+	            label: args.cancel.label,
+							className: 'btn-default'
+	            
+	        }
+	    },
+	    callback: function (result) {
+				if(result)
+				{
+					
+					var done = function() {
+							window.location.href = args.confirm.redirect;
+					};
+					
+					if(args.confirm.post_url)
+					{
+						$.post(args.confirm.post_url, {item: args.id}, done);
+					} else {
+						done();
+					}
+					
+				} else {
+					if(args.cancel.redirect)
+					{
+						window.location.href = args.cancel.redirect.replace(/-1/g, args.id);
+					}
+					
+					if(args.reload)
+					{
+						window.location.reload();
+					}
+				}
+	    }
+	});
+}
+function commission_change()
+{
+	if ($("#commission_type").val() == 'percent')
+	{
+		$("#commission-percent-calculation-container").show();
+	}
+	else
+	{
+		$("#commission-percent-calculation-container").hide();						
+	}
+}
+$("#commission_type").change(commission_change);
+$(document).ready(commission_change);
+
+function get_taxes()
+{
+	var taxes = [];
+	
+	if (!$("#override_default_tax").prop('checked'))
+	{
+		var default_taxes = [];
+	
+		for(var k = 0;k<default_taxes.length;k++)
+		{
+			taxes.push({'percent': parseFloat(default_taxes[k]['percent']), 'cumulative':default_taxes[k]['cumulative'] == 1});
+		}	
+	}
+	else
+	{
+		var k=0;
+		
+		$('.tax-container.main input[name="tax_percents[]"]').each(function()
+		{
+			if ($(this).val())
+			{
+				taxes.push({'percent': parseFloat($(this).val()), 'cumulative': k==1 && $("#tax_cumulatives").prop('checked')});
+			}
+			
+			k++;
+		});	
+	}
+	return taxes;
+	
+}
+
+function get_total_tax_percent()
+{
+	var total_tax_percent = 0;
+	var taxes = get_taxes();
+	for(var k = 0;k<taxes.length;k++)
+	{
+		total_tax_percent += parseFloat(taxes[k]['percent']);
+	}
+	
+	return total_tax_percent;
+}
+
+function are_taxes_cumulative()
+{
+	var taxes = get_taxes();
+	
+	return (taxes.length == 2 && taxes[1].cumulative);
+}
+
+function calculate_margin_percent()
+{
+	if ($("#tax_included").prop('checked') )
+	{
+		var cost_price = parseFloat($('#cost_price').val());
+		var unit_price = parseFloat($('#unit_price').val());
+
+		var cumulative = are_taxes_cumulative();
+		
+		if (!cumulative)
+		{
+			//Margin amount
+			//(100*.1)
+			//100 + (100*.1) = 118.80 * .08 
+	
+			//cost price 100.00
+			//8% tax
+			//margin 10%
+			//110.00 before tax
+			//selling price 118.80
+			//100 * 1.1 = profit 10%	
+	
+	
+			// X = COST PRICE
+			// Y = MARGIN PERCENT
+			// Z = SELLING PRICE
+			// Q = TAX PERCENT
+			//100 * (1+ (10/100)) = 118.80 - (100 * (1+ (10/100)) * 8/100);
+	
+			//X * (1+Y/100) = Z - (X * (1+(Y/100)) * Q/100)
+			//Y = -(100 ((Q+100) X-100 Z))/((Q+100) X) and (Q+100) X!=0
+
+			var tax_percent = parseFloat(get_total_tax_percent());
+		
+			var Z = unit_price;
+			var X = cost_price;
+			var Q = tax_percent;
+			var margin_percent = -(100*((Q+100)*X-100*Z))/((Q+100)*X);
+		}
+		else
+		{
+			var taxes = get_taxes();
+			var tax_1 = 1+(taxes[0]['percent']/100);
+			var tax_2 = 1+(taxes[1]['percent']/100);
+			margin_percent = (unit_price / (cost_price * tax_1 * tax_2) - 1) * 100;
+		}
+
+	}
+	else
+	{
+		var cost_price = parseFloat($('#cost_price').val());
+		var unit_price = parseFloat($('#unit_price').val());
+		var margin_percent =  -100 + (100*(unit_price/cost_price));
+	}
+
+	margin_percent = parseFloat(Math.round(margin_percent * 100) / 100).toFixed(2);
+	
+	$('#margin').val(margin_percent + '%');
+}
+
+function calculate_margin_price()
+{		
+	if ($("#tax_included").prop('checked') )
+	{		
+		var cost_price = parseFloat($('#cost_price').val());
+		var margin_percent = parseFloat($("#margin").val());
+		
+		var cumulative = are_taxes_cumulative();
+		
+		if (!cumulative)
+		{
+			//Margin amount
+			//(100*.1)
+			//100 + (100*.1) = 118.80 * .08 
+	
+			//cost price 100.00
+			//8% tax
+			//margin 10%
+			//110.00 before tax
+			//selling price 118.80
+			//100 * 1.1 = profit 10%	
+	
+	
+			// X = COST PRICE
+			// Y = MARGIN PERCENT
+			// Z = SELLING PRICE
+			// Q = TAX PERCENT
+			//100 * (1+ (10/100)) = 118.80 - (100 * (1+ (10/100)) * 8/100);
+	
+			//X * (1+Y/100) = Z - (X * (1+(Y/100)) * Q/100)
+			//Z = (Q X Y+100 Q X+100 X Y+10000 X)/10000
+			
+			var tax_percent = get_total_tax_percent();
+				
+			var X = cost_price;
+			var Y = margin_percent;
+			var Q = tax_percent;
+		
+			var margin_price = (Q*X*Y+100*Q*X+100*X*Y+10000*X)/10000;		
+		}
+		else
+		{
+			var marked_up_price_before_tax = cost_price * (1+(margin_percent/100));
+			
+			var taxes = get_taxes();
+			var cumulative_tax_percent = taxes[1]['percent'];
+			
+			var first_tax = (marked_up_price_before_tax*(taxes[0]['percent']/100));
+			var second_tax = (marked_up_price_before_tax + first_tax) *(taxes[1]['percent']/100);
+			var margin_price = marked_up_price_before_tax + first_tax + second_tax;
+		}
+		
+		margin_price = parseFloat(Math.round(margin_price * 100) / 100).toFixed(2);
+	}
+	else
+	{
+		var cost_price = parseFloat($('#cost_price').val());
+		var margin_percent = parseFloat($("#margin").val());
+
+		var margin_price = cost_price + (cost_price / 100 * (margin_percent));
+		margin_price = parseFloat(Math.round(margin_price * 100) / 100).toFixed(2);
+		
+	}
+
+	$('#unit_price').val(margin_price);
+}
+
+setTimeout(function(){$(":input:visible:first","#item_kit_form").focus();},100);
+
+//validation and submit handling
+$(document).ready(function()
+{
+	$('#category_id').selectize({
+		create: true,
+		render: {
+	    item: function(item, escape) {
+				var item = '<div class="item">'+ escape($('<div>').html(item.text).text()) +'</div>';
+				return item;
+	    },
+	    option: function(item, escape) {
+				var option = '<div class="option">'+ escape($('<div>').html(item.text).text()) +'</div>';
+				return option;
+	    },
+      option_create: function(data, escape) {
+			var add_new = "New Category";
+        return '<div class="create">'+escape(add_new)+' <strong>' + escape(data.input) + '</strong></div>';
+      }
+		}
+	});
+		
+	$('#tags').selectize({
+		delimiter: ',',
+		loadThrottle : 215,
+		persist: false,
+		valueField: 'value',
+		labelField: 'label',
+		searchField: 'label',
+		create: true,
+		render: {
+	      option_create: function(data, escape) {
+				var add_new = "Add new tag";
+	        return '<div class="create">'+escape(add_new)+' <strong>' + escape(data.input) + '</strong></div>';
+	      }
+		},
+		load: function(query, callback) {
+			if (!query.length) return callback();
+			$.ajax({
+				url:'https://demo.phppointofsale.com/index.php/item_kits/tags'+'?term='+encodeURIComponent(query),
+				type: 'GET',
+				error: function() {
+					callback();
+				},
+				success: function(res) {
+					res = $.parseJSON(res);
+					callback(res);
+				}
+			});
+		}
+	});
+	
+	$('#item_kit_form').validate({
+		ignore: ':hidden:not([class~=selectized]),:hidden > .selectized, .selectize-control .selectize-input input',
+		submitHandler:function(form)
+		{
+			var args = {
+				next: {
+					label: "Edit Items",
+					url: "https:\/\/demo.phppointofsale.com\/index.php\/item_kits\/items\/3?redirect=item_kits",
+				}
+			};
+			
+			$.post('https://demo.phppointofsale.com/index.php/item_kits/check_duplicate', {term: $('#name').val()},function(data) {
+							doItemSubmit(form, args);
+						} , "json");
+		},
+	errorClass: "text-danger",
+	errorElement: "span",
+	highlight:function(element, errorClass, validClass) {
+		$(element).parents('.form-group').removeClass('has-success').addClass('has-error');
+	},
+	unhighlight: function(element, errorClass, validClass) {
+		$(element).parents('.form-group').removeClass('has-error').addClass('has-success');
+	},
+		rules:
+			{
+				name:"required",
+				category_id:"required",
+			},
+			messages:
+			{
+				name:"Item Name is a required field",
+				category_id:"Category is a required field",	
+			}
+	});
+});
+
+$("#verify_age").click(function()
+{
+	if ($('#verify_age').prop('checked'))
+	{
+		$("#required_age_container").removeClass('hidden');	
+	}
+	else
+	{
+		$("#required_age_container").addClass('hidden');
+	}
+	
+});
+
+
+$("#categories_form").submit(function(event)
+{
+	event.preventDefault();
+
+	$(this).ajaxSubmit({ 
+		success: function(response, statusText, xhr, $form){
+			show_feedback(response.success ? 'success' : 'error', response.message, response.success ? "Success" : "Error");
+			if(response.success)
+			{
+				$("#category-input-data").modal('hide');
+				
+				var category_id_selectize = $("#category_id")[0].selectize
+				category_id_selectize.clearOptions();
+				category_id_selectize.addOption(response.categories);		
+				category_id_selectize.addItem(response.selected, true);
+				
+			}		
+		},
+		dataType:'json',
+	});
+});
+
+$(document).on('click', "#add_category",function()
+{
+	$("#categoryModalDialogTitle").html("Add Category");
+	var parent_id = $("#category_id").val();
+	
+	$parent_id_select = $('#parent_id');
+	$parent_id_select[0].selectize.setValue(parent_id, false);
+	
+	$("#categories_form").attr('action',SITE_URL+'/items/save_category');
+	
+	//Clear form
+	$(":file").filestyle('clear');
+	$("#categories_form").find('#category_name').val("");
+	$("#categories_form").find('#category_color').val("");
+	$('#category_color').colorpicker('setValue', '');
+	$("#categories_form").find('#category_image').val("");
+	$("#categories_form").find('#image-preview').attr('src','');
+	$('#del_image').prop('checked',false);
+	$('#preview-section').hide();
+	
+	//show
+	$("#category-input-data").modal('show');
+});
+
+</script>
+
+
+
+		<div id="footers" class="col-md-12 hidden-print text-center">
+				Please visit our 
+					<a href="#" target="_blank">Website</a> to learn the latest information about the project.
+					<span class="text-info">You are using PHP Point Of Sale Version 
+						<span class="badge bg-primary"> 16.2</span>
+					</span> 
+					Built on 07/18/2018 09:13 am EST
+			</div>
+ 
+</div>
+</body>
+</html>

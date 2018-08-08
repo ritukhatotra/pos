@@ -1,0 +1,513 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo - PHP Point Of Sale | Easy to use Online POS Software</title>	
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"> <!--320-->    
+<link rel="stylesheet" type="text/css" href="assets/css/all.css" />
+<script type="text/javascript" src="assets/js/all.js"></script>
+</head>
+
+<body>
+
+<div class="modal fade hidden-print" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog customer-recent-sales">
+        <div class="modal-content">
+            <div class="modal-header" id="myTabHeader">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="ti-close"></span></button>
+                <div class="modal-item-details">
+                        <h4 class="modal-title">New Item 2018</h4>
+                </div>
+                <nav>
+                
+            <ul id="myTab" class="nav nav-tabs nav-justified">
+                        <li class="active"><a href="#ItemInfo" data-toggle="tab">Item Info</a></li>
+              			<li class=""><a href="#Pricing" data-toggle="tab">Pricing</a></li>
+                        <li class=""><a href="#Inventory" data-toggle="tab">Inventory</a></li>
+                        <li class=""><a href="#Images" data-toggle="tab">Images</a></li>
+            </ul>
+                </nav>
+            </div>
+            
+            <div class="modal-body" id="myTabModalBody">    
+                <div class="tab-content">
+                    <div class="tab-pane active" id="ItemInfo">
+                        <div class="panel panel-piluku">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h3><span class="ion-information-circled"></span>Item Information
+                                        <div class="panel-options custom">
+                                              <a href="#" class="btn btn-default pull-right">Edit</a>
+                                          </div>
+                                    </h3> 
+                                </div>
+                            </div>
+                            
+                            <table class="table table-bordered table-hover table-striped">
+                                <tbody>
+                                	<tr>
+                                    	<td width="40%">Category</td> 
+                                        <td>General</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    	<td width="40%">Item Id</td> 
+                                        <td>50</td>
+                                    </tr>
+                                     
+                                     <tr>
+                                     	<td>UPC/EAN/ISBN</td> 
+                                        <td>011111222223</td>
+                                     </tr>																												
+                                     <tr>
+                                     	<td>Supplier</td>
+                                        <td>Test Supplier (First Last)</td>
+                                     </tr>														
+                                     <tr> 
+                                         <td>Allow Alt Description</td> 
+                                         <td> No</td>
+                                     </tr>
+                                      <tr> 
+                                      		<td>Item has Serial Number</td> 
+                                            <td> No</td>
+                                       </tr>
+                                      <tr> 
+                                      	<td>Is Ecommerce Item</td> 
+                                        <td> No</td>
+                                      </tr>
+                            	</tbody>
+                           </table>
+                            
+                        </div>
+                   </div>
+                    <div class="tab-pane" id="Pricing">
+                        <div class="panel panel-piluku">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h3><span class="ion-cash"></span> Pricing								
+                                    
+                                    <div class="panel-options custom">
+                                           <a href="#" class="btn btn-default pull-right">Edit</a>
+                                     </div>
+                                    </h3> 
+                                </div>
+                            </div>
+                            
+                         <table class="table table-bordered table-hover table-striped">  
+                                <tbody>
+                                	<tr>
+                                    	<td width="25%">Selling Price</td>
+                                        <td colspan="5"><strong>$7.99</strong></td>
+                                    </tr>
+                                    <tr>
+                                    	<td>Cost Price</td>
+                                        <td colspan="5">$4.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                     
+                    </div>
+                
+                    <div class="tab-pane" id="Inventory">
+                        <div class="panel panel-piluku">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h3><span class="ion-android-clipboard"></span>Inventory								
+                                    	<div class="panel-options custom">
+                                               <a href="#" class="btn btn-default pull-right">Edit</a>
+                                         </div>
+                                    </h3> 
+                                </div>
+                            </div>
+                            
+                    <h4 style="padding: 10px;">DrawInc</h4>
+                        <table class="table table-bordered table-hover table-striped">	
+                                <tbody>
+                                	<tr>
+                                    	<td width="30%">Quantity</td> 
+                                        <td> 0</td>
+                                    </tr>
+                                
+                                    <tr>
+                                    	<td>Reorder Level</td> 
+                                        <td> Not set</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                         </div>
+                        
+                                            
+                    </div>
+                    <div class="tab-pane" id="Images">
+                        <div class="panel panel-piluku">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h3><span class="ion-android-clipboard"></span> Images
+                                    	<div class="panel-options custom">
+                                           <a href="#" class="btn btn-default pull-right">Edit</a>
+                                        </div>
+                                    </h3> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end tabs -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="wrapper sales-bar mini-bar">
+  <div class="left-bar hidden-print">
+    	<div class="admin-logo">
+          <div class="logo-holder pull-left"> 
+                <img src="assets/images/header_logo.png" class="hidden-print logo" id="header-logo" alt=""> 
+          </div>
+      <!-- logo-holder --> 
+    </div>
+    <!-- admin-logo -->
+    
+    <ul class="list-unstyled menu-parent" id="mainMenu">
+          <li><a href="."><i class="icon ti-dashboard"></i><span class="text">Dashboard</span></a></li>
+          <li><a href="customers.html"><i class="icon ti-user"></i> <span class="text">Customers</span></a></li>
+          <li><a href="items.html"><i class="icon ti-harddrive"></i> <span class="text">Items</span></a> </li>
+   		  <li><a href="edit-item.html"><i class="icon ti-harddrives"></i><span class="text">Item Kits</span></a></li>
+          <li><a href="price-rules.html"><i class="ion-ios-pricetags-outline"></i><span class="text">Price Rules</span></a></li>
+          <li><a href="suppliers.html"><i class="icon ti-download"></i><span class="text">Suppliers</span></a></li>
+          <li><a href="reports.html"><i class="icon ti-bar-chart"></i><span class="text">Reports</span></a></li>
+          <li class="active"><a href="receivings.html"><i class="icon ti-cloud-down"></i><span class="text">Receiving</span></a></li>
+          <li><a href="sales.html"><i class="icon ti-shopping-cart"></i><span class="text">Sales</span></a></li>
+          <li><a href="#"><i class="ion-android-car"></i><span class="text">Deliveries</span></a></li>
+          <li><a href="#"><i class="icon ti-money"></i><span class="text">Expenses</span></a></li>
+          <li><a href="employee.html"><i class="icon ti-id-badge"></i><span class="text">Employees</span></a></li>
+          <li><a href="#"><i class="icon ti-credit-card"></i><span class="text">Gift Cards</span></a></li>
+          <li><a href="#"><i class="icon ti-settings"></i><span class="text">Store Config</span></a></li>
+          <li><a href="#"><i class="icon ti-home"></i><span class="text">Locations</span></a></li>
+          <li><a href="#"><i class="icon ti-email"></i><span class="text">Messages</span></a></li>
+          <li><a href="#"><i class="icon ti-power-off"></i><span class="text">Logout</span></a></li>
+    </ul>
+  </div>
+  <!-- left-bar -->
+  
+  <div class="content" id="">
+    <div class="overlay hidden-print"></div>
+        <div class="top-bar hidden-print">
+              <nav class="navbar navbar-default top-bar">
+                <div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i></div>
+                	<div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs"> 
+                    		<a href="#">Dashboard</a> 
+                       </div>
+                       
+                        <ul class="nav navbar-nav navbar-right top-elements">															
+															
+																		
+						<!-- redirect($_SERVER['HTTP_REFERER']);	 -->
+						<li class="dropdown">
+							<a  href="#" class="dropdown-toggle language-dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
+                            	<img class="flag_img" src="assets/images/english.png" alt=""> 
+                            	 <span class="hidden-sm hidden-xs"> English</span>
+                           		 <span class="drop-icon"><i class="ion ion-chevron-down"></i></span>
+                             </a>
+                             
+							<ul class="dropdown-menu animated fadeInUp wow language-drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+									<li><a href="#"><img class="flag_img" src="assets/images/english.png" alt="">English</a> </li>
+									<li><a href="#"><img class="flag_img" src="assets/images/indonesia.png" alt="">Indonesia</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/italian.png" alt="">Italian</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/portugues.png" alt="">Portugues</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/vietnamese.png" alt="">Vietnamese</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/dutch.png" alt="">Dutch</a></li>
+                                    <li><a href="#"><img class="flag_img" src="assets/images/arabic.png" alt="">Arabic</a></li>
+							</ul>
+						</li>	
+													
+						
+
+												
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                	<i class="ion-ios-bell-outline  icon-notification"></i>
+                                    <span class="badge info-number count " id="unread_message_count">0</span>
+                                </a>
+									<ul class="dropdown-menu dropdown-menu-right animated fadeInUp wow message_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+										<li class="bottom-links"><a href="#" class="last_info">All Messages</a></li>
+										<li class="bottom-links"><a href="#" class="last_info">Sent Messages</a></li>
+                                        <li class="bottom-links"><a href="#" class="last_info">New Message</a></li>
+									</ul>
+							</li>
+														
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="avatar-holder"><img src="assets/images/avatar-default.jpg" alt=""></span>
+
+							<span class="avatar_info visible-sm visible-md visible-lg">John Doe</span></a>
+							<ul class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
+                                <li><a id="support_link" href="#"><i class="ion-help-buoy"></i><span class="text">Support/Documentation</span></a></li>
+                                <li><a href="#"><i class="ion-android-settings"></i><span class="text">Settings</span></a></li>
+                                <li><a id="switch_user" href="#"><i class="ion-ios-toggle-outline"></i><span class="text">Switch User</span></a></li>
+                                <li><a href="#"><i class="ion-edit"></i><span class="text">Edit profile</span></a></li>
+                                <li><a href="#" class="logout_button"><i class="ion-power"></i><span class="text">Logout</span></a></li>			
+							</ul>
+						</li>							
+					</ul>
+              </nav>
+        </div>
+    <!-- top-bar -->
+		  <div class="main-content">
+		<div id="sales_page_holder">
+			<div id="sale-grid-big-wrapper" class="clearfix register">
+				<div class="clearfix" id="category_item_selection_wrapper" style="display: block;">
+					<div class="">
+						<div class="text-center">
+							<div id="grid_selection" class="btn-group" role="group">
+								<a href="javascript:void(0);" class="btn active btn btn-grid" id="by_category">Categories</a>
+								<a href="javascript:void(0);" class=" btn btn-grid" id="by_tag">Tags</a>
+							</div>
+						</div>
+
+					<div id="grid_breadcrumbs">
+						<a href="javascript:void(0);" class="category_breadcrumb_item" data-category_id="0">All</a>
+					</div>
+					
+						<div id="category_item_selection" class="row register-grid">
+							<div class="category_item category col-md-2 register-holder categories-holder col-sm-3 col-xs-6">
+								<p> 
+									<i class="ion-ios-folder-outline"></i> Drive
+								</p>
+							</div>
+							<div class="category_item category col-md-2 register-holder categories-holder col-sm-3 col-xs-6">
+								<p> 
+									<i class="ion-ios-folder-outline"></i> food
+								</p>
+							</div>
+							
+							<div class="category_item category col-md-2 register-holder categories-holder col-sm-3 col-xs-6">
+								<p> 
+									<i class="ion-ios-folder-outline"></i> General Household
+								</p>
+							</div>
+							<div class="category_item category col-md-2 register-holder categories-holder col-sm-3 col-xs-6">
+								<p> 
+									<i class="ion-ios-folder-outline"></i> plastics</p>
+							</div>
+						</div>
+						<div class="pagination hidden-print alternate text-center categories"></div>
+					</div>
+				</div>
+	</div>
+		
+
+
+		<div id="register_container" class="sales clearfix">
+			<a  href="#" class="dismissfullscreen hidden">
+				<i class="ion-close-circled"></i>
+			</a>
+			
+		<div class="row register">
+			<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 no-padding-right no-padding-left">
+				<div class="register-box register-items-form">
+					
+					<div class="item-form">
+						<!-- Item adding form -->
+						<form  id="add_item_form" class="form-inline" method="post">
+							<div class="input-group input-group-mobile contacts">
+								<span class="input-group-addon">
+									<a href="#" class="none add-new-item" title="New Item" id="new-item-mobile">
+										<i class="icon ti-pencil-alt"></i> 
+										<span class="register-btn-text">New Item</span>
+									</a>						
+								</span>
+								
+								<div class="input-group-addon register-mode receive-mode dropdown">
+									<a href="#" class="none active" id="register-mode-mobile" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+										<i class="icon ti-shopping-cart"></i>
+										<span class="register-btn-text">Receive</span>
+									</a>					       
+									<ul class="dropdown-menu sales-dropdown">
+										<li><a href="#" class="change-mode">Return</a></li>
+										<li><a href="#" class="change-mode">Purchase Order</a></li>
+									</ul>
+								</div>
+								
+								<span class="input-group-addon grid-buttons ">
+									<a href="#" class="none show-grid" title="Show Grid">
+										<i class="icon ti-layout"></i> 
+										<span class="register-btn-text"> Show Grid</span>
+									</a>				
+									<a href="#" class="none hide-grid hidden" title="Hide Grid">
+										<i class="icon ti-layout"></i> <span class="register-btn-text"> Hide Grid</span>
+									</a>						
+								</span>
+							</div>
+
+							<div class="input-group contacts  register-input-group">
+								<span class="input-group-addon">
+									<a href="#" class="none add-new-item" id="new-item">
+										<i class="icon ti-pencil-alt"></i>
+									</a>				
+								</span>
+								
+								<span class="ui-helper-hidden-accessible"></span>
+								<input type="text" id="item" name="item" class="add-item-input pull-left keyboardTop ui-autocomplete-input" placeholder="Enter item name or scan barcode">
+								
+
+								<div class="input-group-addon register-mode receive-mode dropdown">
+									<a href="#" class="none active" id="register-mode" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+										<i class="icon ti-shopping-cart"></i>Receive
+									</a>					      
+
+									<ul class="dropdown-menu sales-dropdown">
+										<li><a href="#" class="change-mode">Return</a></li>
+										<li><a href="#" class="change-mode">Purchase Order</a></li>
+									</ul>
+								</div>
+								
+								<span class="input-group-addon grid-buttons ">
+									<a href="#" class="none show-grid" title="Show Grid">
+										<i class="icon ti-layout"></i> Show Grid
+									</a>							
+									<a href="#" class="none hide-grid hidden" title="Hide Grid">
+										<i class="icon ti-layout"></i> Hide Grid
+								   </a>						
+								</span>
+							</div>
+						</form>
+					</div>
+
+				</div>
+				<!-- /.Item Form -->
+
+					<!-- Register Items. @contains : Items table -->
+				<div class="register-box register-items paper-cut">
+					<div class="register-items-holder">
+						
+								
+							<table id="register" class="table table-hover">
+
+								<thead>
+									<tr class="register-items-header">
+										<th></th>
+										<th class="item_name_heading">Item Name</th>
+										<th class="sales_price">Cost</th>
+										<th class="sales_quantity">Qty.</th>
+										<th class="sales_discount">Disc %</th>
+										<th>Total</th>								
+									</tr>
+								</thead>
+
+						
+							<tbody class="register-item-content">
+								<tr class="cart_content_area">
+									<td colspan="6">
+										<div class="text-center text-warning"> 
+											<h3>There are no items in the cart <span class="flatRedc"> [Receiving]</span></h3>
+										</div>
+									</td>
+								</tr>
+							   </tbody>
+							</table>
+					</div>
+					
+					<!-- End of Sales or Return Mode -->
+									<!-- End of Store Account Payment Mode -->
+				</div>
+				<!-- /.Register Items -->
+						
+			</div>
+
+			<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+				<div class="register-box register-right">
+			<!-- Receive  Top Buttons  -->
+					<div class="sale-buttons">
+						<!-- Extra links -->
+						<div class="btn-group">
+							<button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="ion-android-more-horizontal"></i>
+							</button>
+							<ul class="dropdown-menu sales-dropdown" role="menu">
+								<li>
+									<a href="#" class="none suspended_sales_btn" title="Suspended Receivings">
+										<i class="ion-ios-list-outline"></i> Suspended Receivings And <br> Purchase orders</a>						
+							   </li>
+								
+								<li>
+									<a href="#" class="none suspended_sales_btn" title="Create Purchase Order">
+										<i class="ion-ios-paper"></i> Create Purchase Order</a>						
+								</li>
+							
+								
+								<li>
+									<a href="#" class="none suspended_sales_btn" title="Batch receiving">
+										<i class="ion-bag"></i> Batch receiving</a>
+								</li>
+							</ul>
+						</div>
+						
+				</div>
+				<!-- /.End of receive Buttons -->
+
+							
+					<div class="customer-form">
+						<!-- if the supplier is not set , show supplier adding form -->
+						<form id="select_supplier_form">
+							<div class="input-group contacts">
+								<span class="input-group-addon">
+									<a href="#" class="none" title="New Supplier" id="new-customer">
+										<i class="ion-plus"></i></a>						
+								</span>
+								<span class="ui-helper-hidden-accessible"></span>
+								<input type="text" id="supplier" name="supplier" class="add-customer-input keyboardLeft ui-autocomplete-input" placeholder="Type supplier's name..."> 
+
+							</div>
+						</form>
+					</div> 
+				</div>
+
+
+
+				<!-- Summary -->
+				<div class="register-box register-summary paper-cut">
+					<ul class="list-group">
+						<li class="sub-total list-group-item receivings">
+							<span class="key">Sub Total:</span>
+							<span class="value">$0.00</span>
+						</li>
+					</ul>
+
+				<div class="amount-block">
+					<div class="total amount receiving">
+						<div class="side-heading">
+							Total				
+						</div>
+						<div class="amount total-amount">
+							$0.00				
+						</div>
+					</div>
+					<div class="total amount-due">
+						<div class="side-heading">
+							Amount Due				
+						</div>
+						<div class="amount">
+							$0.00				
+						</div>
+					</div>
+				</div>
+				<!-- ./amount block -->
+			</div>
+				<!-- /.Summary -->
+			</div>
+		</div>
+	</div>
+
+		
+		</div>
+</div>
+	</body>
+</html>
