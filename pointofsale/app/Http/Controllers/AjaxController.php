@@ -2,8 +2,10 @@
 namespace App\Http\Controllers;
 use App\Country;
 use App\Customer;
+use App\Manufacturer;
 use App\State;
 use App\User;
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -363,4 +365,43 @@ class AjaxController extends Controller
         $input = $request->all();
         print_r($input['name']);
     }
+
+    /*
+    ** add category
+    */
+    public function addCategory(Request $request){
+        $name = Category::where('name', $request->get('name'))->first();
+        if(isset($name)) {
+            return 'exist';
+        }
+
+        $category = Category::create($request->except(['image']));
+        if ($request->file('image')) {
+            $file = $request->file('image');
+            $name = $category->name.'_'.rand().'.'.$file->getClientOriginalExtension();
+            $file->move('./public/uploads/item/category', $name);
+            $arr = array('image' => $name);
+            Category::where('id', $category->id)->update($arr);
+        }
+
+        $html = '';
+        $html .= '<option value="'.$category->id.'" selected="selected">'.ucfirst($category->name).'</option>';
+        echo $html;
+    }
+
+    /*
+    ** add manufacturer
+    */
+    public function addManufacturer(Request $request){
+        $manufacturer = new Manufacturer();
+        $model = $manufacturer->addManufacturer($request->all());
+        if($model == 'exist') {
+            return $model;
+        }
+
+        $html = '';
+        $html .= '<option value="'.$model->id.'" selected="selected">'.ucfirst($model->name).'</option>';
+        echo $html;
+    }
 }
+

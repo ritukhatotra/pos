@@ -14,3 +14,5 @@ Route::post('checkUsername','AjaxController@checkUsername');
 
 /* item */
 Route::post('save-item','AjaxController@saveItem');
+Route::post('add-category','AjaxController@addCategory');
+Route::post('add-manufacturer','AjaxController@addManufacturer');

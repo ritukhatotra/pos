@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Manufacturer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -30,6 +31,7 @@ class ItemController extends Controller
         $data['page_title'] = "POS | Admin | Add Item";
         $data['current_url'] = url()->current();
         $data['categories'] = Category::all();
+        $data['manufacturers'] = Manufacturer::all();
         return view('admin.item.add_item', $data);
     }
 

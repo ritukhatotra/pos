@@ -90,7 +90,9 @@
                                         <tbody>
                                         </tbody>
                                     </table>
-                                    <input type="text" name="value" value="" id="item-no" class="form-control form-inps selectized">
+                                    <div id="item-no">
+                                        <input type="text" name="value[]" value="" class="form-control form-inps">
+                                    </div>
                                     <a href="javascript:void(0);" id="add_addtional_item_number">Add item number</a>
                                 </div>
                             </div>
@@ -105,7 +107,12 @@
                                 <label for="manufacturer_id" class="col-sm-3 col-md-3 col-lg-2 control-label wide">Manufacturer:</label>
                                 <div class="col-sm-9 col-md-9 col-lg-10">
                                     <select name="manufactures_id" class="form-control" id="manufacturer_id">
-                                        <option value="-1">None</option>
+                                        <option value="">None</option>
+                                        @if(isset($manufacturers))
+                                            @foreach($manufacturers as $manufacturer)
+                                                <option value="{{$manufacturer['id']}}">{{ucfirst($manufacturer['name'])}}</option>
+                                            @endforeach
+                                        @endif
                                     </select>
                                     <div>
                                         <a href="javascript:void(0);" data-toggle="modal" data-target="#manage_manufacture">Manage Manufacturers</a>
@@ -203,6 +210,7 @@
                             <div class="form-group">
                                 <label for="category_name" class="col-sm-3 col-md-3 col-lg-2 control-label wide">Category Name:</label>					<div class="col-sm-9 col-md-9 col-lg-9">
                                     <input type="text" name="name" value="" id="category_name" class="form-control form-inps"  />
+                                    <span id="cate_msg"></span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -245,7 +253,8 @@
                             <div class="form-group">
                                 <label for="category_name" class="col-sm-3 col-md-3 col-lg-2 control-label wide">Name:</label>
                                 <div class="col-sm-9 col-md-9 col-lg-9">
-                                    <input type="text" name="name" value="" class="form-control form-inps"  />
+                                    <input type="text" name="name" value="" class="form-control form-inps"  autocomplete="off"/>
+                                    <span id="manufacture_msg"></span>
                                 </div>
                             </div>
                             <div class="form-actions">
