@@ -137,3 +137,25 @@ jQuery(function() {
     });
 });
 
+/* item attribute */
+$('#add_attribute').on('click', function() {
+    var select = $("#available_attributes option:selected").val();
+    if(select == -1) {
+        $("#check_attribute").modal('show');
+    } else if(select == 0) {
+        $("#new_attribute").modal('show');
+    } else {
+        alert("else");
+    }
+});
+
+/* ok btn */
+$('#ok_btn').on('click', function() {
+   var input = $("#att_name").val();
+   if(input.length > 0) {
+       
+   } else {
+       $("#att_err_msg").html("Enter attribute name.");
+   }
+});
+

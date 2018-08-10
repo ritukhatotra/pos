@@ -43,6 +43,12 @@
         <a href="{{url('admin/items')}}">Items</a>
         <a href="#">New Item</a>
     </div>
+@elseif($current_url == env('APP_URL').'admin/new-item/redirect')
+    <div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs">
+        <a href="{{url('admin/dashboard')}}">Dashboard</a>
+        <a href="{{url('admin/items')}}">Items</a>
+        <a href="#">Variations</a>
+    </div>
 @else
     <div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs">
         <a href="{{url('admin/dashboard')}}">Dashboard</a>

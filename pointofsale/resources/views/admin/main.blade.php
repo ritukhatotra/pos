@@ -25,7 +25,7 @@
 @if($current_url == env('APP_URL').'admin/new-customer' || $current_url == env('APP_URL').'admin/customers' || $current_url == env('APP_URL').'admin/customer/edit/'.Request::segment(4))
     <script src="{{asset('public/js/admin/customer.js')}}"></script>
 @endif
-@if($current_url == env('APP_URL').'admin/items' || $current_url == env('APP_URL').'admin/new-item')
+@if($current_url == env('APP_URL').'admin/items' || $current_url == env('APP_URL').'admin/new-item' || $current_url == env('APP_URL').'admin/new-item/redirect')
     <script src="{{asset('public/js/admin/item.js')}}"></script>
 @endif
 </body>

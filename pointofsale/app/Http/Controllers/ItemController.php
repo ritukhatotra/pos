@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Item;
 use App\Manufacturer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -40,9 +41,10 @@ class ItemController extends Controller
     */
     public function redirect(Request $request) {
         $data['page_title'] = "POS | Admin | Add Item";
-        $data['current_url'] = url()->current();
+        $data['current_url'] = env('APP_URL').'admin/new-item/redirect';
         $data['item_id'] = $request->get('id');
         $data['type'] = $request->get('type');
+        $data['item'] = Item::find($data['item_id']);
         return view('admin.item.add_item_variation', $data);
     }
 }
