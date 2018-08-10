@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 use App\Country;
 use App\Customer;
+use App\Item;
+use App\Item_Number;
 use App\Manufacturer;
 use App\State;
 use App\User;
@@ -362,8 +364,37 @@ class AjaxController extends Controller
     ** save item
     */
     public function saveItem (Request $request) {
-        $input = $request->all();
-        print_r($input['name']);
+        $name = Item::where('item_name', $request->get('item_name'))->first();
+        if(isset($name)) {
+            return 'exist';
+        }
+
+        if($request->get('UPC_EAN_ISBN')) {
+            $upc = Item::where('UPC_EAN_ISBN', $request->get('UPC_EAN_ISBN'))->first();
+            if (isset($upc)) {
+                return 'exist_upc';
+            }
+        }
+
+        $item = Item::create($request->except(['item_numbers_id','item_photo']));
+        if ($request->file('image')) {
+            $file = $request->file('image');
+            $name = $item->item_name.'_'.rand().'.'.$file->getClientOriginalExtension();
+            $file->move('./public/uploads/item', $name);
+            $arr = array('item_photo' => $name);
+            Item::where('id', $item->id)->update($arr);
+        }
+
+        if($request->get('value')) {
+            $item_numbers = $request->get('value');
+            foreach ($item_numbers as $val) {
+                $model = new Item_Number();
+                $model->items_id = $item->id;
+                $model->value = $val;
+                $model->save();
+            }
+        }
+        echo $item->id;
     }
 
     /*

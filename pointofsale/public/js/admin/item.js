@@ -25,7 +25,13 @@ jQuery(function() {
                 url  : BASE_URL+'ajax/save-item',
                 data : frm.serialize(),
                 success: function(res) {
-                    window.location.href = BASE_URL+'admin/new-item/redirect?type=variation&id='+res;
+                    if(res === 'exist') {
+                        $('#item_msg').html('Already exist');
+                    } else if(res === 'exist_upc') {
+                        $('#upc_msg').html('Already exist');
+                    } else {
+                       window.location.href = BASE_URL+'admin/new-item/redirect?type=variation&id='+res;
+                    }
                 }
             });
         }
@@ -46,10 +52,31 @@ var flag = 0;
 jQuery("#add_addtional_item_number").on('click', function() {
     flag++;
     if(flag<=5) {
-        $("#item-no").append('<br/><input type="text" name="value[]" value="" class="form-control form-inps"/>')
+        $("#item-no").append('<input type="text" name="value[]" id="item_'+flag+'" value="'+flag+'" class="form-control form-inps dynamic-input"/>');
+        if(flag == 5) {
+            $("#add_addtional_item_number").addClass('hidden');
+            $("#remove_addtional_item_number").removeClass('hidden');
+            flag = 0;
+        }
+    }  else {
+        flag = 0;
     }
 });
 
+var removeFlag = 6;
+jQuery("#remove_addtional_item_number").on('click', function() {
+    removeFlag--;
+    if(removeFlag>0) {
+        $('#item_'+removeFlag+'').remove();
+        if(removeFlag == 1) {
+            $("#remove_addtional_item_number").addClass('hidden');
+            $("#add_addtional_item_number").removeClass('hidden');
+            removeFlag = 6;
+        }
+    } else {
+        removeFlag = 6;
+    }
+});
 /* add category */
 jQuery(function() {
     jQuery("#categories_form").validate({

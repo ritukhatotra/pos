@@ -39,7 +39,10 @@ class ItemController extends Controller
     ** new Item Variation
     */
     public function redirect(Request $request) {
-        echo "id ".$request->get('id');;
-        echo "<br/> type ".$request->get('type');
+        $data['page_title'] = "POS | Admin | Add Item";
+        $data['current_url'] = url()->current();
+        $data['item_id'] = $request->get('id');
+        $data['type'] = $request->get('type');
+        return view('admin.item.add_item_variation', $data);
     }
 }

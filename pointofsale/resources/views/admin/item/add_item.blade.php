@@ -39,6 +39,7 @@
                                 <label  class="col-sm-3 col-md-3 col-lg-2 control-label required wide">Item Name:</label>
                                 <div class="col-sm-9 col-md-9 col-lg-10">
                                     <input type="text" name="item_name" value="" id="name" class="form-control form-inps">
+                                    <span id="item_msg"></span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -69,6 +70,7 @@
                                 <label for="item_number" class="col-sm-3 col-md-3 col-lg-2 control-label wide">UPC/EAN/ISBN:</label>
                                 <div class="col-sm-9 col-md-9 col-lg-10">
                                     <input type="text" name="UPC_EAN_ISBN" value="" id="item_number" class="form-control form-inps">
+                                    <span id="upc_msg"></span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -80,20 +82,11 @@
                             <div class="form-group">
                                 <label for="item-no" class="col-sm-3 col-md-3 col-lg-2 control-label">Additional Item Numbers</label>
                                 <div class="col-sm-9 col-md-9 col-lg-10">
-                                    <table id="additional_item_numbers" class="table">
-                                        <thead>
-                                        <tr>
-                                            <th>Item Number</th>
-                                            <th>Delete</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
                                     <div id="item-no">
                                         <input type="text" name="value[]" value="" class="form-control form-inps">
                                     </div>
                                     <a href="javascript:void(0);" id="add_addtional_item_number">Add item number</a>
+                                    <a href="javascript:void(0);" id="remove_addtional_item_number" class="hidden">Remove item number</a>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -178,6 +171,7 @@
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" value="{{Auth::user()->id}}" name="users_id"/>
                     <div class="form-actions">
                         <input type="submit" name="submit" value="Save" id="submitf" class="submit_button floating-button btn btn-lg btn-primary">
                     </div>
