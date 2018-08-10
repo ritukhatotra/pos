@@ -1,4 +1,4 @@
-var BASE_URL = "http://localhost/ritu/pointofsale/";
+var BASE_URL = "http://localhost/ritu/pos/pointofsale/";
 
 /* customer */
 jQuery(function() {

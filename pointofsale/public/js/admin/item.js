@@ -153,7 +153,9 @@ $('#add_attribute').on('click', function() {
 $('#ok_btn').on('click', function() {
    var input = $("#att_name").val();
    if(input.length > 0) {
-       
+       $("table#attributes tbody").append('<tr><td>'+input+'</td><td><input autocomplete="off" type="text" class="form-control"/></td><td><a href="#" id="dlt_attr">Delete</a></td></tr>')
+       $("#new_attribute").modal('hide');
+       $("#att_name").val("");
    } else {
        $("#att_err_msg").html("Enter attribute name.");
    }
